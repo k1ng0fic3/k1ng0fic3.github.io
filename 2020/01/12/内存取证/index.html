@@ -6,18 +6,45 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>冰皇&#39;s blog</title>
+  <title>内存取证 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就决定是你了，阿勃梭鲁！超进化！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冰皇&#39;s blog">
-<meta property="og:url" content="https://k1ng0fic3.github.io/index.html">
+  <meta name="description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。题目文件下载链接： https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw做题之前简单介绍下Volatility这个工具——一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入vola">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内存取证">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="就决定是你了，阿勃梭鲁！超进化！">
+<meta property="og:description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。题目文件下载链接： https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw做题之前简单介绍下Volatility这个工具——一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入vola">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun10.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun11.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun12.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun13.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun14.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun15.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun16.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun17.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun18.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun19.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun20.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun21.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun22.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun23.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun24.png">
+<meta property="article:published_time" content="2020-01-12T02:48:26.987Z">
+<meta property="article:modified_time" content="2020-01-12T05:36:38.545Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -157,16 +184,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-内存取证" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-内存取证" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/">内存取证</a>
+    <h1 class="article-title" itemprop="name">
+      内存取证
     </h1>
   
 
@@ -281,6 +306,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -288,16 +334,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://k1ng0fic3.github.io/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大三选课心得</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -317,78 +422,14 @@
 
 
 
-
   
-    <article id="post-大三选课心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/">大三选课心得</a>
-    </h1>
   
 
-        
-        <a href="/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" class="archive-article-date">
-  	<time datetime="2020-01-10T01:45:07.260Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="关于大三的选修课"><a href="#关于大三的选修课" class="headerlink" title="关于大三的选修课"></a>关于大三的选修课</h2><h3 id="虚拟化与云计算"><a href="#虚拟化与云计算" class="headerlink" title="[虚拟化与云计算]"></a>[虚拟化与云计算]</h3><p>优先级+++，到课什么的完全可以不管，临最后交一个小作业一个大作业就过了。总之能选一定要选！</p>
-<h3 id="移动智能终端安全技术①"><a href="#移动智能终端安全技术①" class="headerlink" title="[移动智能终端安全技术①]"></a>[移动智能终端安全技术①]</h3><p>优先级++，经历了刘佳佳，杨超两代人的咕咕咕，这个课由360的工程师代上，上课内容：点点点，所以可以不去了。稍微有点Web安全基础的期末卷子就是满分，就算没有基础，背一下他们搞得学习网站上几张PPT，起码80+吧。</p>
-<h3 id="网络程序设计"><a href="#网络程序设计" class="headerlink" title="[网络程序设计]"></a>[网络程序设计]</h3><p>优先级+，大作业交上就有40分，学的是socket+Linux编程基础，期末卷子是（选择+简答+编程）背一下往年卷子几个简答题，再背一下TCP+UDP编程模板，就差不多了。</p>
-<h3 id="软件逆向工程"><a href="#软件逆向工程" class="headerlink" title="[软件逆向工程]"></a>[软件逆向工程]</h3><p>真的难，背Windows API的痛苦，背DLL注入，API钩取等等代码的痛苦，最后勉强过了。我们这一级有人弃考了这一门，慎选吧反正，不过孙聪给分还可以。（bin组的同学可以无视这些）</p>
-<h3 id="高级语言程序设计"><a href="#高级语言程序设计" class="headerlink" title="[高级语言程序设计]"></a>[高级语言程序设计]</h3><p>Java，考的还挺恶心的，但是过还是挺好过的，孙聪给分算比较痛快。</p>
-<h3 id="网络协议分析与设计"><a href="#网络协议分析与设计" class="headerlink" title="[网络协议分析与设计]"></a>[网络协议分析与设计]</h3><p>到课要注意一下，大概有三次随堂作业。自认为不算很难学的一门课，我们那届考的题比较奇怪，跟往年题不怎么搭，建议把PPT和上课有意提到的重点爬一遍。</p>
-<h3 id="编译原理"><a href="#编译原理" class="headerlink" title="[编译原理]"></a>[编译原理]</h3><p>有一说一，这个课可以选，平时作业和实验验收都整完就有了50分，也就是说平时分就占了一半，老师讲课水平也相当不错，可能课稍微难点。我没选这个课，舍友反馈非常好，期末复习就看上课的录播就好。</p>
-<h3 id="数字信号处理"><a href="#数字信号处理" class="headerlink" title="[数字信号处理]"></a>[数字信号处理]</h3><p>真……真的勇士，敢于直面DSP？</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -411,8 +452,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
