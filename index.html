@@ -233,6 +233,88 @@
 
 
   
+    <article id="post-应急响应の流量分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">应急响应の流量分析</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2020-01-11T12:40:16.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="应急响应中的流量分析练习"><a href="#应急响应中的流量分析练习" class="headerlink" title="应急响应中的流量分析练习"></a>应急响应中的流量分析练习</h1><h5 id="复盘安恒8月月赛题目，以巩固对流量分析的掌握。"><a href="#复盘安恒8月月赛题目，以巩固对流量分析的掌握。" class="headerlink" title="复盘安恒8月月赛题目，以巩固对流量分析的掌握。"></a>复盘安恒8月月赛题目，以巩固对流量分析的掌握。</h5><p>题目文件下载链接：</p>
+<h5 id="https-pan-baidu-com-s-13SoD6xB7YBiqpUDCIcb8mg"><a href="#https-pan-baidu-com-s-13SoD6xB7YBiqpUDCIcb8mg" class="headerlink" title="https://pan.baidu.com/s/13SoD6xB7YBiqpUDCIcb8mg"></a><a href="https://pan.baidu.com/s/13SoD6xB7YBiqpUDCIcb8mg" target="_blank" rel="noopener">https://pan.baidu.com/s/13SoD6xB7YBiqpUDCIcb8mg</a></h5><p>题目背景：</p>
+<blockquote>
+<p>某公司内网网络被黑客渗透，简单了解，黑客首先攻击了一台web服务器，破解了后台的账户的密码，随之利用破解的密码登陆了mail系统，然后获取了vpn的申请方式，然后登陆vpn，在内网pwn掉了一台打印机，请根据提供的流量包回答下面有关问题</p>
+</blockquote>
+<p>总结一些前置知识：</p>
+<p>过滤IP，如源IP或者目标 x.x.x.x </p>
+<blockquote>
+<p>ip.src eq x.x.x.x / ip.dst eq x.x.x.x / ip.addr eq x.x.x.x</p>
+</blockquote>
+<p>过滤端口</p>
+<blockquote>
+<p>tcp.port eq 80 / udp.port eq 80</p>
+</blockquote>
+<p>过滤MAC </p>
+<blockquote>
+<p>eth.dst ==A0:00:00:04:C5:84</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-大三选课心得" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -266,6 +348,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -391,6 +484,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

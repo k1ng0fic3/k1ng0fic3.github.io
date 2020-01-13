@@ -6,45 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>内存取证 | 冰皇&#39;s blog</title>
+  <title>应急响应の流量分析 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。题目文件下载链接： https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw做题之前简单介绍下Volatility这个工具——一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入vola">
+  <meta name="description" content="应急响应中的流量分析练习复盘安恒8月月赛题目，以巩固对流量分析的掌握。题目文件下载链接： https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;13SoD6xB7YBiqpUDCIcb8mg题目背景：  某公司内网网络被黑客渗透，简单了解，黑客首先攻击了一台web服务器，破解了后台的账户的密码，随之利用破解的密码登陆了mail系统，然后获取了vpn的申请方式，然后登陆vpn，在内网pwn掉了一台打印机，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内存取证">
-<meta property="og:url" content="https://k1ng0fic3.github.io/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/index.html">
+<meta property="og:title" content="应急响应の流量分析">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。题目文件下载链接： https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw做题之前简单介绍下Volatility这个工具——一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入vola">
+<meta property="og:description" content="应急响应中的流量分析练习复盘安恒8月月赛题目，以巩固对流量分析的掌握。题目文件下载链接： https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;13SoD6xB7YBiqpUDCIcb8mg题目背景：  某公司内网网络被黑客渗透，简单了解，黑客首先攻击了一台web服务器，破解了后台的账户的密码，随之利用破解的密码登陆了mail系统，然后获取了vpn的申请方式，然后登陆vpn，在内网pwn掉了一台打印机，">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun2.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun3.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun4.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun5.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun6.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun7.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun8.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun9.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun10.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun11.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun12.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun13.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun14.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun15.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun16.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun17.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun18.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun19.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun20.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun21.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun22.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun23.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun24.png">
-<meta property="article:published_time" content="2020-01-12T02:48:26.987Z">
-<meta property="article:modified_time" content="2020-01-12T06:40:38.481Z">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang10.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang11.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang12.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang13.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang14.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang15.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/liuliang16.png">
+<meta property="article:published_time" content="2020-01-11T12:40:16.099Z">
+<meta property="article:modified_time" content="2020-01-13T16:40:32.529Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/liuliang1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -184,108 +176,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-内存取证" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-应急响应の流量分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      内存取证
+      应急响应の流量分析
     </h1>
   
 
         
-        <a href="/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" class="archive-article-date">
-  	<time datetime="2020-01-12T02:48:26.987Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
+        <a href="/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2020-01-11T12:40:16.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="内存取证练习"><a href="#内存取证练习" class="headerlink" title="内存取证练习"></a>内存取证练习</h1><h5 id="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><a href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。" class="headerlink" title="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"></a>以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</h5><p>题目文件下载链接：</p>
-<h5 id="https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><a href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw" class="headerlink" title="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw"></a><a href="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw" target="_blank" rel="noopener">https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw</a></h5><p>做题之前简单介绍下<code>Volatility</code>这个工具——<br>一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入volatility来使用，功能可在源码或直接-h查看。</p>
-<p>附：关于如何给volatility添加组件。<br>【在Python源码<code>https://github.com/volatilityfoundation/</code>中，将目标文件（如：mimikatz. py）移入<code>volatility-master\volatility\plugins</code>目录下即可。】</p>
-<h5 id="1-9、"><a href="#1-9、" class="headerlink" title="1-9、"></a>1-9、</h5><blockquote>
-<p>1- What the password? 100<br>you got a sample of rick’s PC’s memory. can you get his user password? </p>
+        <h1 id="应急响应中的流量分析练习"><a href="#应急响应中的流量分析练习" class="headerlink" title="应急响应中的流量分析练习"></a>应急响应中的流量分析练习</h1><h5 id="复盘安恒8月月赛题目，以巩固对流量分析的掌握。"><a href="#复盘安恒8月月赛题目，以巩固对流量分析的掌握。" class="headerlink" title="复盘安恒8月月赛题目，以巩固对流量分析的掌握。"></a>复盘安恒8月月赛题目，以巩固对流量分析的掌握。</h5><p>题目文件下载链接：</p>
+<h5 id="https-pan-baidu-com-s-13SoD6xB7YBiqpUDCIcb8mg"><a href="#https-pan-baidu-com-s-13SoD6xB7YBiqpUDCIcb8mg" class="headerlink" title="https://pan.baidu.com/s/13SoD6xB7YBiqpUDCIcb8mg"></a><a href="https://pan.baidu.com/s/13SoD6xB7YBiqpUDCIcb8mg" target="_blank" rel="noopener">https://pan.baidu.com/s/13SoD6xB7YBiqpUDCIcb8mg</a></h5><p>题目背景：</p>
+<blockquote>
+<p>某公司内网网络被黑客渗透，简单了解，黑客首先攻击了一台web服务器，破解了后台的账户的密码，随之利用破解的密码登陆了mail系统，然后获取了vpn的申请方式，然后登陆vpn，在内网pwn掉了一台打印机，请根据提供的流量包回答下面有关问题</p>
 </blockquote>
-<p>第一步，先查看imageinfo<br>之后Volatility会给出几个建议的Profile值，用以指定内存的系统信息来精确的“对症下药”。（通常需要爆破出正确的Profile）</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun1.png" alt="avatar"></p>
-<p>第二步，利用插件mimikatz拓展功能（mimikatz：一个法国人写的，用来抓Windows明文密码的工具。此处为插件<code>mimikatz.py</code>）获得password</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun2.png" alt="avatar"></p>
+<p>总结一些前置知识：</p>
+<p>过滤IP，如源IP或者目标 x.x.x.x </p>
+<blockquote>
+<p>ip.src eq x.x.x.x / ip.dst eq x.x.x.x / ip.addr eq x.x.x.x</p>
+</blockquote>
+<p>过滤端口</p>
+<blockquote>
+<p>tcp.port eq 80 / udp.port eq 80</p>
+</blockquote>
+<p>过滤MAC </p>
+<blockquote>
+<p>eth.dst ==A0:00:00:04:C5:84</p>
+</blockquote>
 <a id="more"></a>
-
+<p>http模式过滤</p>
 <blockquote>
-<p>2- General Info 75<br>Let’s start easy - whats the PC’s name and IP address?</p>
+<p>http.request.method== “GET”<br>http.request.method== “POST”<br>http.request.uri ==”/img/logo-edu.gif”<br>http contains”GET”<br>http contains”HTTP/1.”<br>http.request.method== “GET” &amp;&amp; http contains “User-Agent:”</p>
 </blockquote>
-<p>先说IP地址，直接netscan即可扫出：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun3.png" alt="avatar"></p>
-<p>得到：192.168.202.131<br>之后看注册表：(hivelist)</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun4.png" alt="avatar"></p>
-<p>然后去printkey</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun5.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun6.png" alt="avatar"></p>
-<p>中间略，一层一层目录查看即可，最终：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun7.png" alt="avatar"></p>
+<h5 id="1-11、"><a href="#1-11、" class="headerlink" title="1-11、"></a>1-11、</h5><blockquote>
+<p>1、某公司内网网络被黑客渗透，请分析流量，给出黑客使用的扫描器:</p>
+</blockquote>
+<p>总结一些常见扫描器或者自动化工具的特征（或称指纹） ：<br>Awvs（Acunetix Web Vulnerability Scanner ）</p>
 <blockquote>
-<p>3-Play Time 50<br>Rick just loves to play some good old videogames. can you tell which game is he playing? What’s the IP address of the server?</p>
+<p>acunetix_wvs_security_test acunetix<br>acunetix_wvs acunetix_test<br>Acunetix-Aspect-Password: Cookie:<br>acunetix_wvs_security_test X-Forwarded-Host:<br>acunetix_wvs_security_test X-Forwarded-For:<br>acunetix_wvs_security_test Host:<br>acunetix_wvs_security_test</p>
 </blockquote>
-<p>回去找netscan，在进程中发现：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun8.png" alt="avatar"></p>
-<p>LunarMS：（游戏实锤）</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun9.png" alt="avatar"></p>
-<p>故：LunarMS IP为：77.102.199.102</p>
+<p>Netsparker</p>
 <blockquote>
-<p>4-Name Game 100<br>We know that the account was logged in to a channel called Lunar-3. what is the account name?</p>
+<p>X-Scanner: NetsparkerLocation:<br>NetsparkerAccept: netsparker/checkCookie:<br>netsparkerCookie: NETSPARKER</p>
 </blockquote>
-<p>这道题目很简单，既然说了Lunar-3，那就去找就是了，顺便看一下前后的五行。</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun10.png" alt="avatar"></p>
-<p>答案：0tt3r8r33z3</p>
+<p>Appscan</p>
 <blockquote>
-<p>5- Name Game 2 150<br>From a little research we found that the username of the logged on character is always after this signature: 0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2} What’s rick’s character’s name? </p>
+<p>Headers Content-Type: Appscan<br>Content-Type: AppScanHeader<br>Accept: Appscan User-Agent:Appscan </p>
 </blockquote>
-<p>再次回到netscan的界面，把那个游戏LunarMS.exe（pid=708那个）给dump下来，因为题目文件是vmem文件么，所以memdump就好了</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun11.png" alt="avatar"></p>
-<p>接下来就去找0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2}这串东西，可以辨认出来的是：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun12.png" alt="avatar"></p>
-<p>d @ Z三个字符，然而尝试strings之后。。</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun13.png" alt="avatar"></p>
-<p>失败了，还是去查看hex，选择已知相邻最长的0x5a 0x0c 0x00吧：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun14.png" alt="avatar"></p>
-<p>得到：M0rtyL0L（可能还有更好的匹配搜索办法）</p>
+<p>Nessus</p>
 <blockquote>
-<p>6- Silly Rick 100<br>Silly rick always forgets his email’s password, so he uses a Stored Password Services online to store his password. He always copy and paste the password so he will not get it wrong. whats rick’s email password?</p>
+<p>x_forwarded_for: nessus<br>referer: nessus<br>host: nessus</p>
 </blockquote>
-<p>直接去看剪切板（clipboard）：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun15.png" alt="avatar"></p>
-<p>M@il_Pr0vid0rs</p>
+<p>一开始只是黑客攻击服务器的过程，所以用不到VPN的包，从Mail.pcap和web.pcap中找信息：<br>根据常见的扫描器特征，用http contains “x”筛出结果即可，如：http contains “wvs”</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang1.png" alt="avatar"></p>
 <blockquote>
-<p>7- Hide And Seek 100<br>The reason that we took rick’s PC memory dump is because there was a malware infection. Please find the malware process name (including the extension)<br>BEAWARE! There are only 3 attempts to get the right flag!</p>
+<p>2、某公司内网网络被黑客渗透，请分析流量，得到黑客扫描到的登陆后台是(相对路径即可):</p>
 </blockquote>
-<p>去看进程树吧（pstree）：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun16.png" alt="avatar"></p>
-<p>出现了一个新的值–PPid，解释起来很简单：<br>先说Pid（Process ID）–程序被操作系统加载到内存成为进程后动态分配的资源。注意动态一词，Pid在每次重新加载程序的时候都是不同的。（一个Pid标识一个进程，所以它也是唯一的）<br>而PPid（Parent Process ID）–是程序的父进程ID。<br>然后，就可以看题了，需要找出恶意软件进程的名字。<br>…还是再举个例子稍微解释一下</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun17.png" alt="avatar"></p>
-<p>从进程树里随便截取了一段，首先看到init。<br>推测为第一个进程，跟着序列号走：336→396，396→492，注意到后面有两次变动，492→1428,和492→808的时候，序列1428，808的进程又作为父进程，产生了1428→3916和808→960。之后又回到了492的主干，一片和谐。<br>了解这个过程之后就可以做题了。最开始，第三个进程就出现了问题：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun18.png" alt="avatar"></p>
-<p>Pid比PPid还要小，而且序列变化明显的异常，估计不会错了。<br>然后分析这个前后进程吧，dlllist：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun19.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun20.png" alt="avatar"></p>
-<p>锁定了，Temp目录下执行，恶意进程实锤：vmware-tray.exe</p>
+<p>通常后台中可能使用的名字有admin、manager、login、system这些<br>尝试登录的关键字：</p>
 <blockquote>
-<p>8- Path To Glory 150<br>How did the malware got to rick’s PC? It must be one of rick old illigal habits…</p>
+<p>http contains “login” &amp;&amp; http.request.method == “POST”</p>
 </blockquote>
-<p>malware-恶意软件，不过并不知道怎么看出来，这个问题我们后面再讨论吧（先贴个网址在这儿：<a href="https://www.freebuf.com/articles/system/104899.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/system/104899.html</a> ），不过匹配Rick和exe肯定没有错，filescan之：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun21.png" alt="avatar"></p>
-<p>这个地方比较懵，不过根据推测，rwd：读取写入即时同步，于是dump出RWD—模式的文件来看看：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun22.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang2.png" alt="avatar"></p>
+<p>/admin/login.php?rec=login</p>
 <blockquote>
-<p>9- Path To Glory 200<br>Continue the search after the the way that malware got in.</p>
+<p>3、某公司内网网络被黑客渗透，请分析流量，得到黑客使用了什么账号密码登陆了web后台(形式:username/password):</p>
 </blockquote>
-<p>接着上面那个题的，找出恶意软件之后来分析它，这个很暴力，dump下Chrome的进程然后匹配即可（比较耗时）：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun23.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun24.png" alt="avatar"></p>
+<p>接着上面那个题来的，在login.php?rec=login中的最后倒数第二个就是了，或者http contains “passw”一把梭然后慢慢捋。</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang3.png" alt="avatar"></p>
+<blockquote>
+<p>4、某公司内网网络被黑客渗透，请分析流量，得到黑客上传的webshell文件名是，内容是什么,提交webshell内容的base编码:</p>
+</blockquote>
+<p>一般的命令执行函数：eval、system、cmd_shell、assert这些，尝试eval：</p>
+<blockquote>
+<p>http contains “eval”<br>http contains “eval” &amp;&amp; http.request.method==‘post’</p>
+</blockquote>
+<p>往后翻能看到a.php，从命名到参数都具有菜刀的特征，于是</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang4.png" alt="avatar"></p>
+<p>答案是<code>&lt;?php @eval([1234]);?&gt;</code>的base64编码。</p>
+<blockquote>
+<p>5、某公司内网网络被黑客渗透，请分析流量，黑客在robots.txt中找到的flag是什么:</p>
+</blockquote>
+<p>无脑contains之，然后追踪HTTP流即可：（或者<code>http contains &quot;Disallow&quot;</code>）</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang5.png" alt="avatar"></p>
+<blockquote>
+<p>6、某公司内网网络被黑客渗透，请分析流量，黑客找到的数据库密码是多少:</p>
+</blockquote>
+<p>黑客是通过马来操作数据库，那么contains上php和db：</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang6.png" alt="avatar"></p>
+<p>要说有什么快速找到的技巧，我觉得就是倒着往前找吧。但是顺着时间看可以摸清黑客的攻击过程，更有价值些。</p>
+<blockquote>
+<p>7、某公司内网网络被黑客渗透，请分析流量，黑客在数据库中找到的hash_code是什么:</p>
+</blockquote>
+<p>在第一个包中尝试http contains “hash_code”，未果。<br>打开第二个包进行寻找。<br>分析一下两个包的协议情况：</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang7.png" alt="avatar"></p>
+<p>第一个包主要在HTTP下做HTML的响应；第二个包则直接在TCP协议下操作数据库。</p>
+<p>于是执行<code>tcp contains &quot;hash_code&quot;</code>或者<code>mysql contains &quot;hash_code&quot;</code>，然后去查看response，追踪流就好了。</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang8.png" alt="avatar"></p>
+<blockquote>
+<p>8、某公司内网网络被黑客渗透，请分析流量，黑客破解了账号<a href="mailto:ijnu@test.com">ijnu@test.com</a>得到的密码是什么:</p>
+</blockquote>
+<p>和上面一样<code>tcp contains &quot;ijnu@test.com&quot;</code>就好了</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang9.png" alt="avatar"></p>
+<p>解一个MD5</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang10.png" alt="avatar"></p>
+<blockquote>
+<p>9、某公司内网网络被黑客渗透，请分析流量，被黑客攻击的web服务器，网卡配置是什么，提交网卡内网ip:</p>
+</blockquote>
+<p>网卡的信息会一起出现，eth0、eth1、eth2…lo<br>所以<code>http contains &quot;eth&quot;</code>或者<code>http contains lo&quot;</code>可以筛出对应信息<br>注意结果在Web1里，反正两个包都试一下。</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang11.png" alt="avatar"></p>
+<blockquote>
+<p>10、某公司内网网络被黑客渗透，请分析流量，黑客使用了什么账号登陆了mail系统（形式: username/password）:</p>
+</blockquote>
+<p>既然是mail系统，所以去找mail的两个包，根据时间点看，黑客在进行爆破登录，mailtwo没爆出来，mailtwo1这个包继续爆，找到最后一条记录。<br>因为是否成功登录无法很明确看出来，不妨翻翻第一个包的记录。<br>首先后台对用户名和密码的验证如下：</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang12.png" alt="avatar"></p>
+<p>然后，登录成功后的回显（response）如下：</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang13.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/liuliang14.png" alt="avatar"></p>
+<p>可知，黑客登录成功的记录中也会有此信息，故使用<code>http contains &quot;{\&quot;success\&quot;:true}&quot;</code>（再回溯到request，找到序号17194）</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang15.png" alt="avatar"></p>
+<p>根据第一张图，可知密码是AES加密之后的密文，利用CryptoJS+key解密即可，最终求得明文为：<code>admin!@#pass123</code><br>(相关代码以后整理一下再放上来)</p>
+<blockquote>
+<p>11、某公司内网网络被黑客渗透，请分析流量，黑客获得的vpn,ip是多少:</p>
+</blockquote>
+<p>数据包中的IP不唯一，忽略CTF可以提交验证的情况。利用Wireshark的统计功能可以更好地解释它（<code>统计→端点</code>）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/liuliang16.png" alt="avatar"></p>
+<p>得知10.3.4.3发包最多，解题完成。</p>
 
       
 
@@ -375,7 +400,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://k1ng0fic3.github.io/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://k1ng0fic3.github.io/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -389,9 +414,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          内存取证
+        
+      </div>
+    </a>
   
-    <a href="/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">应急响应の流量分析</div>
+  
+    <a href="/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大三选课心得</div>
       <i class="icon-circle-right"></i>
     </a>
   
