@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki12.png">
 <meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki13.png">
 <meta property="article:published_time" content="2020-01-27T08:46:05.179Z">
-<meta property="article:modified_time" content="2020-01-27T08:45:16.199Z">
+<meta property="article:modified_time" content="2020-01-27T08:50:45.541Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
@@ -196,6 +196,7 @@
         <h2 id="西电forensic-wikiのWindows部分-amp-amp-部分美亚杯题目分析"><a href="#西电forensic-wikiのWindows部分-amp-amp-部分美亚杯题目分析" class="headerlink" title="西电forensic-wikiのWindows部分 &amp;&amp; 部分美亚杯题目分析"></a>西电forensic-wikiのWindows部分 &amp;&amp; 部分美亚杯题目分析</h2><p>和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下Windows部分</p>
 <h1 id="Windows-Analysis"><a href="#Windows-Analysis" class="headerlink" title="Windows Analysis"></a>Windows Analysis</h1><p>与挖掘Linux服务器镜像中的网络行为信息不同，取证比赛中对于Windows镜像的考查主要体现在使用痕迹与文件上，比如软件使用记录，浏览器历史记录，病毒样本文件，以及爬取的表单话单等。</p>
 <p>因此取证工作者要熟练地掌握文件提取、数据恢复、系统仿真、详单分析、编程与逆向工程等知识与技术手段。</p>
+<a id="more"></a>
 <h2 id="磁盘结构"><a href="#磁盘结构" class="headerlink" title="磁盘结构"></a>磁盘结构</h2><p>从物理层面，一个磁盘按层次分为 ：<br>磁盘组合 → 单个磁盘 → 某一盘面 （platter）→ 某一磁道 （track）→ 某一扇区（sector）</p>
 <p>关于簇和扇区：<br>文件占用磁盘空间时，基本单位不是字节而是簇。簇的大小与磁盘的规格有关，一般情况下，软盘每簇是1个扇区，硬盘每簇的扇区数与硬盘的总容量大小有关，可能是4、8、16、32、64……</p>
 <p>Windows文件系统：<br>通常在Windows平台下使用的3种文件系统是FAT（文件分区表），FAT32（32位文件分区表）和NTFS（NT文件系统）。<br>在FAT文件系统下，每一个磁盘被分成固定大小的簇。簇最少为512个字节，其大小可以成倍增长，最大为32K。每个簇都是由唯一的索引号——一个16位二进制数来标识。因为16位二进制数最大为65536，所以FAT分区所拥有的簇的数量不可能超过65536个。<br>FAT32文件的原理几乎与此相同，但它的簇更小，而且由于FAT32入口是32位，所以其容量理论上可以超过40亿个字节。<br>NTFS是一个相当高级的文件系统。它的主文件表（MFT）是一个非常完整的数据库，它负责对磁盘上的每个文件进行索引。每个MFT的入口通常为1K大小，其中记录了大量的文件信息。NTFS可以在文件的MFT入口中存储非常小的文件的全部内容；对于大一些的文件，这些入口会标识出包含文件数据的簇。</p>
