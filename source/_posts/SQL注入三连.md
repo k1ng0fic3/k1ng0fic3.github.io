@@ -209,7 +209,7 @@ for i in lists:
 
 其实不是SQL注入，原意是phar反序列化的题，但是非预期很多而且非预期比较简单，还是从正常解开始。
 
-关于phar反序列化有一篇特别好的[总结](https://www.cnblogs.com/BOHB-yunying/p/11504051.html)，必须分析。
+关于phar反序列化有一篇特别好的[总结](https://www.cnblogs.com/BOHB-yunying/p/11504051.html)，必须分享。
 
 首先弱口令或者字典爆破登录进平台（admin&password）
 然后跳转到了URL：`http://183.129.189.60:10009/home.php?file=upload`上
