@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://k1ng0fic3.github.io/images/sql28.png">
 <meta property="og:image" content="https://k1ng0fic3.github.io/images/sql29.png">
 <meta property="article:published_time" content="2020-01-31T13:30:24.937Z">
-<meta property="article:modified_time" content="2020-02-01T10:44:23.232Z">
+<meta property="article:modified_time" content="2020-02-01T11:20:34.527Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
@@ -305,7 +305,7 @@
 </blockquote>
 <p><img src="https://k1ng0fic3.github.io/images/sql21.png" alt="avatar"></p>
 <h4 id="0x02：Babysqli-v3-0"><a href="#0x02：Babysqli-v3-0" class="headerlink" title="0x02：Babysqli v3.0"></a>0x02：Babysqli v3.0</h4><p>其实不是SQL注入，原意是phar反序列化的题，但是非预期很多而且非预期比较简单，还是从正常解开始。</p>
-<p>关于phar反序列化有一篇特别好的<a href="https://www.cnblogs.com/BOHB-yunying/p/11504051.html" target="_blank" rel="noopener">总结</a>，必须分析。</p>
+<p>关于phar反序列化有一篇特别好的<a href="https://www.cnblogs.com/BOHB-yunying/p/11504051.html" target="_blank" rel="noopener">总结</a>，必须分享。</p>
 <p>首先弱口令或者字典爆破登录进平台（admin&amp;password）<br>然后跳转到了URL：<code>http://183.129.189.60:10009/home.php?file=upload</code>上</p>
 <p><img src="https://k1ng0fic3.github.io/images/sql22.png" alt="avatar"></p>
 <p>这种情况就扫一下:共flag.php upload.php home.php index.php四个，直接访问flag.php无回显，也无法文件读取，其他文件会自动加上后缀<code>.fxxkyou!</code>且00截断无效。</p>
@@ -453,6 +453,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/02/07/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          最友好のWin+Linux双系统安装
+        
+      </div>
+    </a>
   
   
     <a href="/2020/01/27/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/" id="article-nav-older" class="article-nav-link-wrap">
