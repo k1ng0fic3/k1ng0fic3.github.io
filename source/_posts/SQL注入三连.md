@@ -3,11 +3,11 @@
 ##### 为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目
 
 感谢颖奇师傅[博客](https://www.gem-love.com)的帮助。
-
+<!-- more -->
 ### 题目内容：
 
 ![avatar](https://k1ng0fic3.github.io/images/sql1.png)
-<!-- more -->
+
 ![avatar](https://k1ng0fic3.github.io/images/sql2.png)
 
 ![avatar](https://k1ng0fic3.github.io/images/sql3.png)
@@ -49,7 +49,7 @@ base64解码得：
 
 题目没有给出源码，盲猜大概逻辑如下：
 
-```
+```php
 <?
 $name = $_POST['name'];
 $passwd = md5($_POST['pw']);
@@ -72,7 +72,7 @@ if (!strcasecmp($passwd, $query[passwd])) {
 很简单，联合查询时，当查询的数据不存在的时候，就会构造一个虚拟的数据来。
 测试过程：
 
-```
+```sql
 create database test;   #创建一个数据库
 use test                #使用test数据库
 create table user( id int, username varchar(20), password varchar(20) );  #创建表
@@ -173,7 +173,7 @@ You can really dance~
 <5> 转载工具
 看了下*Nepnep*师傅们的WP，给出了一个updatexml的自动化脚本，转发以宣传之。
 作者Shana、7TNE7，[原文链接](http://www.qfrost.com/PWN/GXY_CTF_2019/)
-```
+```python
 import requests
 import re
 import base64
@@ -195,7 +195,7 @@ lists = allBase64Str.split(',')
 
 for i in lists:
      print(base64.b64decode(i))
- ```
+```
 
 ##### `floor()`报错注入原理：
 
@@ -226,7 +226,7 @@ for i in lists:
 
 那么根据提示读upload：`http://183.129.189.60:10009/home.php?file=php://filter/convert.base64-encode/resource=upload`
 
-```
+```php
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 
 <form action="" method="post" enctype="multipart/form-data">
@@ -310,7 +310,7 @@ if(isset($_FILES['file'])) {
 
 分析最后上传部分：
 
-```
+```php
 if(@file_get_contents($uploader)){
 	echo "下面是你上传的文件：<br>".$uploader."<br>";
 	echo file_get_contents($uploader);
@@ -322,10 +322,10 @@ if(@file_get_contents($uploader)){
 
 在`__construct()`方法中有以下两行
 
-```
+```php
 $sandbox = getcwd()."/uploads/".md5($_SESSION['user'])."/";
 $this->Filename = $sandbox.$_SESSION['user'].$ext;
- ```
+```
 
 随便上传一个txt，回显
 
@@ -335,7 +335,7 @@ $this->Filename = $sandbox.$_SESSION['user'].$ext;
 
 然后在本地生成phar文件：
 
-```
+```php
 <?php
 class Uploader{
 	public $Filename;

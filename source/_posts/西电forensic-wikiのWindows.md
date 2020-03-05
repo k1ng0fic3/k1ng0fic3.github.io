@@ -1,13 +1,13 @@
 ## 西电forensic-wikiのWindows部分 && 部分美亚杯题目分析
 
 和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下Windows部分
-
+<!-- more -->
 # Windows Analysis
 
 与挖掘Linux服务器镜像中的网络行为信息不同，取证比赛中对于Windows镜像的考查主要体现在使用痕迹与文件上，比如软件使用记录，浏览器历史记录，病毒样本文件，以及爬取的表单话单等。
 
 因此取证工作者要熟练地掌握文件提取、数据恢复、系统仿真、详单分析、编程与逆向工程等知识与技术手段。
-<!-- more -->
+
 ## 磁盘结构
 
 从物理层面，一个磁盘按层次分为 ：
@@ -84,7 +84,8 @@ NTFS是一个相当高级的文件系统。它的主文件表（MFT）是一个�
 
 ![avatar](https://k1ng0fic3.github.io/images/wiki9.png)
 
->'''标准时间到时间戳'''
+```python
+'''标准时间到时间戳'''
 import time
 a = time_str
 timeArray = time.strptime(a,"%Y-%m-%d %H:%M:%S") 
@@ -93,7 +94,7 @@ timeStamp = int(time.mktime(timeArray))
 import time
 timeArray = time.localtime(timeStamp)
 otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
-
+```
 测试：
 
 ![avatar](https://k1ng0fic3.github.io/images/wiki10.png)

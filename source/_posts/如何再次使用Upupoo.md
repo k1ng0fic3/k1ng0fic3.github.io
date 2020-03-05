@@ -6,7 +6,7 @@ tags:
 ## 如何再次使用Upupoo
 
 写这篇博客时，笔者的心情还是有些怆然，曾经在宿舍跟舍友们看Upupoo各种好玩的壁纸，讨论各种番剧OP时的场景历历在目。
-
+<!-- more -->
 但是企业的走向毕竟也是个无奈的事情，我们都无法改变什么，只能尽自己努力来找回一些喜欢的东西吧。
 
 #### 0x00 自动更新问题
@@ -18,7 +18,9 @@ tags:
 ![avatar](https://k1ng0fic3.github.io/images/bizhi0.png)
 
 查资料了解，在更古老的版本```upupooAll.exe```2.1.0.x 中可以避免它。
-<!-- more -->
+
+链接：https://pan.baidu.com/s/1v1xdwBTh6rnRw7zNPbx2RA 
+提取码：al8k
 #### 0x01 选择
 
 如果电脑上还有```UpupooResource```这个文件夹，一定要保留好，它里面留着我们之前下载过的壁纸，并在安装时指向该路径。
@@ -41,7 +43,9 @@ tags:
 
 之后新建文件，rename为```theme.upup```，写入内容如下：
 
->{"author":"2020202020","description":"弘连讲座","isOriginal":"0","name":"弘连讲座","reprintUrl":" ","src":"弘连讲座.mp4","tag":"1,3,9","themeType":1,"themeno":2020202020,"url":"http://source.upupoo.com/theme/2020202020/theme.upup","used":1,"ver":"1"}
+```json
+{"author":"2020202020","description":"弘连讲座","isOriginal":"0","name":"弘连讲座","reprintUrl":" ","src":"弘连讲座.mp4","tag":"1,3,9","themeType":1,"themeno":2020202020,"url":"http://source.upupoo.com/theme/2020202020/theme.upup","used":1,"ver":"1"}
+```
 
 成功！示例：
 
