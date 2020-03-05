@@ -6,34 +6,45 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>区块链&amp;智能合约 | 冰皇&#39;s blog</title>
+  <title>内存取证 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="区块链の智能合约学习以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识题目链接： https:&#x2F;&#x2F;archive.aachen.ccc.de&#x2F;34c3ctf.ccc.ac&#x2F;challenges&#x2F;index.html  send 1505 szabo 457282 babbage 649604 wei 0x949a6ac29b9347b3eb9a420272a9dd7890b">
+  <meta name="description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链&amp;智能合约">
-<meta property="og:url" content="https://k1ng0fic3.github.io/2020/01/16/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html">
+<meta property="og:title" content="内存取证">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="区块链の智能合约学习以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识题目链接： https:&#x2F;&#x2F;archive.aachen.ccc.de&#x2F;34c3ctf.ccc.ac&#x2F;challenges&#x2F;index.html  send 1505 szabo 457282 babbage 649604 wei 0x949a6ac29b9347b3eb9a420272a9dd7890b">
+<meta property="og:description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng1.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng2.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng3.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng4.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng5.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng6.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng7.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng8.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng9.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng10.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng12.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng13.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng11.png">
-<meta property="article:published_time" content="2020-01-16T09:41:44.754Z">
-<meta property="article:modified_time" content="2020-01-17T10:32:32.008Z">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun10.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun11.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun12.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun13.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun14.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun15.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun16.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun17.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun18.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun19.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun20.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun21.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun22.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun23.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun24.png">
+<meta property="article:published_time" content="2020-03-05T03:05:36.520Z">
+<meta property="article:modified_time" content="2020-03-05T03:04:06.825Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/zhineng1.png">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -75,6 +86,8 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
@@ -136,6 +149,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -153,12 +168,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -173,136 +190,107 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-区块链&amp;智能合约" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-内存取证" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      区块链&amp;智能合约
+      内存取证
     </h1>
   
 
         
-        <a href="/2020/01/16/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" class="archive-article-date">
-  	<time datetime="2020-01-16T09:41:44.754Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-16</time>
+        <a href="/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" class="archive-article-date">
+  	<time datetime="2020-03-05T03:05:36.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="区块链の智能合约学习"><a href="#区块链の智能合约学习" class="headerlink" title="区块链の智能合约学习"></a>区块链の智能合约学习</h1><h5 id="以34C3-CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识"><a href="#以34C3-CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识" class="headerlink" title="以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识"></a>以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识</h5><p>题目链接：</p>
-<h5 id="https-archive-aachen-ccc-de-34c3ctf-ccc-ac-challenges-index-html"><a href="#https-archive-aachen-ccc-de-34c3ctf-ccc-ac-challenges-index-html" class="headerlink" title="https://archive.aachen.ccc.de/34c3ctf.ccc.ac/challenges/index.html"></a><a href="https://archive.aachen.ccc.de/34c3ctf.ccc.ac/challenges/index.html" target="_blank" rel="noopener">https://archive.aachen.ccc.de/34c3ctf.ccc.ac/challenges/index.html</a></h5><p><img src="https://k1ng0fic3.github.io/images/zhineng1.png" alt="avatar"></p>
-<blockquote>
-<p>send 1505 szabo 457282 babbage 649604 wei 0x949a6ac29b9347b3eb9a420272a9dd7890b787a3</p>
+        <h1 id="内存取证练习"><a href="#内存取证练习" class="headerlink" title="内存取证练习"></a>内存取证练习</h1><h5 id="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><a href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。" class="headerlink" title="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"></a>以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</h5><a id="more"></a>
+<p>题目文件下载链接：</p>
+<h5 id="https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><a href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw" class="headerlink" title="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw"></a><a href="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw" target="_blank" rel="noopener">https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw</a></h5><p>做题之前简单介绍下<code>Volatility</code>这个工具——<br>一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入volatility来使用，功能可在源码或直接-h查看。</p>
+<p>附：关于如何给volatility添加组件。<br>【在Python源码<code>https://github.com/volatilityfoundation/</code>中，将目标文件（如：mimikatz. py）移入<code>volatility-master\volatility\plugins</code>目录下即可。】</p>
+<h5 id="1-9、"><a href="#1-9、" class="headerlink" title="1-9、"></a>1-9、</h5><blockquote>
+<p>1- What the password? 100<br>you got a sample of rick’s PC’s memory. can you get his user password? </p>
 </blockquote>
-<h5 id="什么是Etherscan"><a href="#什么是Etherscan" class="headerlink" title="什么是Etherscan"></a>什么是Etherscan</h5><p>其实是一种特殊的浏览器，就像Chrome、Firefox、IE等一样，不过Etherscan让我们浏览的不是Internet内容，而是Blockchain的内容。</p>
-<p>主页是<code>etherscan.io</code>，需要科学上网。</p>
-<p>解题：</p>
-<h5 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h5><p>send、wei等为以太坊的关键字，具体单位关系自行百度，<code>1505 * 10 ** 12 + 457282 * 10 ** 6 + 649604)/10 ** 18 = 0.001505457282649604</code>ether，注意babbage有时是KWei，有时是MWei，此题为MWei。但是不需要支付这笔钱也可解出flag</p>
-<p>题目中给出了地址，访问它得到字节码：</p>
-<a id="more"></a>
-
-<p><img src="https://k1ng0fic3.github.io/images/zhineng2.png" alt="avatar"></p>
-<p>反编译&amp;反汇编给出的字节码：(<code>https://ethervm.io/decompile</code>附代码)</p>
+<p>第一步，先查看imageinfo<br>之后Volatility会给出几个建议的Profile值，用以指定内存的系统信息来精确的“对症下药”。（通常需要爆破出正确的Profile）</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun1.png" alt="avatar"></p>
+<p>第二步，利用插件mimikatz拓展功能（mimikatz：一个法国人写的，用来抓Windows明文密码的工具。此处为插件<code>mimikatz.py</code>）获得password</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun2.png" alt="avatar"></p>
 <blockquote>
+<p>2- General Info 75<br>Let’s start easy - whats the PC’s name and IP address?</p>
 </blockquote>
-<pre><code>contract Contract {
-    function main() {
-    memory[0x40:0x60] = 0x60;
-
-    if (msg.data.length &lt; 0x04) { revert(memory[0x00:0x00]); }
-
-    var var0 = msg.data[0x00:0x20] / 0x0100000000000000000000000000000000000000000000000000000000 &amp; 0xffffffff;
-
-    if (var0 == 0x2a0f7696) {
-        // Dispatch table entry for 0x2a0f7696 (unknown)
-        if (msg.value) { revert(memory[0x00:0x00]); }
-
-        var var1 = 0x0081;
-        var var2 = msg.data[0x04:0x24] &amp; 0xffff;
-        var1 = func_00CC(var2);
-        var temp0 = memory[0x40:0x60];
-        memory[temp0:temp0 + 0x20] = var1;
-        var temp1 = memory[0x40:0x60];
-        return memory[temp1:temp1 + (temp0 + 0x20) - temp1];
-    } else if (var0 == 0x5b6b431d) {
-        // Dispatch table entry for Withdraw(uint256)
-        if (msg.value) { revert(memory[0x00:0x00]); }
-
-        var1 = 0x00c0;
-        var2 = msg.data[0x04:0x24];
-        Withdraw(var2);
-        stop();
-    } else if (var0 == 0x9f1b3bad) {
-        // Dispatch table entry for Receive()
-        var1 = 0x00ca;
-        Receive();
-        stop();
-    } else { revert(memory[0x00:0x00]); }
-}
-
-function func_00CC(var arg0) returns (var r0) {
-    var var0 = 0x00;
-
-    if (arg0 &amp; 0xffff != storage[0x01] &amp; 0xffff) { return 0x00; }
-
-    memory[0x00:0x20] = msg.sender;
-    memory[0x20:0x40] = 0x02;
-    return storage[keccak256(memory[0x00:0x40])];
-}
-
-function Withdraw(var arg0) {
-    if (msg.sender != storage[0x00] &amp; 0xffffffffffffffffffffffffffffffffffffffff) { revert(memory[0x00:0x00]); }
-
-    var temp0 = arg0;
-    var temp1 = memory[0x40:0x60];
-    var temp2;
-    temp2, memory[temp1:temp1 + 0x00] = address(msg.sender).call.gas(!temp0 * 0x08fc).value(temp0)(memory[temp1:temp1 + memory[0x40:0x60] - temp1]);
-
-    if (temp2) { return; }
-    else { revert(memory[0x00:0x00]); }
-}
-
-function Receive() {
-    var var0 = 0x00;
-    var var1 = var0;
-    var var2 = 0x02;
-    memory[memory[0x40:0x60] + 0x20:memory[0x40:0x60] + 0x20 + 0x20] = 0x00;
-    var temp0 = memory[0x40:0x60];
-    memory[temp0:temp0 + 0x20] = msg.value;
-    var var3 = temp0 + 0x20;
-    var temp1 = memory[0x40:0x60];
-    var temp2;
-    temp2, memory[temp1:temp1 + 0x20] = address(var2).call.gas(msg.gas - 0x646e)(memory[temp1:temp1 + var3 - temp1]);
-
-    if (!temp2) { revert(memory[0x00:0x00]); }
-
-    var temp3 = memory[memory[0x40:0x60]:memory[0x40:0x60] + 0x20] ~ storage[0x01];
-    memory[0x00:0x20] = msg.sender;
-    memory[0x20:0x40] = 0x02;
-    storage[keccak256(memory[0x00:0x40])] = temp3;
-    }
-}</code></pre><p><img src="https://k1ng0fic3.github.io/images/zhineng3.png" alt="avatar"></p>
-<h5 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h5><p>可见总共main+三个函数，main作为入口主要用来选择函数，接下来查看函数在交易中的调用情况：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng4.png" alt="avatar"></p>
-<p>真正成功的记录只有中间没有感叹号的五条，挨着看一下：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng5.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng6.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng7.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng8.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng9.png" alt="avatar"></p>
-<p>第四条记录调用了Receive()，剩下四条均调用func_00CC()。那么主要分析这两个函数(不懂的地方查一查solidity手册)</p>
-<h5 id="0x02-func-00CC"><a href="#0x02-func-00CC" class="headerlink" title="0x02:func_00CC"></a>0x02:func_00CC</h5><p>1、main()函数头（见上面反编译结果）<br>(1)<code>if (msg.value) { revert(memory[0x00:0x00]); }</code><br>msg.value的值代表转账者给合约转账的金额数，此行语句说明没有支付，忽略。<br>(2)    第三行：<code>var var2 = msg.data[0x04:0x24] &amp; 0xffff;</code><br>此过程是个传参过程，从<code>0x04</code>开始读取<code>0x20（32）</code>个字节长度，然后进行<code>0xffff</code>运算。该数据没有进行除法处理，可以判断其变量类型byte2<br>(3)    随后开始调用func_00CC()执行，有return值</p>
-<p>2、func_00CC内部<br>第二行的if对<code>arg0 &amp; 0xffff</code>和<code>storage[0x01] &amp; 0xffff</code>进行比较，不相等则返回<code>0x00</code></p>
-<h5 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h5><p>逻辑清楚后，现在只剩下找出支付成功后的返回值（唯一可能的flag载体）：<br>根据交易记录：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng10.png" alt="avatar"></p>
-<p>可知第四次交易时发生了转账，即调用了Receive()，所以在第五次交易时调用func_00CC()执行，可以得到return值。</p>
-<p>可使用浏览器的Parity Trace功能，来查看第五次记录：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng12.png" alt="avatar"></p>
-<p>甚至连Hex转Text的功能都提供了，getflag：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng13.png" alt="avatar"></p>
-<p>附：对于func_00CC()中，判断输入与storage[0x01]处，可以用getStorageAt()得到保存的数据。<br>方法不限，Node+web3.js可行，调用API也可行。</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng11.png" alt="avatar"></p>
-<p>由此获取其最后两个字节的值<code>0xc1cb</code>，只后也可以自行发送<code>0x2a0f7696c1cb</code>作为Input Data，获得Output。</p>
+<p>先说IP地址，直接netscan即可扫出：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun3.png" alt="avatar"></p>
+<p>得到：192.168.202.131<br>之后看注册表：(hivelist)</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun4.png" alt="avatar"></p>
+<p>然后去printkey</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun5.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun6.png" alt="avatar"></p>
+<p>中间略，一层一层目录查看即可，最终：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun7.png" alt="avatar"></p>
+<blockquote>
+<p>3-Play Time 50<br>Rick just loves to play some good old videogames. can you tell which game is he playing? What’s the IP address of the server?</p>
+</blockquote>
+<p>回去找netscan，在进程中发现：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun8.png" alt="avatar"></p>
+<p>LunarMS：（游戏实锤）</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun9.png" alt="avatar"></p>
+<p>故：LunarMS IP为：77.102.199.102</p>
+<blockquote>
+<p>4-Name Game 100<br>We know that the account was logged in to a channel called Lunar-3. what is the account name?</p>
+</blockquote>
+<p>这道题目很简单，既然说了Lunar-3，那就去找就是了，顺便看一下前后的五行。</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun10.png" alt="avatar"></p>
+<p>答案：0tt3r8r33z3</p>
+<blockquote>
+<p>5- Name Game 2 150<br>From a little research we found that the username of the logged on character is always after this signature: 0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2} What’s rick’s character’s name? </p>
+</blockquote>
+<p>再次回到netscan的界面，把那个游戏LunarMS.exe（pid=708那个）给dump下来，因为题目文件是vmem文件么，所以memdump就好了</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun11.png" alt="avatar"></p>
+<p>接下来就去找0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2}这串东西，可以辨认出来的是：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun12.png" alt="avatar"></p>
+<p>d @ Z三个字符，然而尝试strings之后。。</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun13.png" alt="avatar"></p>
+<p>失败了，还是去查看hex，选择已知相邻最长的0x5a 0x0c 0x00吧：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun14.png" alt="avatar"></p>
+<p>得到：M0rtyL0L（可能还有更好的匹配搜索办法）</p>
+<blockquote>
+<p>6- Silly Rick 100<br>Silly rick always forgets his email’s password, so he uses a Stored Password Services online to store his password. He always copy and paste the password so he will not get it wrong. whats rick’s email password?</p>
+</blockquote>
+<p>直接去看剪切板（clipboard）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun15.png" alt="avatar"></p>
+<p>M@il_Pr0vid0rs</p>
+<blockquote>
+<p>7- Hide And Seek 100<br>The reason that we took rick’s PC memory dump is because there was a malware infection. Please find the malware process name (including the extension)<br>BEAWARE! There are only 3 attempts to get the right flag!</p>
+</blockquote>
+<p>去看进程树吧（pstree）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun16.png" alt="avatar"></p>
+<p>出现了一个新的值–PPid，解释起来很简单：<br>先说Pid（Process ID）–程序被操作系统加载到内存成为进程后动态分配的资源。注意动态一词，Pid在每次重新加载程序的时候都是不同的。（一个Pid标识一个进程，所以它也是唯一的）<br>而PPid（Parent Process ID）–是程序的父进程ID。<br>然后，就可以看题了，需要找出恶意软件进程的名字。<br>…还是再举个例子稍微解释一下</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun17.png" alt="avatar"></p>
+<p>从进程树里随便截取了一段，首先看到init。<br>推测为第一个进程，跟着序列号走：336→396，396→492，注意到后面有两次变动，492→1428,和492→808的时候，序列1428，808的进程又作为父进程，产生了1428→3916和808→960。之后又回到了492的主干，一片和谐。<br>了解这个过程之后就可以做题了。最开始，第三个进程就出现了问题：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun18.png" alt="avatar"></p>
+<p>Pid比PPid还要小，而且序列变化明显的异常，估计不会错了。<br>然后分析这个前后进程吧，dlllist：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun19.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun20.png" alt="avatar"></p>
+<p>锁定了，Temp目录下执行，恶意进程实锤：vmware-tray.exe</p>
+<blockquote>
+<p>8- Path To Glory 150<br>How did the malware got to rick’s PC? It must be one of rick old illigal habits…</p>
+</blockquote>
+<p>malware-恶意软件，不过并不知道怎么看出来，这个问题我们后面再讨论吧（先贴个网址在这儿：<a href="https://www.freebuf.com/articles/system/104899.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/system/104899.html</a> ），不过匹配Rick和exe肯定没有错，filescan之：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun21.png" alt="avatar"></p>
+<p>这个地方比较懵，不过根据推测，rwd：读取写入即时同步，于是dump出RWD—模式的文件来看看：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun22.png" alt="avatar"></p>
+<blockquote>
+<p>9- Path To Glory 200<br>Continue the search after the the way that malware got in.</p>
+</blockquote>
+<p>接着上面那个题的，找出恶意软件之后来分析它，这个很暴力，dump下Chrome的进程然后匹配即可（比较耗时）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun23.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun24.png" alt="avatar"></p>
 
       
 
@@ -392,7 +380,7 @@ function Receive() {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://k1ng0fic3.github.io/2020/01/16/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -406,18 +394,18 @@ function Receive() {
   
 <nav id="article-nav">
   
-    <a href="/2020/01/26/%E5%A6%82%E4%BD%95%E5%86%8D%E6%AC%A1%E4%BD%BF%E7%94%A8Upupoo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/05/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          如何再次使用Upupoo
+          区块链&amp;智能合约
         
       </div>
     </a>
   
   
-    <a href="/2020/01/12/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">内存取证</div>
+    <a href="/2020/03/05/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大三选课心得</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -436,6 +424,19 @@ function Receive() {
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存取证练习"><span class="toc-number">1.</span> <span class="toc-text">内存取证练习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9、"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">1-9、</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -622,7 +623,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">西安电子科技大学在读&lt;br&gt;&lt;br&gt;网络安全实验班大三学生&lt;br&gt;&lt;br&gt;冰皇参上&lt;br&gt;&lt;br&gt;皮卡丘！十万伏特！</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">西安电子科技大学本科在读&lt;br&gt;&lt;br&gt;2017级网络安全实验班学生&lt;br&gt;&lt;br&gt;冰皇参上&lt;br&gt;&lt;br&gt;皮卡丘！十万伏特！</div>
   	  	
     	</section>
     
