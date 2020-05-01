@@ -6,20 +6,45 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>大三选课心得 | 冰皇&#39;s blog</title>
+  <title>内存取证 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于大三的选修课">
+  <meta name="description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大三选课心得">
-<meta property="og:url" content="https://k1ng0fic3.github.io/2020/03/05/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:title" content="内存取证">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/05/01/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="关于大三的选修课">
+<meta property="og:description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-05T03:05:36.518Z">
-<meta property="article:modified_time" content="2020-03-05T03:03:51.142Z">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun10.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun11.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun12.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun13.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun14.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun15.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun16.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun17.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun18.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun19.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun20.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun21.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun22.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun23.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun24.png">
+<meta property="article:published_time" content="2020-05-01T10:15:19.459Z">
+<meta property="article:modified_time" content="2020-03-05T03:04:06.825Z">
 <meta property="article:author" content="冰皇">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -165,35 +190,107 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-大三选课心得" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-内存取证" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      大三选课心得
+      内存取证
     </h1>
   
 
         
-        <a href="/2020/03/05/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" class="archive-article-date">
-  	<time datetime="2020-03-05T03:05:36.518Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+        <a href="/2020/05/01/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" class="archive-article-date">
+  	<time datetime="2020-05-01T10:15:19.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于大三的选修课"><a href="#关于大三的选修课" class="headerlink" title="关于大三的选修课"></a>关于大三的选修课</h2><a id="more"></a>
-<h3 id="虚拟化与云计算"><a href="#虚拟化与云计算" class="headerlink" title="[虚拟化与云计算]"></a>[虚拟化与云计算]</h3><p>优先级+++，到课什么的完全可以不管，临最后交一个小作业一个大作业就过了。总之能选一定要选！</p>
-<h3 id="移动智能终端安全技术①"><a href="#移动智能终端安全技术①" class="headerlink" title="[移动智能终端安全技术①]"></a>[移动智能终端安全技术①]</h3><p>优先级++，经历了刘佳佳，杨超两代人的咕咕咕，这个课由360的工程师代上，上课内容：点点点，所以可以不去了。稍微有点Web安全基础的期末卷子就是满分，就算没有基础，背一下他们搞得学习网站上几张PPT，起码80+吧。</p>
-<h3 id="网络程序设计"><a href="#网络程序设计" class="headerlink" title="[网络程序设计]"></a>[网络程序设计]</h3><p>优先级+，大作业交上就有40分，学的是socket+Linux编程基础，期末卷子是（选择+简答+编程）背一下往年卷子几个简答题，再背一下TCP+UDP编程模板，就差不多了。</p>
-<h3 id="软件逆向工程"><a href="#软件逆向工程" class="headerlink" title="[软件逆向工程]"></a>[软件逆向工程]</h3><p>真的难，背Windows API的痛苦，背DLL注入，API钩取等等代码的痛苦，最后勉强过了。我们这一级有人弃考了这一门，慎选吧反正，不过孙聪给分还可以。（bin组的同学可以无视这些）</p>
-<h3 id="高级语言程序设计"><a href="#高级语言程序设计" class="headerlink" title="[高级语言程序设计]"></a>[高级语言程序设计]</h3><p>Java，考的还挺恶心的，但是过还是挺好过的，孙聪给分算比较痛快。</p>
-<h3 id="网络协议分析与设计"><a href="#网络协议分析与设计" class="headerlink" title="[网络协议分析与设计]"></a>[网络协议分析与设计]</h3><p>到课要注意一下，大概有三次随堂作业。自认为不算很难学的一门课，我们那届考的题比较奇怪，跟往年题不怎么搭，建议把PPT和上课有意提到的重点爬一遍。</p>
-<h3 id="编译原理"><a href="#编译原理" class="headerlink" title="[编译原理]"></a>[编译原理]</h3><p>有一说一，这个课可以选，平时作业和实验验收都整完就有了50分，也就是说平时分就占了一半，老师讲课水平也相当不错，可能课稍微难点。我没选这个课，舍友反馈非常好，期末复习就看上课的录播就好。</p>
-<h3 id="数字信号处理"><a href="#数字信号处理" class="headerlink" title="[数字信号处理]"></a>[数字信号处理]</h3><p>真……真的勇士，敢于直面DSP？</p>
+        <h1 id="内存取证练习"><a href="#内存取证练习" class="headerlink" title="内存取证练习"></a>内存取证练习</h1><h5 id="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><a href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。" class="headerlink" title="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"></a>以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</h5><a id="more"></a>
+<p>题目文件下载链接：</p>
+<h5 id="https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><a href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw" class="headerlink" title="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw"></a><a href="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw" target="_blank" rel="noopener">https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw</a></h5><p>做题之前简单介绍下<code>Volatility</code>这个工具——<br>一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入volatility来使用，功能可在源码或直接-h查看。</p>
+<p>附：关于如何给volatility添加组件。<br>【在Python源码<code>https://github.com/volatilityfoundation/</code>中，将目标文件（如：mimikatz. py）移入<code>volatility-master\volatility\plugins</code>目录下即可。】</p>
+<h5 id="1-9、"><a href="#1-9、" class="headerlink" title="1-9、"></a>1-9、</h5><blockquote>
+<p>1- What the password? 100<br>you got a sample of rick’s PC’s memory. can you get his user password? </p>
+</blockquote>
+<p>第一步，先查看imageinfo<br>之后Volatility会给出几个建议的Profile值，用以指定内存的系统信息来精确的“对症下药”。（通常需要爆破出正确的Profile）</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun1.png" alt="avatar"></p>
+<p>第二步，利用插件mimikatz拓展功能（mimikatz：一个法国人写的，用来抓Windows明文密码的工具。此处为插件<code>mimikatz.py</code>）获得password</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun2.png" alt="avatar"></p>
+<blockquote>
+<p>2- General Info 75<br>Let’s start easy - whats the PC’s name and IP address?</p>
+</blockquote>
+<p>先说IP地址，直接netscan即可扫出：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun3.png" alt="avatar"></p>
+<p>得到：192.168.202.131<br>之后看注册表：(hivelist)</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun4.png" alt="avatar"></p>
+<p>然后去printkey</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun5.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun6.png" alt="avatar"></p>
+<p>中间略，一层一层目录查看即可，最终：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun7.png" alt="avatar"></p>
+<blockquote>
+<p>3-Play Time 50<br>Rick just loves to play some good old videogames. can you tell which game is he playing? What’s the IP address of the server?</p>
+</blockquote>
+<p>回去找netscan，在进程中发现：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun8.png" alt="avatar"></p>
+<p>LunarMS：（游戏实锤）</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun9.png" alt="avatar"></p>
+<p>故：LunarMS IP为：77.102.199.102</p>
+<blockquote>
+<p>4-Name Game 100<br>We know that the account was logged in to a channel called Lunar-3. what is the account name?</p>
+</blockquote>
+<p>这道题目很简单，既然说了Lunar-3，那就去找就是了，顺便看一下前后的五行。</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun10.png" alt="avatar"></p>
+<p>答案：0tt3r8r33z3</p>
+<blockquote>
+<p>5- Name Game 2 150<br>From a little research we found that the username of the logged on character is always after this signature: 0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2} What’s rick’s character’s name? </p>
+</blockquote>
+<p>再次回到netscan的界面，把那个游戏LunarMS.exe（pid=708那个）给dump下来，因为题目文件是vmem文件么，所以memdump就好了</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun11.png" alt="avatar"></p>
+<p>接下来就去找0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2}这串东西，可以辨认出来的是：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun12.png" alt="avatar"></p>
+<p>d @ Z三个字符，然而尝试strings之后。。</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun13.png" alt="avatar"></p>
+<p>失败了，还是去查看hex，选择已知相邻最长的0x5a 0x0c 0x00吧：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun14.png" alt="avatar"></p>
+<p>得到：M0rtyL0L（可能还有更好的匹配搜索办法）</p>
+<blockquote>
+<p>6- Silly Rick 100<br>Silly rick always forgets his email’s password, so he uses a Stored Password Services online to store his password. He always copy and paste the password so he will not get it wrong. whats rick’s email password?</p>
+</blockquote>
+<p>直接去看剪切板（clipboard）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun15.png" alt="avatar"></p>
+<p>M@il_Pr0vid0rs</p>
+<blockquote>
+<p>7- Hide And Seek 100<br>The reason that we took rick’s PC memory dump is because there was a malware infection. Please find the malware process name (including the extension)<br>BEAWARE! There are only 3 attempts to get the right flag!</p>
+</blockquote>
+<p>去看进程树吧（pstree）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun16.png" alt="avatar"></p>
+<p>出现了一个新的值–PPid，解释起来很简单：<br>先说Pid（Process ID）–程序被操作系统加载到内存成为进程后动态分配的资源。注意动态一词，Pid在每次重新加载程序的时候都是不同的。（一个Pid标识一个进程，所以它也是唯一的）<br>而PPid（Parent Process ID）–是程序的父进程ID。<br>然后，就可以看题了，需要找出恶意软件进程的名字。<br>…还是再举个例子稍微解释一下</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun17.png" alt="avatar"></p>
+<p>从进程树里随便截取了一段，首先看到init。<br>推测为第一个进程，跟着序列号走：336→396，396→492，注意到后面有两次变动，492→1428,和492→808的时候，序列1428，808的进程又作为父进程，产生了1428→3916和808→960。之后又回到了492的主干，一片和谐。<br>了解这个过程之后就可以做题了。最开始，第三个进程就出现了问题：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun18.png" alt="avatar"></p>
+<p>Pid比PPid还要小，而且序列变化明显的异常，估计不会错了。<br>然后分析这个前后进程吧，dlllist：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun19.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun20.png" alt="avatar"></p>
+<p>锁定了，Temp目录下执行，恶意进程实锤：vmware-tray.exe</p>
+<blockquote>
+<p>8- Path To Glory 150<br>How did the malware got to rick’s PC? It must be one of rick old illigal habits…</p>
+</blockquote>
+<p>malware-恶意软件，不过并不知道怎么看出来，这个问题我们后面再讨论吧（先贴个网址在这儿：<a href="https://www.freebuf.com/articles/system/104899.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/system/104899.html</a> ），不过匹配Rick和exe肯定没有错，filescan之：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun21.png" alt="avatar"></p>
+<p>这个地方比较懵，不过根据推测，rwd：读取写入即时同步，于是dump出RWD—模式的文件来看看：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun22.png" alt="avatar"></p>
+<blockquote>
+<p>9- Path To Glory 200<br>Continue the search after the the way that malware got in.</p>
+</blockquote>
+<p>接着上面那个题的，找出恶意软件之后来分析它，这个很暴力，dump下Chrome的进程然后匹配即可（比较耗时）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun23.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun24.png" alt="avatar"></p>
 
       
 
@@ -233,17 +330,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -294,7 +380,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/03/05/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/05/01/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -308,18 +394,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/05/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          内存取证
+          西电forensic-wikiの流量分析
         
       </div>
     </a>
   
   
-    <a href="/2020/03/05/volatility%E6%8F%92%E4%BB%B6%E3%81%AE%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">volatility插件の笔记</div>
+    <a href="/2020/05/01/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">区块链&amp;智能合约</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -346,7 +432,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于大三的选修课"><span class="toc-number">1.</span> <span class="toc-text">关于大三的选修课</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟化与云计算"><span class="toc-number">1.1.</span> <span class="toc-text">[虚拟化与云计算]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动智能终端安全技术①"><span class="toc-number">1.2.</span> <span class="toc-text">[移动智能终端安全技术①]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络程序设计"><span class="toc-number">1.3.</span> <span class="toc-text">[网络程序设计]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件逆向工程"><span class="toc-number">1.4.</span> <span class="toc-text">[软件逆向工程]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级语言程序设计"><span class="toc-number">1.5.</span> <span class="toc-text">[高级语言程序设计]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络协议分析与设计"><span class="toc-number">1.6.</span> <span class="toc-text">[网络协议分析与设计]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译原理"><span class="toc-number">1.7.</span> <span class="toc-text">[编译原理]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字信号处理"><span class="toc-number">1.8.</span> <span class="toc-text">[数字信号处理]</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存取证练习"><span class="toc-number">1.</span> <span class="toc-text">内存取证练习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9、"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">1-9、</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
