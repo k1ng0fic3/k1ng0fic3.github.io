@@ -6,18 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>Archives: 2020/5 | 冰皇&#39;s blog</title>
+  <title>西电forensic-wikiのWindows | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就决定是你了，阿勃梭鲁！超进化！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冰皇&#39;s blog">
-<meta property="og:url" content="https://k1ng0fic3.github.io/archives/2020/05/index.html">
+  <meta name="description" content="西电forensic-wikiのWindows部分 &amp;&amp; 部分美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下Windows部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="西电forensic-wikiのWindows">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="就决定是你了，阿勃梭鲁！超进化！">
+<meta property="og:description" content="西电forensic-wikiのWindows部分 &amp;&amp; 部分美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下Windows部分">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki11.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki10.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki12.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/wiki13.png">
+<meta property="article:published_time" content="2020-05-01T10:15:19.464Z">
+<meta property="article:modified_time" content="2020-03-05T03:04:49.687Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/wiki3.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -163,336 +179,227 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-西电forensic-wikiのWindows" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      西电forensic-wikiのWindows
+    </h1>
+  
+
+        
+        <a href="/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/" class="archive-article-date">
+  	<time datetime="2020-05-01T10:15:19.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="西电forensic-wikiのWindows部分-amp-amp-部分美亚杯题目分析"><a href="#西电forensic-wikiのWindows部分-amp-amp-部分美亚杯题目分析" class="headerlink" title="西电forensic-wikiのWindows部分 &amp;&amp; 部分美亚杯题目分析"></a>西电forensic-wikiのWindows部分 &amp;&amp; 部分美亚杯题目分析</h2><p>和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下Windows部分</p>
+<a id="more"></a>
+<h1 id="Windows-Analysis"><a href="#Windows-Analysis" class="headerlink" title="Windows Analysis"></a>Windows Analysis</h1><p>与挖掘Linux服务器镜像中的网络行为信息不同，取证比赛中对于Windows镜像的考查主要体现在使用痕迹与文件上，比如软件使用记录，浏览器历史记录，病毒样本文件，以及爬取的表单话单等。</p>
+<p>因此取证工作者要熟练地掌握文件提取、数据恢复、系统仿真、详单分析、编程与逆向工程等知识与技术手段。</p>
+<h2 id="磁盘结构"><a href="#磁盘结构" class="headerlink" title="磁盘结构"></a>磁盘结构</h2><p>从物理层面，一个磁盘按层次分为 ：<br>磁盘组合 → 单个磁盘 → 某一盘面 （platter）→ 某一磁道 （track）→ 某一扇区（sector）</p>
+<p>关于簇和扇区：<br>文件占用磁盘空间时，基本单位不是字节而是簇。簇的大小与磁盘的规格有关，一般情况下，软盘每簇是1个扇区，硬盘每簇的扇区数与硬盘的总容量大小有关，可能是4、8、16、32、64……</p>
+<p>Windows文件系统：<br>通常在Windows平台下使用的3种文件系统是FAT（文件分区表），FAT32（32位文件分区表）和NTFS（NT文件系统）。<br>在FAT文件系统下，每一个磁盘被分成固定大小的簇。簇最少为512个字节，其大小可以成倍增长，最大为32K。每个簇都是由唯一的索引号——一个16位二进制数来标识。因为16位二进制数最大为65536，所以FAT分区所拥有的簇的数量不可能超过65536个。<br>FAT32文件的原理几乎与此相同，但它的簇更小，而且由于FAT32入口是32位，所以其容量理论上可以超过40亿个字节。<br>NTFS是一个相当高级的文件系统。它的主文件表（MFT）是一个非常完整的数据库，它负责对磁盘上的每个文件进行索引。每个MFT的入口通常为1K大小，其中记录了大量的文件信息。NTFS可以在文件的MFT入口中存储非常小的文件的全部内容；对于大一些的文件，这些入口会标识出包含文件数据的簇。</p>
+<h2 id="信息提取与分析"><a href="#信息提取与分析" class="headerlink" title="信息提取与分析"></a>信息提取与分析</h2><p>推荐使用的有两种软件：美亚的取证大师和弘连的证据分析软件。</p>
+<p>二者各有各的优缺点，取证大师主要体现在广度，功能非常齐全。在自动取证结果中能够直接提供很多有用的信息（如时间线，软件使用痕迹等），省去很多麻烦。19年增加小程序板块后，功能的扩展性也极好，能够调用python等脚本去做日志分析等，还提供了包括如正则表达式在内的匹配方法，筛选功能强大。</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki3.png" alt="avatar"></p>
+<p>火眼证据分析软件补充了取证大师在处理数据库和备份文件上的缺陷。不仅能够对SQL数据库进行直接预览和处理，而且能将PC中的iOS与Android备份文件作为证据文件，再次进行取证分析，甚至将手机中的微信记录等细节直观的投到屏幕，在遇到PC+手机备份的情况下较为实用。</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki4.png" alt="avatar"></p>
+<h2 id="系统仿真"><a href="#系统仿真" class="headerlink" title="系统仿真"></a>系统仿真</h2><p>系统仿真是指将镜像文件或者对象计算机系统的硬盘模拟为虚拟机，在虚拟机环境下进行启动，我们就可以以交互的方式和系统用户的角度直观的检查和操作目标系统，查看相关信息。</p>
+<p>目前推荐使用的软件工具是弘连的火眼仿真软件，能方便地实现锁定系统版本和绕过开机密码，并调用本机的VMware虚拟机实现仿真，如下：</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki1.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki2.png" alt="avatar"></p>
+<h2 id="知识整理（持续完善中）"><a href="#知识整理（持续完善中）" class="headerlink" title="知识整理（持续完善中）"></a>知识整理（持续完善中）</h2><h4 id="磁盘容量"><a href="#磁盘容量" class="headerlink" title="磁盘容量"></a>磁盘容量</h4><p>首先需要理解<a href="https://baike.baidu.com/item/4K%E5%AF%B9%E9%BD%90/3778627?fr=aladdin" target="_blank" rel="noopener">4K对齐</a>的原理。</p>
+<p>电脑传统机械硬盘的每个扇区一般大小为512个字节，然而随着时代发展，硬盘容量不断扩展，于是将每个扇区512字节改为每个扇区4096个字节，也就是现在常说的“4K扇区”。<br>随着NTFS成为了标准的硬盘文件系统，其文件系统的默认分配单元大小（簇）也是4096字节，为了使簇与扇区相对应，即使物理硬盘分区与计算机使用的逻辑分区对齐，保证硬盘读写效率，所以就有了“4K对齐”的概念。</p>
+<p>例（2019美亚杯个人4）</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki5.png" alt="avatar"></p>
+<p>通过取证大师查看：</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki6.png" alt="avatar"></p>
+<p>得知D盘为系统（OS）盘，扇区数为<code>961099776</code></p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki7.png" alt="avatar"></p>
+<p>再次确认逻辑扇区的大小为<code>512</code>字节，故需要空出4096/512=<code>8</code>个扇区的空间，即:<br>(961099776 - 8) * 512  = <code>492,083,081,216</code></p>
+<h4 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h4><p>由于在数据库等信息储存介质中，经常使用<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E6%88%B3" target="_blank" rel="noopener">时间戳(timestamp)</a>来记录时间信息，需要理解并能够把它与标准时间进行互相转换。</p>
+<p>例（2019美亚杯个人41）</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki8.png" alt="avatar"></p>
+<p>利用取证大师得到上传的标准时间（年-月-日 时:分:秒）2019-10-31 15:22:31</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki11.png" alt="avatar"></p>
+<p>最后使用Python库函数转换为时间戳，附代码：</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki9.png" alt="avatar"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''标准时间到时间戳'''</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">a = time_str</span><br><span class="line">timeArray = time.strptime(a,<span class="string">"%Y-%m-%d %H:%M:%S"</span>) </span><br><span class="line">timeStamp = int(time.mktime(timeArray))</span><br><span class="line"><span class="string">'''时间戳到标准时间'''</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">timeArray = time.localtime(timeStamp)</span><br><span class="line">otherStyleTime = time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>, timeArray)</span><br></pre></td></tr></table></figure>
+<p>测试：</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki10.png" alt="avatar"></p>
+<h4 id="动态链接库"><a href="#动态链接库" class="headerlink" title="动态链接库"></a>动态链接库</h4><p>例（2019美亚杯个人15）</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki12.png" alt="avatar"></p>
+<p>想在镜像文件中找到动态链接库的调用情况可能比较困难，不妨换个思路。</p>
+<p>利用取证大师提取出该exe程序后在本地运行，再利用火绒剑查看即可。</p>
+<p><img src="https://k1ng0fic3.github.io/images/wiki13.png" alt="avatar"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/Tencentpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E5%A6%82%E4%BD%95%E5%86%8D%E6%AC%A1%E4%BD%BF%E7%94%A8Upupoo/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E5%A6%82%E4%BD%95%E5%86%8D%E6%AC%A1%E4%BD%BF%E7%94%A8Upupoo/">如何再次使用Upupoo</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/05/01/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          应急响应の流量分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/01/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最友好のWin+Linux双系统安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">应急响应の流量分析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#西电forensic-wikiのWindows部分-amp-amp-部分美亚杯题目分析"><span class="toc-number">1.</span> <span class="toc-text">西电forensic-wikiのWindows部分 &amp;&amp; 部分美亚杯题目分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows-Analysis"><span class="toc-number"></span> <span class="toc-text">Windows Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#磁盘结构"><span class="toc-number">1.</span> <span class="toc-text">磁盘结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信息提取与分析"><span class="toc-number">2.</span> <span class="toc-text">信息提取与分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统仿真"><span class="toc-number">3.</span> <span class="toc-text">系统仿真</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识整理（持续完善中）"><span class="toc-number">4.</span> <span class="toc-text">知识整理（持续完善中）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#磁盘容量"><span class="toc-number">4.0.1.</span> <span class="toc-text">磁盘容量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间戳"><span class="toc-number">4.0.2.</span> <span class="toc-text">时间戳</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态链接库"><span class="toc-number">4.0.3.</span> <span class="toc-text">动态链接库</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/">西电forensic-wikiのWindows</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">最友好のWin+Linux双系统安装</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">西电forensic-wikiの流量分析</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/">内存取证</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E5%8C%BA%E5%9D%97%E9%93%BE&%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/">区块链&amp;智能合约</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.454Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/%E5%A4%A7%E4%B8%89%E9%80%89%E8%AF%BE%E5%BF%83%E5%BE%97/">大三选课心得</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/volatility%E6%8F%92%E4%BB%B6%E3%81%AE%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.454Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/volatility%E6%8F%92%E4%BB%B6%E3%81%AE%E7%AC%94%E8%AE%B0/">volatility插件の笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/01/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/" class="archive-article-date">
-  	<time datetime="2020-05-01T10:15:19.450Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/01/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/">SQL注入三连</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -515,8 +422,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
