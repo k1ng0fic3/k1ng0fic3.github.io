@@ -308,7 +308,7 @@
 <h3 id="PS树状图"><a href="#PS树状图" class="headerlink" title="PS树状图"></a>PS树状图</h3><p>该部分提供<strong>恶意进程的调用链信息</strong>，每个进程块包含进程的相关信息，恶意节点和恶意调用链均以红色醒目标记</p>
 <p><img src="result.png" alt=""></p>
 <h2 id="关键注册表信息"><a href="#关键注册表信息" class="headerlink" title="关键注册表信息"></a>关键注册表信息</h2><p>该部分提供<strong>系统自启动项的相关信息</strong>，包含注册表内容及对应表项名称</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">注册表内容                                   注册表项名称  </span><br><span class="line">------------------------------------------ --------------------</span><br><span class="line">&quot;C:\Foxmail 7.2\Foxmail.exe&quot; -min                  Foxmail             </span><br><span class="line">C:\Users\float\AppData\Roaming\Figggl.exe          Figggl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">注册表内容                                   注册表项名称  </span><br><span class="line">------------------------------------------ --------------------</span><br><span class="line">&quot;C:\Foxmail 7.2\Foxmail.exe&quot; -min�                 Foxmail             </span><br><span class="line">C:\Users\float\AppData\Roaming\Figggl.exe�         Figggl</span><br></pre></td></tr></table></figure>
 
 <h2 id="网络信息行为"><a href="#网络信息行为" class="headerlink" title="网络信息行为"></a>网络信息行为</h2><h3 id="网络连接情况"><a href="#网络连接情况" class="headerlink" title="网络连接情况"></a>网络连接情况</h3><p>该部分提供<strong>恶意进程可疑网络连接情况</strong>，具体包括进程ID、本地IP及端口信息、远程IP及端口信息以及协议类型</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Pid     本地地址            本地端口        协议类型        远程地址            远程端口</span><br><span class="line">------- ----------------- -------------- ------------- ----------------- ----------          </span><br><span class="line">  1196     10.10.10.26         49350         TCPv4       13.249.165.32           443         </span><br><span class="line">  1196     10.10.10.26         49346         TCPv4       13.225.163.119          443         </span><br><span class="line">  1196     10.10.10.26         49358         TCPv4       13.225.163.92           443         </span><br><span class="line">  1196     10.10.10.26         49341         TCPv4        13.249.165.9           443         </span><br><span class="line">  1196       Unknown           49289         TCPv4        23.37.124.72            80         </span><br><span class="line">  2672      127.0.0.1          49277         TCPv4         127.0.0.1            49278        </span><br><span class="line">  2180     10.10.10.26         49306         TCPv4       212.83.168.196           80         </span><br><span class="line">  2180       Unknown             0           TCPv4         104.0.25.2             0          </span><br><span class="line">  2180     10.10.10.26         49336         TCPv4        199.2.137.21           1863</span><br></pre></td></tr></table></figure>
@@ -348,7 +348,7 @@
     <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
     </script>
 
 
