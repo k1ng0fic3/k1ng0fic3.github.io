@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="DigDog安全产品" />
+
+
+
+<meta name="description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内存取证">
+<meta property="og:url" content="http://yoursite.com/2020/05/26/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun10.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun11.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun12.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun13.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun14.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun15.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun16.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun17.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun18.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun19.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun20.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun21.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun22.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun23.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/neicun24.png">
+<meta property="article:published_time" content="2020-05-26T14:53:26.347Z">
+<meta property="article:modified_time" content="2020-03-05T03:04:06.825Z">
+<meta property="article:author" content="DigDog安全产品">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/neicun1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>内存取证 | </title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">DigDog安全产品</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">为您提供自动化的内存取证与恶意软件检测服务</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有报告</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">DigDog安全产品</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">DigDog安全产品</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">为您提供自动化的内存取证与恶意软件检测服务</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有报告</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-内存取证" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/05/26/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" class="article-date">
+      <time datetime="2020-05-26T14:53:26.347Z" itemprop="datePublished">2020-05-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      内存取证
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="内存取证练习"><a href="#内存取证练习" class="headerlink" title="内存取证练习"></a>内存取证练习</h1><h5 id="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><a href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。" class="headerlink" title="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"></a>以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</h5><a id="more"></a>
+<p>题目文件下载链接：</p>
+<h5 id="https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><a href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw" class="headerlink" title="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw"></a><a href="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw" target="_blank" rel="noopener">https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw</a></h5><p>做题之前简单介绍下<code>Volatility</code>这个工具——<br>一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入volatility来使用，功能可在源码或直接-h查看。</p>
+<p>附：关于如何给volatility添加组件。<br>【在Python源码<code>https://github.com/volatilityfoundation/</code>中，将目标文件（如：mimikatz. py）移入<code>volatility-master\volatility\plugins</code>目录下即可。】</p>
+<h5 id="1-9、"><a href="#1-9、" class="headerlink" title="1-9、"></a>1-9、</h5><blockquote>
+<p>1- What the password? 100<br>you got a sample of rick’s PC’s memory. can you get his user password? </p>
+</blockquote>
+<p>第一步，先查看imageinfo<br>之后Volatility会给出几个建议的Profile值，用以指定内存的系统信息来精确的“对症下药”。（通常需要爆破出正确的Profile）</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun1.png" alt="avatar"></p>
+<p>第二步，利用插件mimikatz拓展功能（mimikatz：一个法国人写的，用来抓Windows明文密码的工具。此处为插件<code>mimikatz.py</code>）获得password</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun2.png" alt="avatar"></p>
+<blockquote>
+<p>2- General Info 75<br>Let’s start easy - whats the PC’s name and IP address?</p>
+</blockquote>
+<p>先说IP地址，直接netscan即可扫出：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun3.png" alt="avatar"></p>
+<p>得到：192.168.202.131<br>之后看注册表：(hivelist)</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun4.png" alt="avatar"></p>
+<p>然后去printkey</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun5.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun6.png" alt="avatar"></p>
+<p>中间略，一层一层目录查看即可，最终：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun7.png" alt="avatar"></p>
+<blockquote>
+<p>3-Play Time 50<br>Rick just loves to play some good old videogames. can you tell which game is he playing? What’s the IP address of the server?</p>
+</blockquote>
+<p>回去找netscan，在进程中发现：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun8.png" alt="avatar"></p>
+<p>LunarMS：（游戏实锤）</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun9.png" alt="avatar"></p>
+<p>故：LunarMS IP为：77.102.199.102</p>
+<blockquote>
+<p>4-Name Game 100<br>We know that the account was logged in to a channel called Lunar-3. what is the account name?</p>
+</blockquote>
+<p>这道题目很简单，既然说了Lunar-3，那就去找就是了，顺便看一下前后的五行。</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun10.png" alt="avatar"></p>
+<p>答案：0tt3r8r33z3</p>
+<blockquote>
+<p>5- Name Game 2 150<br>From a little research we found that the username of the logged on character is always after this signature: 0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2} What’s rick’s character’s name? </p>
+</blockquote>
+<p>再次回到netscan的界面，把那个游戏LunarMS.exe（pid=708那个）给dump下来，因为题目文件是vmem文件么，所以memdump就好了</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun11.png" alt="avatar"></p>
+<p>接下来就去找0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2}这串东西，可以辨认出来的是：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun12.png" alt="avatar"></p>
+<p>d @ Z三个字符，然而尝试strings之后。。</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun13.png" alt="avatar"></p>
+<p>失败了，还是去查看hex，选择已知相邻最长的0x5a 0x0c 0x00吧：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun14.png" alt="avatar"></p>
+<p>得到：M0rtyL0L（可能还有更好的匹配搜索办法）</p>
+<blockquote>
+<p>6- Silly Rick 100<br>Silly rick always forgets his email’s password, so he uses a Stored Password Services online to store his password. He always copy and paste the password so he will not get it wrong. whats rick’s email password?</p>
+</blockquote>
+<p>直接去看剪切板（clipboard）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun15.png" alt="avatar"></p>
+<p>M@il_Pr0vid0rs</p>
+<blockquote>
+<p>7- Hide And Seek 100<br>The reason that we took rick’s PC memory dump is because there was a malware infection. Please find the malware process name (including the extension)<br>BEAWARE! There are only 3 attempts to get the right flag!</p>
+</blockquote>
+<p>去看进程树吧（pstree）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun16.png" alt="avatar"></p>
+<p>出现了一个新的值–PPid，解释起来很简单：<br>先说Pid（Process ID）–程序被操作系统加载到内存成为进程后动态分配的资源。注意动态一词，Pid在每次重新加载程序的时候都是不同的。（一个Pid标识一个进程，所以它也是唯一的）<br>而PPid（Parent Process ID）–是程序的父进程ID。<br>然后，就可以看题了，需要找出恶意软件进程的名字。<br>…还是再举个例子稍微解释一下</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun17.png" alt="avatar"></p>
+<p>从进程树里随便截取了一段，首先看到init。<br>推测为第一个进程，跟着序列号走：336→396，396→492，注意到后面有两次变动，492→1428,和492→808的时候，序列1428，808的进程又作为父进程，产生了1428→3916和808→960。之后又回到了492的主干，一片和谐。<br>了解这个过程之后就可以做题了。最开始，第三个进程就出现了问题：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun18.png" alt="avatar"></p>
+<p>Pid比PPid还要小，而且序列变化明显的异常，估计不会错了。<br>然后分析这个前后进程吧，dlllist：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun19.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun20.png" alt="avatar"></p>
+<p>锁定了，Temp目录下执行，恶意进程实锤：vmware-tray.exe</p>
+<blockquote>
+<p>8- Path To Glory 150<br>How did the malware got to rick’s PC? It must be one of rick old illigal habits…</p>
+</blockquote>
+<p>malware-恶意软件，不过并不知道怎么看出来，这个问题我们后面再讨论吧（先贴个网址在这儿：<a href="https://www.freebuf.com/articles/system/104899.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/system/104899.html</a> ），不过匹配Rick和exe肯定没有错，filescan之：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun21.png" alt="avatar"></p>
+<p>这个地方比较懵，不过根据推测，rwd：读取写入即时同步，于是dump出RWD—模式的文件来看看：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun22.png" alt="avatar"></p>
+<blockquote>
+<p>9- Path To Glory 200<br>Continue the search after the the way that malware got in.</p>
+</blockquote>
+<p>接着上面那个题的，找出恶意软件之后来分析它，这个很暴力，dump下Chrome的进程然后匹配即可（比较耗时）：</p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun23.png" alt="avatar"></p>
+<p><img src="https://k1ng0fic3.github.io/images/neicun24.png" alt="avatar"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/05/26/test/">
+                    test
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">报告目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存取证练习"><span class="toc-text">内存取证练习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><span class="toc-text">以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><span class="toc-text">https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9、"><span class="toc-text">1-9、</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/05/26/test/" title="下一篇: test">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/05/26/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/">内存取证</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/26/test/">test</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2020 DigDog安全产品
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架"></a><a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5"></a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
