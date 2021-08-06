@@ -6,18 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>Archives: 2020/3 | 冰皇&#39;s blog</title>
+  <title>CTF网鼎杯2020-青龙组-虚幻2 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就决定是你了，阿勃梭鲁！超进化！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="冰皇&#39;s blog">
-<meta property="og:url" content="https://k1ng0fic3.github.io/archives/2020/03/index.html">
+  <meta name="description" content="CTF网鼎杯2020-青龙组-虚幻2 题解因备考而搁置了大半年的题目，补坑。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF网鼎杯2020-青龙组-虚幻2">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2021/01/31/CTF%E7%BD%91%E9%BC%8E%E6%9D%AF2020-%E9%9D%92%E9%BE%99%E7%BB%84-%E8%99%9A%E5%B9%BB2/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="就决定是你了，阿勃梭鲁！超进化！">
+<meta property="og:description" content="CTF网鼎杯2020-青龙组-虚幻2 题解因备考而搁置了大半年的题目，补坑。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh1.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh2.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh3.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh4.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh5.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh6.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh8.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh7.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh9.png">
+<meta property="og:image" content="https://k1ng0fic3.github.io/images/xh0.png">
+<meta property="article:published_time" content="2021-01-31T02:47:44.000Z">
+<meta property="article:modified_time" content="2021-01-31T07:59:52.173Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/xh1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -163,103 +176,226 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CTF网鼎杯2020-青龙组-虚幻2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CTF网鼎杯2020-青龙组-虚幻2
+    </h1>
+  
+
+        
+        <a href="/2021/01/31/CTF%E7%BD%91%E9%BC%8E%E6%9D%AF2020-%E9%9D%92%E9%BE%99%E7%BB%84-%E8%99%9A%E5%B9%BB2/" class="archive-article-date">
+  	<time datetime="2021-01-31T02:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-31</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CTF网鼎杯2020-青龙组-虚幻2-题解"><a href="#CTF网鼎杯2020-青龙组-虚幻2-题解" class="headerlink" title="CTF网鼎杯2020-青龙组-虚幻2 题解"></a>CTF网鼎杯2020-青龙组-虚幻2 题解</h2><p>因备考而搁置了大半年的题目，补坑。</p>
+<a id="more"></a>
+
+<h3 id="初步分析"><a href="#初步分析" class="headerlink" title="初步分析"></a>初步分析</h3><p>题目内容如下：</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh1.png" alt="avatar"></p>
+<p>file文件，binwalk识别为png图片</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh2.png" alt="avatar"></p>
+<p>改后缀，得到：</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh3.png" alt="avatar"></p>
+<p><a href="https://k1ng0fic3.github.io/images/xhfile.png">源文件下载</a> 想自己复现的朋友可以存一下，我就不传网盘了 :-)</p>
+<h3 id="图片分解与合并"><a href="#图片分解与合并" class="headerlink" title="图片分解与合并"></a>图片分解与合并</h3><p>按套路去stegsolve中分解，RGB三色道分别保存图片</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh4.png" alt="avatar"></p>
+<p>去年的虚幻考的汉信码，今年也不会例外，剩下的就是如何将图片放大并拼接，画图就可以实现，也可以用Excel等笨方法：</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh5.png" alt="avatar"></p>
+<p>而汉信码的大致图案样式如下：</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh6.png" alt="avatar"></p>
+<p>再次观察三色道的图片，猜测是将三张图按行拼在一起，第一行明显是Green，剩下的顺序只能猜。根据上图样式，一定记得左下方的标志位换个方向！即：</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh8.png" alt="avatar"></p>
+<p>最终得到：</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh7.png" alt="avatar"></p>
+<p>汉信码的纠错能力很强（比赛也是为了体现这一点并打个广告），缺的那块随便涂一下，直接去扫码即可。不过汉信码的支持做的贼差，只有一个网站能扫码结果服务器还日常炸，说是有手机客户端，结果还万年不更新完全打不开，无语…</p>
+<h3 id="Python脚本"><a href="#Python脚本" class="headerlink" title="Python脚本"></a>Python脚本</h3><p>首先查看像素，发现为36*12。接下来提取图片中的RGB值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*- </span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">x = <span class="number">36</span>          <span class="comment">#x坐标        </span></span><br><span class="line">y = <span class="number">12</span>          <span class="comment">#y坐标        </span></span><br><span class="line"></span><br><span class="line">im=Image.open(<span class="string">'file.png'</span>)</span><br><span class="line">file = open(<span class="string">'1'</span>,<span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#im.show()</span></span><br><span class="line">z=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, x):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, y):</span><br><span class="line">        rgb=im.getpixel((i, j))</span><br><span class="line">        print(rgb)</span><br><span class="line">        <span class="keyword">if</span>(rgb[<span class="number">0</span>]==<span class="number">0</span>):</span><br><span class="line">            z+=<span class="string">'1'</span></span><br><span class="line">        <span class="keyword">elif</span>(rgb[<span class="number">0</span>]==<span class="number">255</span>):</span><br><span class="line">            z+=<span class="string">'0'</span></span><br><span class="line">        <span class="keyword">if</span>(rgb[<span class="number">1</span>]==<span class="number">0</span>):</span><br><span class="line">            z+=<span class="string">'1'</span></span><br><span class="line">        <span class="keyword">elif</span>(rgb[<span class="number">1</span>]==<span class="number">255</span>):</span><br><span class="line">            z+=<span class="string">'0'</span></span><br><span class="line">        <span class="keyword">if</span>(rgb[<span class="number">2</span>]==<span class="number">0</span>):</span><br><span class="line">            z+=<span class="string">'1'</span></span><br><span class="line">        <span class="keyword">elif</span>(rgb[<span class="number">2</span>]==<span class="number">255</span>):</span><br><span class="line">            z+=<span class="string">'0'</span></span><br><span class="line">print(z)</span><br><span class="line">file.write(z)</span><br></pre></td></tr></table></figure>
+
+<p>运行得：</p>
+<blockquote>
+<p>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111110000110111111110011111110000010000000001100111101100000000010000010111110000000110110110011111010000010100000001010100111111000001010000010101110001010110110001011101010000010101110010010101010000011101010000010101110100110100010000011101010000000000000101010101111001000000000000000000000000010101001100111011000000001101100011010110000000100100100000001111101010000101010011100000110000010101000010110111111001111000000000010001101001100110011001111110000000000000000000000110001000001111000000011111111111111111110010010001010000011101001001000010110000111101000000011101010000101101110011010110100000010101010100110111001110010001110000010000101100001000101111000011110000011010110000111111101110100101110000011011011110010011110111101100010000011101001110010100001011001000110000000110111000100110111010000000000000000000000101110101111101000000000000010101110001111000000000011101010000010101110010000000000000011101010000010101110101011000000000011101010000010100000100000000000000000001010000010111110010110000000000011111010000010000000000000000000000000000010000011111110011000000000000011111110000000000000000000000000000000000000000000000000000000000000000000000000</p>
+</blockquote>
+<p>生成图片,1就是255,0就是0：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">x = <span class="number">36</span>	  <span class="comment">#x坐标	</span></span><br><span class="line">y = <span class="number">36</span>	  <span class="comment">#y坐标	</span></span><br><span class="line"></span><br><span class="line">im = Image.new(<span class="string">"RGB"</span>, (x, y))	</span><br><span class="line">file = open(<span class="string">'1'</span>,<span class="string">'r'</span>)	</span><br><span class="line"></span><br><span class="line">a=file.read()</span><br><span class="line">z=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, x):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, y):</span><br><span class="line">		print(a[z])</span><br><span class="line">		<span class="keyword">if</span>(a[z]==<span class="string">'1'</span>):</span><br><span class="line">			im.putpixel((i, j), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">		<span class="keyword">elif</span>(a[z]==<span class="string">'0'</span>):</span><br><span class="line">			im.putpixel((i, j), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">		z=z+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">im.show()</span><br><span class="line">im.save(<span class="string">'1.png'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>得到：</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh9.png" alt="avatar"></p>
+<p>合并脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*- </span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">x = <span class="number">36</span>          <span class="comment">#x坐标        </span></span><br><span class="line">y = <span class="number">12</span>          <span class="comment">#y坐标        </span></span><br><span class="line"></span><br><span class="line">im=Image.open(<span class="string">'file.png'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#im.show()</span></span><br><span class="line">z=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, x):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, y):</span><br><span class="line">        rgb=im.getpixel((i, j))</span><br><span class="line">        print(rgb)</span><br><span class="line">        <span class="keyword">if</span>(rgb[<span class="number">0</span>]==<span class="number">0</span>):</span><br><span class="line">            z+=<span class="string">'1'</span></span><br><span class="line">        <span class="keyword">elif</span>(rgb[<span class="number">0</span>]==<span class="number">255</span>):</span><br><span class="line">            z+=<span class="string">'0'</span></span><br><span class="line">        <span class="keyword">if</span>(rgb[<span class="number">1</span>]==<span class="number">0</span>):</span><br><span class="line">            z+=<span class="string">'1'</span></span><br><span class="line">        <span class="keyword">elif</span>(rgb[<span class="number">1</span>]==<span class="number">255</span>):</span><br><span class="line">            z+=<span class="string">'0'</span></span><br><span class="line">        <span class="keyword">if</span>(rgb[<span class="number">2</span>]==<span class="number">0</span>):</span><br><span class="line">            z+=<span class="string">'1'</span></span><br><span class="line">        <span class="keyword">elif</span>(rgb[<span class="number">2</span>]==<span class="number">255</span>):</span><br><span class="line">            z+=<span class="string">'0'</span></span><br><span class="line"></span><br><span class="line">x1 = <span class="number">36</span>	  <span class="comment">#x坐标	</span></span><br><span class="line">y1 = <span class="number">36</span>	  <span class="comment">#y坐标	</span></span><br><span class="line"></span><br><span class="line">im = Image.new(<span class="string">"RGB"</span>, (x1, y1))		</span><br><span class="line"></span><br><span class="line">z1=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, x1):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, y1):</span><br><span class="line">		print(z[z1])</span><br><span class="line">		<span class="keyword">if</span>(z[z1]==<span class="string">'1'</span>):</span><br><span class="line">			im.putpixel((i, j), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">		<span class="keyword">elif</span>(z[z1]==<span class="string">'0'</span>):</span><br><span class="line">			im.putpixel((i, j), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">		z1=z1+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">im.show()</span><br><span class="line">im.save(<span class="string">'1.png'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>记得改定位符方向，没有flag总是感觉缺点什么，放上其他师傅的图（</p>
+<p><img src="https://k1ng0fic3.github.io/images/xh0.png" alt="avatar"></p>
+<p>附：祝贺石家庄解封，河北继续加油！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/Tencentpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/" class="archive-article-date">
-  	<time datetime="2020-03-05T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/">SQL注入三连</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2021/01/31/CTF%E7%BD%91%E9%BC%8E%E6%9D%AF2020-%E9%9D%92%E9%BE%99%E7%BB%84-%E8%99%9A%E5%B9%BB2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/" class="archive-article-date">
-  	<time datetime="2020-03-05T03:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/04/16/%E5%8D%8E%E4%B8%BA%E5%85%A5%E8%81%8C%E5%AD%A6%E4%B9%A0%E2%80%94%E5%85%A5%E8%8F%8A%E5%BF%85%E5%AD%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          华为入职学习—入菊必学
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/14/DigDog%E5%AE%89%E8%A3%85%E4%B8%8E%E7%AE%80%E6%98%93%E8%BF%90%E8%A1%8C%E6%BC%94%E7%A4%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DigDog安装与简易运行演示</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AEWindows/">西电forensic-wikiのWindows</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CTF网鼎杯2020-青龙组-虚幻2-题解"><span class="toc-number">1.</span> <span class="toc-text">CTF网鼎杯2020-青龙组-虚幻2 题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初步分析"><span class="toc-number">1.1.</span> <span class="toc-text">初步分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片分解与合并"><span class="toc-number">1.2.</span> <span class="toc-text">图片分解与合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python脚本"><span class="toc-number">1.3.</span> <span class="toc-text">Python脚本</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-03-05T02:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">西电forensic-wikiの流量分析</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -282,8 +418,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
