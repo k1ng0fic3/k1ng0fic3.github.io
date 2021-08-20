@@ -8,36 +8,18 @@
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
   <title>最友好のWin+Linux双系统安装 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最友好のWin+Linux双系统安装本文介绍一下装第二系统时踩的坑和最终解决的过程，想参考文章安装系统的朋友直接向下翻找到教程那儿即可。">
+  <meta name="description" content="站住！口令？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最友好のWin+Linux双系统安装">
 <meta property="og:url" content="https://k1ng0fic3.github.io/2020/04/01/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="最友好のWin+Linux双系统安装本文介绍一下装第二系统时踩的坑和最终解决的过程，想参考文章安装系统的朋友直接向下翻找到教程那儿即可。">
+<meta property="og:description" content="站住！口令？">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong1.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong2.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong3.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong4.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong5.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong6.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong7.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong8.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong9.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong10.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong14.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong15.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong10.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong11.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong12.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong13.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/xitong14.jpg">
 <meta property="article:published_time" content="2020-04-01T04:47:44.000Z">
-<meta property="article:modified_time" content="2020-06-08T13:40:11.285Z">
+<meta property="article:modified_time" content="2021-08-20T16:06:13.844Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/xitong1.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -203,91 +185,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="最友好のWin-Linux双系统安装"><a href="#最友好のWin-Linux双系统安装" class="headerlink" title="最友好のWin+Linux双系统安装"></a>最友好のWin+Linux双系统安装</h1><p>本文介绍一下装第二系统时踩的坑和最终解决的过程，想参考文章安装系统的朋友直接向下翻找到教程那儿即可。</p>
-<a id="more"></a>
-<p>起因：换新电脑之后，本想把旧电脑刷成Linux。后来想了想，还是做成双系统比较方便，于是开始了踩坑之路。</p>
-<p>最开始的想法无非是，用iso镜像做一个U盘启动安装，但是马上就遇到了问题。</p>
-<p>既然是双系统，肯定会考虑如何做好开机引导，后面看到了两篇文章，本以为找到了救星，结果不小心踩了坑……（主要原因大概还是我自己菜，大佬的文章还是很好的）</p>
-<h3 id="坑文"><a href="#坑文" class="headerlink" title="坑文"></a>坑文</h3><p>给出了<a href="https://blog.csdn.net/lidawei0124/article/details/80383469" target="_blank" rel="noopener">单磁盘多系统</a>和<a href="https://blog.csdn.net/u014113983/article/details/83049102" target="_blank" rel="noopener">多磁盘多系统</a>的两种方案。</p>
-<p>其他博主写的这种方法的文章也有很多，可是照着实现的时候总是会出现引导错误等问题，安装不成功。</p>
-<p>所以无论单磁盘还是多磁盘，用上面的办法都太冒险了，装不好系统事小，万一哪里没有注意，一个错误把原来的系统也损坏就亏大了。</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong1.png" alt="avatar"></p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><p><a href="https://blog.csdn.net/qingsong3333/article/details/80863293" target="_blank" rel="noopener">救星</a>出现！</p>
-<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>原材料：</p>
-<blockquote>
-<p>Windows X<br>EasyBCD 2.3<br>ubuntu-18.04.3-desktop-amd64.iso or <a href="https://ubuntu.com/download" target="_blank" rel="noopener">其他版本</a></p>
-</blockquote>
-<h4 id="可用空间"><a href="#可用空间" class="headerlink" title="可用空间"></a>可用空间</h4><p>首先，win+r，输入<code>diskmgmt.msc</code>进行空间管理，删除某个分区空出一块地方来。</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong2.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong3.png" alt="avatar"></p>
-<h4 id="配置引导"><a href="#配置引导" class="headerlink" title="配置引导"></a>配置引导</h4><p>划重点！要将.iso中的<code>initrd.lz</code>、<code>vmlinuz.efi</code>解压出来，与iso一起，这三个文件一同放在C盘或D盘根目录（必须根目录）下：（我这里的两个文件没有后缀）</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong4.png" alt="avatar"></p>
-<p>打开EasyBCD，依次进行：添加新条目 → NeoGrub → 安装：</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong5.png" alt="avatar"></p>
-<p>再进行配置，我这里是这样的：</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong6.png" alt="avatar"></p>
-<blockquote>
-<p>title Install Ubuntu<br>root (hd0,4)<br>kernel (hd0,4)/vmlinuz boot=casper iso-scan/filename=/ubuntu-18.04.3-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8<br>initrd (hd0,4)/initrd</p>
-</blockquote>
-<h4 id="磁盘编号"><a href="#磁盘编号" class="headerlink" title="磁盘编号"></a>磁盘编号</h4><p><img src="https://k1ng0fic3.github.io/images/xitong7.png" alt="avatar"></p>
-<p>我这里把三个文件放到了D盘下，如上图，在硬盘中位于第一逻辑分区，所以定位在<code>(hd0,4)</code>。<br>主分区与逻辑分区的编号规则如下：</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong8.png" alt="avatar"></p>
-<p>保存后查看引导菜单，一定记得保存设置！：</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong9.png" alt="avatar"></p>
-<h4 id="进入引导"><a href="#进入引导" class="headerlink" title="进入引导"></a>进入引导</h4><p>重启计算机，进入引导界面，选择NeoGrub引导加载器，开始安装Ubuntu</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong10.jpg" alt="avatar"></p>
-<p>进入后，使用ctrl + alt + T打开终端，输入以下命令卸载分区：</p>
-<blockquote>
-<p>sudo umount -l /isodevice</p>
-</blockquote>
-<p><img src="https://k1ng0fic3.github.io/images/xitong14.png" alt="avatar"></p>
-<p>之后运行桌面上的系统安装程序</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong15.jpg" alt="avatar"></p>
-<p>具体过程略，要注意一下磁盘的分区安排，我的空间是200G多一些，如下：</p>
-<table>
-<thead>
-<tr>
-<th>目录</th>
-<th>描述</th>
-<th>大小</th>
-<th>格式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>/</td>
-<td>为根目录，逻辑分区</td>
-<td>96G+</td>
-<td>ext4</td>
-</tr>
-<tr>
-<td>swap</td>
-<td>交换空间，一般为物理内存的两倍，逻辑分区</td>
-<td>16G</td>
-<td>swap</td>
-</tr>
-<tr>
-<td>/home</td>
-<td>用户工作目录，含个人配置文件，逻辑分区</td>
-<td>96G+</td>
-<td>ext4</td>
-</tr>
-<tr>
-<td>/boot</td>
-<td>空间起始位置，应大于400M或1G，主分区</td>
-<td>4G</td>
-<td>ext4</td>
-</tr>
-</tbody></table>
-<p><img src="https://k1ng0fic3.github.io/images/xitong10.png" alt="avatar"></p>
-<p>安装启动引导器的设备指定<code>/boot</code>所在分区，之后一步一步安装即可</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong11.png" alt="avatar"></p>
-<h4 id="清理引导"><a href="#清理引导" class="headerlink" title="清理引导"></a>清理引导</h4><p>安装完之后，重启进入Windows系统，打开EasyBCD，添加Ubuntu启动项，（我的是GRUB(Legacy)）</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong12.png" alt="avatar"></p>
-<p>并删除NeoGrub引导项，删除根目录下的iso等三个文件，预期效果：</p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong13.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/xitong14.jpg" alt="avatar"></p>
-<p>当时选择的是中文安装Ubuntu，但是因为在终端操作时，中文的路径非常之难用，可在语言支持中把English拖动到中文之上，注销登出一下即可，然后再update一下就OK了~</p>
-
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="答错了哟" data-whm="好像不太对，不过算了">
+  <script id="hbeData" type="hbeData" data-hmacdigest="451b6ff90bc8ceb9a7774788f4543e05b56ae287cf58cd9e5ff47ed0e1be6ae4">767f3e9fdc7e6be0813d9bcd429a0f12242b4d174a324bc76ac3455e946c4516df36b0c49c7411e9527465522d4e06f731d46c8b49256c456c8da664b2957319b2d14aabf4e4420a2e5a97da4334e2994c2d96a76597d69d5b50d63686e2f382776ae03b84b5e328884ce32d14c2d9cfa5902f36cb0dbfb8852c40103589407223048cadf9db20654b39a2af62ec83ac192b63682d3adb54e842894defe2971d3ca8509aa356c2dc2d1827fceb2ee8ce4a60280f186c3d129165cb328f07ec046e47295d30fd818fcb693758542201d4e810282f5f5b33b553d65666811265bec3877e8e6530c28b837890061fb00479e6bfd90858c20c05a1fa3cade68d3dc87334742e7c6e192a354ebaab9c824da838a282e099c107c6ef79c93da182db8d840a29e6c6b52708c2a9d13a32878153a318ddd05cace8e2321545dc011d6016e5c6738d1fd495b5d0ae296021d07ea23d9acb197e1a5c53cb745930bcfdee0787dfc2fc77d6738d598d4df8c17d2bf39a08787ca6df8b9aa794fde22d50f2e723db70977dc287189ceca8dc60f2d03303cdd88745cf61487402338e16c38bee52910d7f9a69e198dfe547d2fbe72e0ec839209f6a4e8f1529e5cecaf129a0ab5e8f3732e58daede533d7b3b6a2cacb68ec8662d1c69e37a8c5e2204832503f7172d14958ca887cd08beb501546139e6d034f6bc3bbb5a092c6ffd4359945bfee64aba14bc250b49abdd4fb9c04a0e0a6fb7e23c07f2b2158f00a08409c204f777e79688f5daf45942160922737424daadf0a446824c6adc04fd519f6db57705229349719a07d091bef30f2612c88dd9a7b44e5c094233ac4106ec704245c3bf7f4b446231ec3e936bdeb1b0ece9a3e8c2ebff5ce5e2be97a62e1b75327e029d5dabacb2be879dd0f07e914ce23cd24283d1b80098cb4a2590ca3e34b651a69be7245ed6303bdaedb91cebaf2b23c61d6c2d42b958b3e88808a27f17283f73a280d8416e472612306fef5a8cba5aa960c83bff974ca3ed94d293791376fe807e88deb11a1ec5399b02abcc712fa252893a4c317016234b5424265ddca3815ab771e2f8f1622b1a9dbc20d33eec142a02db0764a1e86f489a08442721cbeb18a0708de1b0a81b17c1732374e2bcf7b059d9992b6a21b7d651424300505e6047938e660ce68b46992baf9e998b07bcebaf924c85d6062400450675167968888516211b9dd9390d1122a7d66789746667802c8587f0ea2daec7c78e91eec357874eb7cb9def349b740069bcf170c5d9ef1bfd358385ee140248cf665b0e2f3150f217d0f33fc5bef518bda2e5b1a82f5e02525801a7aa28c8fe1687509c4824eced29050ba4bc1888af582626ba69d1e545c7c3bf18653c98da016c6ec42811e6bd94e6b1f4e793bb67a2fcc920bc47224392b86ef1c8e967c75ca85c85851203e6f13ca6f2a5ec4aabfdc4bcdd42d22edfe5dc75764bb3f202c8a6704200c6f971f22899bcd2d30baf510f2c15e3339ce33517d2f27556933018cafc639d4adf65e7d3b371c2b04bb9699f3fa673f67b8124ba7f893889434915e0a01c96e6044fbb9aa0838240e2b1a754fa1673ae24abf4eb8da1ed34a440d82cd77ca0bd8a2feabdc9e7fe67d61ea64cb5a385c045a1a166a239b4a4baacd440d012ef345bfb3cf5f75d06b7d59bd7c1dee53f79f845b8814445bdffc87311a8f12c7a878921d8600eacf18e3fe2fa697a2555663b9ea97bbabe8e243ccf85ddf62d2639f4a6d252ad1ab33b2e6d7234be140e21552059ac3b1270a2e9d5b2b506b216159596ecc1f1a849fe3b4c2235b5b0ab2a9110988ca7c1ced619dc357770e9f15415c3a314a0a11f257e6fd4f1e400dd9a9d4d5a023c7abf7b8ee18b15d9700bb649424415d214e1e0acdf4ecc3e4601ca43bc0562d6f33803d5e3a056be101100e306c55b4ad4cb26946dcc13995f0e633ce2a464fbda1ba3c932a184072c0bdbb7369e4c93275d03314eabe7171129af5341b48f215022b5696c9aa158e1dcd5cbe486ed3e0efba8f3a6cf20cbae025eb704f6740d7edebb3cede03aa79b1ab906ce339fd819a07f83d08d394e9960ae435f5076e977cc616a139c218177fe9bfa15e879577daaac2a6fba3cc393cf43c43a12389e1b8f0fd12c48a793a208a25a86b2f99001f2f1e9f70997e5c7eb4dde8b15e420f5d4743bfd4e2e3fde696becf6ef73d1d0d5569b1b598873d0b44c00b13d7150a3e8c815303a32b56865faf929dadc4985fd315e3b66d7f3abee5af1e78281d8fef42bd24d2b96a638b9b00f42642b723190d67fb5b7d2103e6eb83ad706149e2d0c41723a417c3a7ec29dc66a6cda49d6eec7a909c4140bcb6085d930c2c973513a4c2ca86a3f603e8c2e24ad77a57e943d5798298f70adbad82fd3ed57787214956a9b8b18b6f7a7aaad6a5bd0987c79737527c0041bfe485c7a4a185538df080e5bee0924e8d687240a48e78b4f67cf093a6abfea0baa24bdf6c2d01353d9d8744a7505682c03f764335ba55d6b644e2bea45a03edf61b938fd125e0a0403d2f9e19fa1fbc282d8f2e7cb4c8fca99220722c374d16322d8dc65692d4646eb324691cb346e545c0452505d5980540aadc66f25f26a824e543e5427c7ad3f498c9980cca96635cf7d20383aa1367d1ec3d479881bf2a2f0ab5e15bec1e50ddd60bbe479939088fe5824c5b66c1262f04d71754bf0d8c5a8da9c5b5a736d84ad520c9fbd5838104b9cf899d46faf9467986725fdfa348bb87ca7234cf547a072e68421bb33c25b619f7910ce6d2393a4b770ed3edd59926a9442030678615c13c367efa1b0b813c77f5e5c09e0390b94a4d8732deacb363c244b0d775b5d49976a67393b8530663961e4d6c1708b220856b3923a6331aac1e176008408565682f237084174b4ea863ec6e698de46798c8b4886ab10b704fccf3abf855ed97c04dcfa89ee0fc267470099f7f2ab7e954cf6e2e002bd1d875cfcce8d8336a2d9471e9ae72d054e98bc9c2e60028323ea0003c11485f1b1664918c0c6ba476b0014818f653fe20739447729a4614e2845860eafcbad8de501a94c947b1823237689187a0c92fbb1a2d2e8f79f55512802611327fc7edfddb93905a2cd8cd9908fb0779288ff1a32bee59b9b3548b7505db4dd0edf49b61aecefcc3ce1ecccc4bc8a8dbe46e7944393fc511170bc205be47ba261d37a84907fff37d0df671cac109968ef45598f2c523bfa237aef8fd0d7b4ad2ba34e101f4de7f3038616d85ea4c458361f7a13ab76a1de389c3f19b45b76cd59c56af104f0dcb28dead1cc1b4e19e5b1983159d8316cec98c23f841b117897f1a0ab4fb0e02e8cafb6cedd0c1f89269a555a24256fcf19ac4ccf084360bf01644eb6273aca5b839e09b602ac1ccc9be847f74735f617fff345c3a5b03c5963123e9e480a84ac3f0373b666f66f949e183c84aa943f9267c6773477eb7cc780777e96ff5c83e7eee6c01d7ae6209aa5eca073217b6f25047918010c223291283288f3e4a9cd23195c02fd101f084e18767c6e7e73234e497d1c3bfc1844cefa0ae51f75ce8968247337ac2de00916ebaac5e9d0fe37b247bbc5b999923caece81ea8e99d85d95ff080832aa0a7d44121e1c2f36ce673b93eaeab28e686e5dae75e20c45a63317dbeb53de6545e99237119e52854dc2834e7b547c7789c1b7ca2686cfcd5fe534d2e36f9a6a57f7288082a0d2a9bb20b3436ff19d8a1b3317f3f05e425408901c8f436aa3ccf9cb0378e529b737d9cf31770a555f7546f653d0cb58b6622810ed75be236e7361e7bd984e10e0adcf8ae87dc5098e439e1148cf666707539475605ce1f064db9282a5747c3ba402fbbee513414a99af99934e026d25fb459a815d90fde35bd959bfdb39c408207e58756d3dab6fc17b0fce0463d6b8d7635354de27678d5aa2429058e9cec812203d2667dfaef01a3e50bd7c1c7cd1fde4ff7b84c10efa4fa77c60626be8c43df8f3b39df2d2552c26557db93335f6882e8519ad446888ca27c51f7eae639a23024d49709529ec2103b4faaa41ceac9e39738f604a77ba63f2c38c7cb9344ca8aecfbda5e9cc766ff53175a8555624e1f6735261d81eb35d95dc1b8ef82fd3e8584f86889f2543ef00d3658fda27dcc15a3baf3f324e2c8f3a909c237b1280144575e8353a06ee83f36b089453343bf334376893b140b6788950a7b7cb0fe8f346c810430c3fe4f9b97f76a561d0ecb7e71ac6305c49d7eae6e50cca27860ef1fe004f5d836ca5a80e1f681d1929be0bb5f9862145165948728623e12a6ca698755e8222739fa5f7b7e9ff9ad184ab39fa4f32f0d81b994342c4e11412e1c9ea3850b8ef41909b37ef716ee904d7ed27a40254a421a099ded9a49b66490752b2cbdb6f054e856fb06c7deb67f388613824fd4775ade804050daa3c83b2ead33a4a0d56bc6b4e931d24c8ca182b945f66f462b957e81564ef8d70cd0cf777be26389bb6bd088c89549dc42f6cdbfaef7ab9d712fa6e8dc1d9002a9fb08d11a053eec8b3c548fdd2d6d9a4d07708caa4d134bf256d81e9978ceb507c4bd50b474f07478ee91f4ee32b94a154bfd950cf95e9a4423c4ea3290d31f2b13749b67aec08e160e6f80c09e148629829f54b5a8908e27f27615265c9d433b7962972add5219b4c66d33a2c5625318470df472bc25b947680b2bacef3613ee654a8d4e4209bc519ebb76af4c80d5515cc2aca5dfbac9ade6050e2b0db80cbae3475660ee91228665ef6ef861be1b417090a95d7718e592e4aa5fbdccaeb045bcd27d30d6d24cb7577de659eeaae105f106713fa40668c34ba8b0dd7073e89b9ead7d0d2613d9b0795f9e4dd43a56756676ecf64f23e41b221ab4e888ff93b6fd1320385c920ff8b6002d2bdd2a19e890c4feb834f1e8f7bde4aaf0a200e9b026f064e77823423a201b7f1b208ad0766d58b0cd3d75c057f78aa48a527679dcef11538d904966b6248286e1cea984c2f2e20047a9d6a52ae097bbb16a059846d28bc3f37fae127017b45576342cca1f81b03ae2cbd5cbdf0ebb56e146a22be4795d487d81fa16efb4948dff9d5ee9bd8bc3fce67d392ba4554c925b3bf2703ad0644e1b46a907eb9ebc06630c5352a52708e75e9fe97c08a3e3b8cd5fbc4f213d10b6379692e114a50238a916720b8fd3843c5b6d595edede1521dee142cda138fb7cb797fd6fe035d24819c94e28c67183e6862b98877cf01127c6b1f469cdb9f8fa6619c83765c7bb28c797b7c9be3ce8a349c96e1601c7719a1a3a6a47278a07421cf6702fd9bfd654c1edb34e4d68f961ee9118ed26778f89e9552618f786f6819177742c6edf8ff0637830160ed29436761f4df1d84748bb1ffe2e8b99222dfaaa9b4df37decfa7770432b0720afc034dc19ede184a2e328428e19fc4a379b789199d957098a82afc5c274e3231d2a1f87e966c5e4eed444aaa5a87246cd5ef5d845a617d675cb2c473592e8c1ec811cae33c562e4202b93aa389cb771bdedb86973db2e99dc23d1ff4cc1abe27847f858d1dcc2be55b1ca975266bb8f66611c2cd585d84dab32247213780a8fc7b1eee2fe96c9b1a6870b2c5e6e079a90c61b380ca9dac2975b92960cc2b61660073a40042ec908ffcf200f2c4b69b1f943c244018a2240237d371028d4fc87c6849a4cb267b470331b533bb1d28bf3b55a89d4fdcd3ce5a3c34b2f6bf0335aa7a5dd60bf1e0094384c6b58e99dd8e351ef0dfe103a1b04581956ed8f20724c0bf0a6358c806914184d169d3a0473ca6a5900138648d3bcbcdcd620b9e614539bd6655b4f05b13f649dfa825377c3b53a1eb24651c2b3d521f743efdc2e33df0af09a5a7cfedea8a8fbe6bfa6af985245a7f87178e863ba0b4418227bdd9e76b74f83fa34b9efcd0c1d4cbf380f423ec34a4ca3115f0d1ed25ca2cfd455eaf6ac5fea75e2108e2cd514f9b3c787859a60659721775a8d2e064baf63336fdbeccb3d3f07842d529d1eddee740f7f585793f326ea3e7a2620e5991f64a40f3333ff55a6b4a353e1278c50b83e2714b28806837ab56b405c10fcc0fe82b98a321569e0d2408076eaa042fbff1196cab9d6478030a6f6bec0525bbfd128fa421b895575672e7f7cd4d93ecb60d0759577450794f8b0f03be5ab72114df9cf0f7b981602ab36d62ff38ef08654db189b0c3ea24ceea29e635e8af0888bb8d76b890ae8567cd83bc37285d272ea2bdf359efcc423a9e0034de1e753b14ae7cde84700f0edd031279b6bf0087ca323456d4019f61149d87d33d7c35172ee58ece100282c7269edb4ff1546dd6492e49e52cc9f12cae1d86261d290a4d1d43150d4d9ecf87716442fef8773c4af90c52946d7ed74ed162936ef6d655b3e136286234ecfeaa6e744c7d0c5fecb20d74b8bac35e7aa7007093d903fd17e3eb8641ae1c9a9481ba92906f1f98e4020d6fa64b1853bdf804d4b8dd637636421cc8622a5bd13885ff1186c6ee3834358d225a021ec9267460317c2cf8336e1119ab074cb7fbd56b091e2a1c4db4cbe5567abdc4116cbdcdf2b069d1053533c1686d646c9dfb0e63c58ea8ff7a94da386175363a380b22aadc618b1ed49507e29d9af835b7c51efb2e6885b5b6f75016b279d36ed916be76d043a37c59d3526fcfe5d88a24a33cd5badd876b358328a2c1a65b6de8b24e63b731d8c673146a661ab5dd7549f5735cd7342fbfc574dbfd8df913d8b810add0e231a2e47a0be0e014c8290a07b3491af0e0e15b44685963643f48d4e0c08e70b5ca0505c214b35c2e565a6072224f97e13fa74f6212b9f4704892837f0e696888dfd16e12d1f20c12b4dcf30fc7f929a16a5333e2475862a907b749cf89ce0c6e2bc1fc92883fb5af88085ae78611084cdad1d6321b1c22653840623a176924bd5d17397d9dc6ba7b0891b32c981077fab64e509fea89e9b2385ec8d7752038db177ab5e5c236d360a4b6332d1598ac7fd2033b1f503a16d5fb186c851387814afe2a5d13f280658205e0403342c99ac5e9f97c6076ef655cdea601dbec68e6bc9168bf0509ab43446676c3f52a8e9ea16541d2e8559de5e63efac24549b91b096eb1bb706ec43d63fe4bb6344fde916526a2fbdabbb140624aea644900757b74d3f3a515ff0998113c5fea04995584adf49a26a2570c42b5b3a495a5bf40b2c62b428b754b621dc67b98fba251d42e1453824ae2b7c9ae07ca573c8d9d35820f0f14bc2a609d764718435cc8d330ee84c52f299e0857268ff376b000d95e7fb4f51d76b60fad2b9df928b92fc1e2c4e12b7c09088d5f63af3c46ccfec6c4953958a49bde1c6873ee779569ecfc606e4466d574a9ec22d9f8660e1b142302fa4119f99d757c0aea11b7b6c1674d105352c7b87b5efb0471f9432277558a1f62db4fcd287e5de03f908db759503528808dbe60eec03da2c520ba6d94f17d8ccc2dff89aa444241723ec70a7ec7277752c3d372b06b9d5fc955b603a48d17bd3e17fdba167c898bc5b156465ff780c473eaaaba0d7c528b3dc863893fdb4758264bcb2f123d6e53550e21e17c3f783fbaad7f48b8f0fbe45672cd2cefb15df8dfeccfb0ab10e50605e7ffa2288f2264a9eab91981a97646fe07e51bcddb713a300610ddd02a01d00ee355d174cb5da18c4f77803f8ea0318a9e6198282c317ca12c0de990daf35e06864481cf3873ce98cfe0033f7a76d2b9cd365f1da415e014359f81be99c4c17fa2bcff457964348672b3e99936fe011af108af81042c687edda84767b55301cb8861d3d046e4079306aeee2f37ad6cfbbea40b729e8c10d7dfa33501827e665329d292de7618f9ec00f348b9aa086ddf869a86bbb5a10d1090228faf9013ea04022e236fc7873c9cd3a85bd9ff6e48d5f4608c42b95ab41eadde04f37feffe605b8a9529644700924ae25c4cf6d28fb37a097e50ef8c29181f2efcd5f6b8eb99f237ad39ac6d407942faf506e44ba722ae79f94bd6f14fc65e2f38aa6eb4073cb8f7a717681e4a0f9ebe856e0f4c863f3a05477306bf35536123edd0b7335a3a048f5cda850125ffc8878c02e655d211f96de2c3961a66e0d6fcafdee326329cb8527d36bb4c6c49b101ce207ebf9758c1e0f8f8b4705ff233f70911d33d923b0f1f468e68dff3ed3ee410d81a207ae763669f9826d32ced85875653d6bd46d3b8ec7ee5c6278f350378b930c2c1b141124634872bfdf50788fc8f971cb8130f47f4cf79bff68b2b2a800b99092df5ae312a94cd5e50a1359cbe0250c518017321038996bea4a4b1767fd0ce8db32a156d172ce3b8e8bf3161a6e014e9b699d22a90f314acf8e0098d7be1ef2f07e024458b06d7352fa8db48dc8bc8d089df1fa48f044e4ef00c5b59465984eaf869a0af0879344a48e91b48bd9f19bd5baaf77bd784d2ab756edc682571980a5f4caf4dab1403fc842c4ce869af56269a10b6e3a68266653034fe358f011639f91637807e5ba9a2a9b79eacf584fe0cb77d6d09bd9ad74b822d949b7f163034cf6f1a33b2ac1584bbee9d428cb4855f0f33bdde9f7977f9936223d614608a65eae12f40eeba6ea3df451906718408130a7cd170b44a4892b0f293faab0dc742a446075488fdff3a6d85ceaf8e568a9438ced1ec0ed4149f628ec64b46af762bff29015c61be38be7996a8a28c064518230c1d7dd787280618d39d7d1ce22f103a0c75b61752406a2af3f736699f5afa48d332f4104fd46e5cb25bea7bd1a8d2ce8149f7f7372a1c2b595d923f41c32eb031e39c4cefe9d81e94d9dc456362d9edfe0c126c5a3aa8f8c2312b7572fc288232d274210ac1f4d90e6fce961397b7878b71c8c99a7fdf5d245b45779e0b9db5821da48369c7d86853433871b79ab4113e140636ce142edd21752930cea0aa4cc34c0913129ed9ebbe5b8645596339b64df5b4d4f92f67dad288a9de737c5bb885c46ddbef5413e5a4a1b053fa68ccffca050ca5745b65fa30c3f6d103dc076636d50750a91ebb909c5ac29433d26d0f32182d5eaa0c3f9f8d43887ce1f71f79e9e2d20fb379686306bb0374610bf9b2ebf140d0f9fb99533e903ccf7056c093f124901ff949029008b622cd143777fd246ed12a8f439475607dca1dc3285991676948f3b235ff</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">叫什么名字？</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
       
 
       
@@ -439,7 +348,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#最友好のWin-Linux双系统安装"><span class="toc-number">1.</span> <span class="toc-text">最友好のWin+Linux双系统安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#坑文"><span class="toc-number">1.0.1.</span> <span class="toc-text">坑文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#教程"><span class="toc-number">1.0.2.</span> <span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备工作"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可用空间"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">可用空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置引导"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">配置引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#磁盘编号"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">磁盘编号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进入引导"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">进入引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#清理引导"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">清理引导</span></a></li></ol></li></ol></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -630,7 +539,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">西安电子科技大学&lt;br&gt;&lt;br&gt;2017届网络安全实验班毕业&lt;br&gt;&lt;br&gt;2021年入职华为&lt;br&gt;&lt;br&gt;ID：冰皇&lt;br&gt;&lt;br&gt;梦想：像曾哥一样Getshell</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">西安电子科技大学&lt;br&gt;&lt;br&gt;2017届网络安全实验班毕业&lt;br&gt;&lt;br&gt;2021年入职华为&lt;br&gt;&lt;br&gt;ID：冰皇&lt;br&gt;&lt;br&gt;梦想：像曾哥一样流畅地Getshell</div>
   	  	
     	</section>
     

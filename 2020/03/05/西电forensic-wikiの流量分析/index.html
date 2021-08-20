@@ -8,29 +8,18 @@
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
   <title>西电forensic-wikiの流量分析 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。">
+  <meta name="description" content="站住！口令？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="西电forensic-wikiの流量分析">
 <meta property="og:url" content="https://k1ng0fic3.github.io/2020/03/05/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。">
+<meta property="og:description" content="站住！口令？">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki4.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki2.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki3.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki1.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki5.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki6.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki7.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki8.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki9.png">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/w1ki10.png">
 <meta property="article:published_time" content="2020-03-05T02:47:44.000Z">
-<meta property="article:modified_time" content="2020-06-08T13:37:47.959Z">
+<meta property="article:modified_time" content="2021-08-20T16:06:02.595Z">
 <meta property="article:author" content="冰皇">
 <meta property="article:tag" content="Web，宝可梦，取证">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/w1ki4.png">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -196,55 +185,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析"><a href="#西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析" class="headerlink" title="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析"></a>西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</h2><p>和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。</p>
-<a id="more"></a>
-<h1 id="Packet-Analysis"><a href="#Packet-Analysis" class="headerlink" title="Packet Analysis"></a>Packet Analysis</h1><p>网络流量分析是指捕捉网络中流动的数据包，并通过查看包内部数据以及进行相关的协议、流量分析、统计等来发现网络运行过程中出现的问题。</p>
-<p>在应急响应与日常运维中都是至关重要的步骤。</p>
-<p>对于取证分析，在<a href="https://wiki.x10sec.org/misc/traffic/introduction/" target="_blank" rel="noopener">CTF中的流量包分析</a>中有一些简单的介绍。二者基本上类似，不过在CTF中对数据包的分析比较注重细节和较高难度的处理；在美亚杯的比赛中更注重流量包的行为和结果，从而对其他镜像的分析结果进行佐证。</p>
-<h2 id="Wireshark使用"><a href="#Wireshark使用" class="headerlink" title="Wireshark使用"></a>Wireshark使用</h2><p>pcap流量包的分析通常都是通过图形化的网络嗅探器——Wireshark进行的，这款嗅探器经过众多开发者的不断完善，现在已经成为了使用最为广泛的安全工具之一。</p>
-<p>Wireshark的基本使用分为数据包筛选、数据包搜索、数据包还原、数据提取四个部分。</p>
-<h4 id="数据包筛选"><a href="#数据包筛选" class="headerlink" title="数据包筛选"></a>数据包筛选</h4><p>数据包筛选功能是Wireshark的核心功能，比如需要筛选出特定的协议如HTTP，Telnet等，也可能需要筛选出ip地址，端口等。</p>
-<h4 id="数据包搜索"><a href="#数据包搜索" class="headerlink" title="数据包搜索"></a>数据包搜索</h4><p>在Wireshark界面按“Ctrl+F”，可以进行关键字搜索。Wireshark的搜索功能支持正则表达式、字符串、十六进制等方式进行搜索，通常情况下直接使用字符串方式进行搜索。</p>
-<h4 id="数据包还原"><a href="#数据包还原" class="headerlink" title="数据包还原"></a>数据包还原</h4><p>在Wireshark中，存在一个交追踪流的功能，可以将HTTP或TCP流量集合在一起并还原成原始数据，具体操作方式：选中想要还原的流量包，右键选中，选择追踪流 – TCP流/UPD流/SSL流/HTTP流。</p>
-<h4 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h4><p>Wireshark支持提取通过http传输（上传/下载）的文件内容，方法：选中http文件传输流量包，在分组详情中找到data或者Line-based text data:text/html层，鼠标右键点击 – 选中 导出分组字节流。</p>
-<h2 id="第五届美亚杯题解"><a href="#第五届美亚杯题解" class="headerlink" title="第五届美亚杯题解"></a>第五届美亚杯题解</h2><h4 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h4><p><img src="https://k1ng0fic3.github.io/images/w1ki4.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki2.png" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki3.png" alt="avatar"></p>
-<h4 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h4><p>106、文件的MD5值：</p>
-<p>这是美亚杯一个特点，疯狂求各种文件的MD5值。</p>
-<p>Windows终端命令如下：</p>
-<blockquote>
-<p>certutil -hashfile filename MD5/SHA1/SHA256</p>
-</blockquote>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki1.png" alt="avatar"></p>
-<p>不过此题出了一些问题，跟答案对不上，最终作废了。</p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki5.png" alt="avatar"></p>
-<p>107、Dos攻击：</p>
-<p>从很多地方可以看出来攻击方式：</p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki6.png" alt="avatar"></p>
-<p><a href="https://github.com/shekyan/slowhttptest" target="_blank" rel="noopener">Slowhttptest</a>是依赖HTTP协议的慢速攻击DoS攻击工具，设计的基本原理是服务器在请求完全接收后才会进行处理，如果客户端的发送速度缓慢或者发送不完整，服务端为其保留连接资源池占用，大量此类请求并发将导致DoS。</p>
-<p>108、抓包时间：</p>
-<p>按时间排序后，查看最后一个包的Arrival Time。</p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki7.png" alt="avatar"></p>
-<p>109、目标地址：</p>
-<p>在107、中的图中可以看到Host信息，包括了发送的目的域名和端口号。</p>
-<p>110、目标IP：</p>
-<p>域名正确后，直接看建立连接的Destination。</p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki8.png" alt="avatar"></p>
-<p>111、协议统计：</p>
-<p>利用Wireshark的统计功能：统计 → 协议分级 得出HTTP占0.3%</p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki9.png" alt="avatar"></p>
-<p>112、数据包个数：</p>
-<p>比较简单，参照108、最下方包的序号。</p>
-<p>根据下图解决最后两题：</p>
-<p><img src="https://k1ng0fic3.github.io/images/w1ki10.png" alt="avatar"></p>
-<p>115、协议认定：</p>
-<p>通过111、协议统计，HTTP的包只占了0.3%，不足以实现Slow HTTP Attack。故很明确被识别成了上层的TCP。</p>
-<p>116、数据包信息：</p>
-<p>根据Slow HTTP Attack模式中的Slow Header：</p>
-<p>HTTP Header以两个CLRF结尾，通过发送只包含一个CLRF的畸形Header请求，占用Web服务器连接，消耗掉所有的连接数，而造成Web服务器拒绝新的服务。</p>
-<p>也就是正常情况下的两个\r\n，现在只发了一个，来实现攻击。</p>
-
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="答错了哟" data-whm="好像不太对，不过算了">
+  <script id="hbeData" type="hbeData" data-hmacdigest="036d840eff625e6be6d8559618fcf00dd521a194041a6b449cc9c175998bbe6c">767f3e9fdc7e6be0813d9bcd429a0f12f4cbf174d4c30951b2ffa90a9cbaa9a2392caa39e9eba8dce210be23c9750665a4c5e80be80d1ece9ce1dda72a5739ac063fd7a345fc3d51c8bddb57bfa07a4d29dbaba629d95ae9421569d2b1a7b78928039cbea94dc5a19d2ac44c55364a693f3bdabe412fbd5875c25fc61cdf537e4a97d965dcca6fc889fa086b607b6a88cf157f2f8b22c5b7e128a660e1c6adb4c511f828c779bfd8fe01a5e30c73ef311cbba86f2c91f9f69688505aed1e0d9c3e115836d6fbc27a94b6eaa8fe3a90d440325972e9921a6949be20aac161ccbccbd45f9263328fa0ca7fb0e56a8f41a8d8663f98679057b595fd8ab94513a4e7bf1a6e6c95e8f5b271eb934344db7b6e6bb6e50dd426e7c9665efd3c668e14d42ad06da2e191fa2c3c04c1d43416bf5a07c6d9005327a825e151088a7fe82faa11711b4cc49a883812d63f33da84ca2a531b12e38525cb1422b88068c9cc6ccbc1b06c9b9e071e2b2639f8dfe3370bb92a95a7342a4ab1a14d981732217e74ff4030e7c800a195ffdf0d136e5f01fa9f5c1dd217852b8516408fcdd5a510261d0deb6cdc14f801fa127aa15361df9045b9854646e8d0cb2a730185ea45d4037c94238f499df49c1ce05e34dae6b885c19a5e8d9277729f35f0648b3e45c3249d4ded42c722487afb80414ba533b62470907d6afefc6b265237a1a0ea79903ea34b57411d5be2b97d2f32d52e7e77c9aa4bd17f0dd025a133fca4d973f2cb984b7fa69f7991fd0f24bcdbc027b801874e577b8d1e9c324c6c72421e1787c272662db3857862b73617afd7e4dc0273f33790933d42e95f1dfd52c7d732fcae9c45ba9d574d113ce9735a5cb09c23c3d7334dc0ea57755d0d2e28f97f7be0e62a83443f31e3b02d7660ce1c1050222de6f63e06e513a8618441e452a24a4a15d8d9a6e8585aa06feadcf586f5b19d7104ae0cdcc597f72424d44f4126ec2ce06acf8ef60ae56c76f53e4ac3f006a3b6a15a60a0a789b29378c1d6b65e301f7f0b88520701a9b189300f4cf4a976f15c8f25f5c14e12c1da7a4447f80a37db3f008bd4f8573c324cc1d38e95fe07337c7e94a02638d56d6cfb5d35feca36bfd02272b699acb88f0610cb2187884c377680c4b08217152f68ac2c092893f8f9a20f5196882b7709f6dce3ebf3c8d01fc89c13a359ae01db0aaa538fad771858004fd26c19ff5c0e266b825d6fc73df4a403c4a058c6ce9c3b41ec2c46a489973e9f664b75340176cc6245662b735edebc436e5fcea534f15fe44b865a1953cf9c687c98a5d70c1d6f966d792881442957ebb1874bec3d14ae441d255a341c45f1858043a083da9c5719a2ec7415d640197b960a7f2250e3fb30db34db16e9d0cdb219d1d846aa0a8556152cc26134871ad32cb26d952e4100486d722fe7b81028c9675ce5c7554e6a7fb8b1bde8a0b86cdadba079aedee13c674b1747ed88016e292d526530b7dd69d00886b887a3e82a584a05e632cfba9a2718eaceafe938b4980dab8510bb5b75ea9f707a58f2dfd42d1abff155a9eced428b935538d543be177434a220d380b84e7f0020c5f1c298fe95928660e90f9a03b0cb92e89229e5445d8e1683c8b5e4c13f6989571a73de1a78da78f0a35d194a40304d2be0c672878f6d133f1adf3078985e3eed1b19b7de64805fed6b1ba2d45380970e722f5eddb201f4c1bd98bed3f139e2dbf12a11b5910eff3e4d2b15815f3ac91ea8b5e8e678838e81a8a8a2f0420ade21c9fe2968e2af668cc494491b85684fd176935db0255bd77488250a3b065c2ec3acf9b07c878dfa097c1b7d6bdaca7245fd389037ff5f40829317f19d0d1b614660832251c56b145e77e65476035a526b1abd166b884156d8988133d795f19e5f3cf112b66bc7e2f87e69e11346d054b90cb2759f2b614f87c0c6ef593c1eeea9b1953b81578db6f6ba811b624d134e12ee5424cf29e25985f4698431915bc17fec3e1ffea018a212cc79a2126b7b76d3da695b636d338d6738ed1672a59806b3e11066631148c047ce32fe31178f4066bf1581cabd7bdcc09013fffe6500ad5640b57acaf56fb2e354b12f117748833fc170b0bb81798dc285ef61dd9749852db70e76b71f4fa400a92bb690585a1cccd22d3bb80686ef66bb8bbba6469ffff5ad3b9a125e1b79ba48920bd31f675f41f33c497d387a674cd5fb62f5be0101f138f123cede874c9ba35985a2dea40bb01212b22367b7514cc3a0d8460b0cc6920a513dbae43d4b8cf54edf99e1be89a9363268de06f3c2cceb470c8a237665391a30c67ac1080926cd36e0ec1c533b55200386cdba759e243ba3f28ba79ac57717ad9b7525d045b5142cd615bea755ca83f71729290fc8409b01d70706a59ce27a40504c5821be64aef29d1febd39bf77892c8503d455f6d201a9da6d9657a35b174d28679d120a84e627b709a421b0248b9fa1b23ca6ff884a32a5d5527529f1afa03cb2cb9c355bf09373b47b445499ff3850bb1290c7bef39e4d1e5d21da2de79a1dbfc7ae45fca9af5bfe7929a20725b6ce63e499e9c1b119bdd0006f09df30ba87c4abf7acb02509250fee2e603c55621f1276a6642ad4df3508cff8e241b5e69d0f58c8eff9e6c2dccb8118b3bfcf08cec2d08ca5dc6ec9520d43287fd334c8a238edeee7184094f139d842abf7047ec3397abb86779928bce911aaf0334cd1460266c8019e2b6949ff6767a8900f6794150a9cc251086f2c733b0566e632b0acefd65ede7cf7bc41b6ccadad97a42008f52a834a7df9db981c5f41a07404f90aed314fab03245056a7ec909e196de32078f882c213ab9848cc1e69be40b4afb0625f6327b38aeae017825bade38c3d5f8683076350d28d609e9fe172428db95fc588ba10ef947a60d350d5cb377dfcc287d948f2f1bea0ca9ae2a7f17371b98198cd8ee3e0d619f4d0f858a11b43bee23e7c450486a3034238e69beff33d015c6befe0929e93d9d054873647325d4314692e1e79a68a72d7475b60c65c4b042b66d06785b86d7f74d6bd7f3d1ed34b7e4ab1de9ac6a4218c7a7c414252f482f9899b950220013fbd7e8a734297769c5b05e37954ebb8150dc886fdfd8100d70baf6f41ee231c3c8188ad098ebadb227858cb54f04852c3561ffd6458facfac64d05096e5a9f1d4192f0a90a3fbbeddc68c4d2e8bcef36319a88598242041b881b023d45a2aa1a0edf2a674413609573577082157d570c422f09e1e75d3b23a64f8c90a960243ad30ffa2415dc4a0ceaaef53b040182da0e4fffe5cb02d2faad01f777ff05b029480ddd78337e20ba99a140bdcf3692721ba16fca66217523d1e56a351384b012d40b792aa97a9d83c913ce1b061b03f8b6f0e8bb6a86bfb8bcaa5cfeda8126aa8e11e1a9c59e58835241511ab6b4f77ec31a3da95e9d1567eb4adeda3f992bb438d072944319543b7f927a68a7673bd5407979e1c95bce9590dbdd8f8dd44c0e2e534c4f3f9f64e4507ab53f723477cec227b343d416bf9eb47be23e6996ed1eab5fa6d374f3f9a2b6048b7d1b5dd881abe7de80d3fb1e82aeaeafb80ac092c99c540c62d020deb6fd12314c733464f0eeff272482046333d045ec7e075f48edd53d8a216435584135d0b9abee13d4bc0d18561c755e24d7d6b02dc05314372cc52edc1af3ccc0a806cb8d38b6b3e86fd6fb9c7b7b80b235b88fee2d5cb7f6526b5f39a23606f9a2e7f42d94026e16219291aa26e0eede1ed3b5663dd9362a55a313f2b7fd229d23826e34b1b39daa6c6d29cd3d95a46def0c9b6b0f8b3660bd1dd72c2a77f6e37fdb2e24bd6c99f416b18c8cd4746f2d5aeec6dec77b5a1156b44e8e3cf13404a4055191cf23dd98cd5c4c9e55b94f2bb8c6beb7cb9c5a0323f919d367c31ebd629963581912a0d31e7dc829168cca879848c63589d05e6a78c6a464278c518acc7ab5a3215329ceb9b943ab83df613bbdae5f2619c6f6f4275b12fcf6a71b8a6366ed5776a5e1a5e096bdc7f311c530a32a3bf4193cb18582a22b20b642e582aa25c125dc07ef6412d113d72b987822b381408f80474bd4c4727ea24e3d017cd64aa12601fb05b23e4fb7cf46a442a8ab3bed44be5d14136b12dfd648259a270859bb918fbab0efdcce445f3e5217a53586cce453ac649a164af808445f7d5299c095a0232e5ce4eb3e6ae16e67f0f7104ba5ec52f3fe46637b225832c2e5b70d67631ec8a56a5a33e36f87128034c1359ddb6be7ae13e7b2214ae33d0ec17cf65927ac63867e9a43325c6cf6ef236f8304ca5057b88e559e31697f5fafc75a42e765662beef278520a62021e6f96bcfa9eb227f658bbb04adebe3c65f2642353282c3c4605689484918156707906cc513a03e94244dcbb7f4419e08cea4b87b4a2d23b0302683c35c6ce9f6b8f8fea1127f25ddd00fc1bb9839adf8ab3f8496b61171a2b85f1deda63cc97317015fd430aaae4c8cda8fb67446ad5f1884b0481deee27f4816d7459a6aec006bea65bd428fb3358990cc4274b77818e07d0e4951f37982e438b9aaaa5aaf116be0a8b75e8dac2febff2f122340cd6bdd7b9312af1e59edb0e4822d987111f99fdddbafd42876e426708faeed3d48b4440cad89022033e0ebbe4036ecab839f7848d0e3fb072d2f109e31d707a5dd3abb2fe7fa190db0681a0b0490f1ac2de247b776fcff03d81c62add428a21ed65d3f16c7432a28b2e6fa93fc9daa0aa4957ad1482cec5a46da2274b38b2fda94a64d54400054746a18118bdd6003636a26875a8e515619dc72a740d71cbaadfc98db282a583616872598eade4ea6ce2507c80aaf4c6877f2e91127aa6514eb60825c49ac178324a6743bf8a7948856d9daaf579ac5696df461b6f3721411bb61186bab15fc58c128e7eec0dd9df3792b246418d5123559bde2d7e925ba3d6013c03879c2770c0b977ed5373181ef3ba8e5731c592f86f07ccb4ce50dec0d910d499d4b2064a12048cc5a9ed725baae7ffe2109ec1e9655c4614958ad2fc09ec615eec2f6ea075abfda7965e8508268f612d3e1d1c7133dd39e88d123ee80b5a9536ed6a2eae5dd07fe4618b6937bb50b11093f0ee67d37b55b496c32f81aa825889114208247b91978197599f832cabc342c8e2ae0d3baad191677ee99b86ac1ec99eea7523efa6c2041ed045be4edfb810e708bc03eb29b1f4e1eb4fc7b5a65c2a09cbbfe832c87cc88484e586b1153be3cd9182a2fb5bba71087b21109403abf6138ee0339b8cad367459e3b36afa1358234cea68fb6b3bb926adfaf870a23774045df21df0b33e693dfbd1524a499783881a54c8fc698eebfd9910c633ad916cecaed005c187c0fc4996e0e20b2fd9e958a79a05ff7f7af97e516d52237e1682fdccf0385f14badeb1afbc68e1098c76d543e9c91ada95d8f64069b970bdc9b25bc066b90cb2c953ff564af84417257234078c85a153328972e25eee325d6e35506256454779c59acbc20104196b7cdaf7e0d85e5a552ef99cd06646f2da340567f6ca70975bac9b48da211e230e4d702497afc462075a6aa3947447b2a785b79884a3fd812d4269a1e22cbb146c89935912124fdec1e1b2bb2c2d6a6ca6bfa97b1a92f6676c1136809ccebd9ae511496ab3fab82b3a7b0253a7338cd85997ff1c57bfb86fdad2462d314be6d71996ea95b55ebf754ce2e9effcae4127647127fdc7bb9e4bd4e87e807879df483f4036d7eba47a9798660f6110bf1595ccc99155a7ecf0e940a5d678bf31052009721c4dfa01ab1e9b01f7412415330b9db05952e8a56dc1e6247fffe187bb60df4ea6e5378027aaa0fee2c2ca47aab9252b6ffdb1821ee744c18cd7ca4891689848766a75f5ccc6f769f9cb2929cb0c4bd419aa876e840b9b0b3ef49b27ec3971a6d0c67ab82cecff9b66f2f60e18b41306d0de4f90da863eec595b187232ba3d51fa2edb4a46dc22b03fb77ed36e97042ed9fbfbad59430c61e6fbd82c6bab39438a56362bf819d15b62689b227b3c6d04ed8a148e470f97cccf5635c4c7cbfa7f8d27b3b48d9b9720a09ee46c2b0b007069e3e7a403659c3b72f84245e389a1463e780179b15108dc6c8c2025c9eb4de88026f69c4e8d7e31f0313a0a05414e433b994868985510d76229e72bec782ade8ec43ef28a2a93c61b8365a91d4a13e8c6d2c1e7ddf2f000ecb056c5e969f7174713d70ee50ecdd85eec75caa25f25341f261bbd86c07e177ea3892a12533b527fecd575efdc9787187366c001112deb41b3727ce9ea953b59822e466651f9a07b49f65b997b0259ff3ba8f6817f2fdc32561884c68ae5b10839b11cf129d0613862f23b331ba0fc640d2f89205cfe599c2264e9e22db8ff0851e37deb2e18c53387f7278d6d69564e6add8463e9e2fab389099a283fba0c2a2de22a2d47f2c3bcce284458ba3b386ab65d4e7bce84bc973eaa9c48feafa83ec07279c6f421670bacc287935e70e4b7a8244f6effd73883c93a4a015533a873f61d6ff0e255109d414bb4fd62ead2eaa30260eae7a25897f6e59d9784a9120f666fa789986ccffc7ab84e4bc9433ae4b0c1084a97ef4a1287167d3ba988199a246dc2df1a0a44cda156a07b327d0d21c1cfe85998b03a96594b59496651fc3b18bdbb451f47cd34045b36643947e3090f94241369ab51962c753a6ba41ce25e89b93c7452f7fc2821e11737bf22a894cebef7652a77ac51224e9ce70be22bd42edaadbc630c7f7be458a86f3f8bef78c1efe03189b28c11bc6aaa4a687c4200b54b70647b863d2e9a4b726db305839f24245f7e4635a32531a2e7656303492ec1232c2269a8aa807a0b8377dba2fd0be9cf301dc12d6921b34e525389c45ea8335072f644dd1d1a7c6eb51640850f03881133381afaee50727dc1126fbc5b494b9bfd1cb96967b152f13ac97425e110e6dbc81d4c6684de3ba59dce96d56a3b2a31f2923f6f2f10219652898951c30e6bf8d565aa06c53e9d6204a90dd0468f7de16aaa51845fbe8b365823ed2e644b25a85eaa73a9be6e2459d956df9d1d15f92f332a21de182bb9abdb6b5ac73cbfd5e5fcbb432b55fabe843725d13201df1570952c934fb87f02f17b541858dd62bef14954dc04b960dad79477bcfaa81badc8a8b44ff874cd3c46548c9755c71a96633c873696ca7e501006e9b466587c45a8e21a98bc352fe7e9e5ee809b6aaf4d8f4543998b4353d7b560582f2326c9a450125568329c6aed26ac82d181758b8261855030badf59ed4a311e41fc2dab7259b9cc745aed187ee9e669d8925ae7379af1d98d2eaaf82a4f1ce89b0b2c440e1235aedb7144e9c2b26eac243752630b69f15800077ba6ccf2e113e3772df8703fca22df66cf637e8352c952aaf73b27a085a4590fbada848689f8af3199ab32b7e9e12778a49aa039aff2a5cc15bcff7a2dfc6c09b6904c4739b6f2d2ec4420ab96621c0c5bcbfc0552d4217271e4d23c381f68bf5fab5b0759121de7e779214c4b3e9f23e3bdbbed78564668b3259778a053b1eef8dc1b8beea95dd1282a38dd9ced533ec4b74d84988006893342693104554952984add675e18741ee710c94bdf942418817f671ebdc29cb26381c2cd07a5ab73fbbf158be32f35dd4f29b440d012b9062fcf37ce5ffadfe4bc5bb03346c61e07100a55aa684c1dd16b6562bb9b876572b3b836b5176560c19652c50da3e72d047d792dec92c5be158556eebd54a8daf15dfffa478150b0207eeb04846ee615d4b9587060302450b206fe97e93fd1a646704ab41ae91c5799338cf3b3429d2d605ad196eae2bfe81072a06c9656b3c7c7c22bd3cc0798a320a83cedafe14ccc6da4c276c657b17ed592f1c0af88b756672bda22db63562e923dbb5145e5cd7f5eb209afee3876a84b367af7c68343319d95efa5ea752d08876bd7830d69e56ef4e74797b6156bd45b9f5feda6d9c1d5020a2961ff106bbc25c6ca244c2b78b9d6bfbacdc9fc124f64d1ea7889eda8cf92f60c8b5dfa658aaa38e058ff6636b877ca5d5afa463c87d690e78ddc8ba3c064f774a88f8e1f35a7f1d575eff474d16e915a2d2992914af1771710171b8d5d6205b0b6e7d799efe0f647481457cf20a999e0a192536fce0e998d4d17a39e4809f6d69e3d594ab761ccd18dac8752096361ce90fc06df6403ea86a117f6af66d81f1f2f5f61585085ca240bbfcd5adf4efe5554fe4ebb204bd6c7511561020023733c936598377d19680342df9ead02efbb6fb468f7aa1997c98eb3960de2326ff27877187773128ba75fee7dce963fcc218e9efe28b97b694cf36151b102178bbcde10ed9df6f9929a1c4cf155d6ccf2be5c400edd667c5b6ff5d6b7de7ed767c8e5128751250b062f008962c322b05f7c42ef43a29fc0daacb80405f55712ee5eda3dd207afa62e437788197078eb429572c5a6b06f7fa4cc06fda23923e1574a71468f02a6a49767145ae3098ef439c4ecf774f60aa8fbb8a08e9f37a9e91781a29efc02ba965e652977c8e37ca34a4c5e1a4a96e6630697</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">叫什么名字？</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
       
 
       
@@ -380,7 +332,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析"><span class="toc-number">1.</span> <span class="toc-text">西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Packet-Analysis"><span class="toc-number"></span> <span class="toc-text">Packet Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wireshark使用"><span class="toc-number">1.</span> <span class="toc-text">Wireshark使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包筛选"><span class="toc-number">1.0.1.</span> <span class="toc-text">数据包筛选</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包搜索"><span class="toc-number">1.0.2.</span> <span class="toc-text">数据包搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包还原"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据包还原</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.0.4.</span> <span class="toc-text">数据提取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五届美亚杯题解"><span class="toc-number">2.</span> <span class="toc-text">第五届美亚杯题解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目："><span class="toc-number">2.0.1.</span> <span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解析："><span class="toc-number">2.0.2.</span> <span class="toc-text">解析：</span></a></li></ol></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -571,7 +523,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">西安电子科技大学&lt;br&gt;&lt;br&gt;2017届网络安全实验班毕业&lt;br&gt;&lt;br&gt;2021年入职华为&lt;br&gt;&lt;br&gt;ID：冰皇&lt;br&gt;&lt;br&gt;梦想：像曾哥一样Getshell</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">西安电子科技大学&lt;br&gt;&lt;br&gt;2017届网络安全实验班毕业&lt;br&gt;&lt;br&gt;2021年入职华为&lt;br&gt;&lt;br&gt;ID：冰皇&lt;br&gt;&lt;br&gt;梦想：像曾哥一样流畅地Getshell</div>
   	  	
     	</section>
     
