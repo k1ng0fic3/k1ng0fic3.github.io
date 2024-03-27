@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>最友好のWin+Linux双系统安装 | 冰皇&#39;s blog</title>
+  <title>冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最友好のWin+Linux双系统安装本文介绍一下装第二系统时踩的坑和最终解决的过程，想参考文章安装系统的朋友直接向下翻找到教程那儿即可。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最友好のWin+Linux双系统安装">
+<meta property="og:title" content="冰皇&#39;s blog">
 <meta property="og:url" content="https://k1ng0fic3.github.io/2020/04/01/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
 <meta property="og:description" content="最友好のWin+Linux双系统安装本文介绍一下装第二系统时踩的坑和最终解决的过程，想参考文章安装系统的朋友直接向下翻找到教程那儿即可。">
@@ -55,7 +55,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -69,10 +69,8 @@
 			<img src="/images/BH.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">冰皇</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">欲登宝可梦巅峰者</p>
 		
 
 		<nav class="header-menu">
@@ -131,10 +129,8 @@
 				<img src="/images/BH.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">冰皇</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>欲登宝可梦巅峰者<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -186,36 +182,21 @@
             <article id="post-最友好のWin+Linux双系统安装" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      最友好のWin+Linux双系统安装
-    </h1>
-  
-
-        
-        <a href="/2020/04/01/%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin+Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-04-01T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="最友好のWin-Linux双系统安装"><a href="#最友好のWin-Linux双系统安装" class="headerlink" title="最友好のWin+Linux双系统安装"></a>最友好のWin+Linux双系统安装</h1><p>本文介绍一下装第二系统时踩的坑和最终解决的过程，想参考文章安装系统的朋友直接向下翻找到教程那儿即可。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>起因：换新电脑之后，本想把旧电脑刷成Linux。后来想了想，还是做成双系统比较方便，于是开始了踩坑之路。</p>
 <p>最开始的想法无非是，用iso镜像做一个U盘启动安装，但是马上就遇到了问题。</p>
 <p>既然是双系统，肯定会考虑如何做好开机引导，后面看到了两篇文章，本以为找到了救星，结果不小心踩了坑……（主要原因大概还是我自己菜，大佬的文章还是很好的）</p>
-<h3 id="坑文"><a href="#坑文" class="headerlink" title="坑文"></a>坑文</h3><p>给出了<a href="https://blog.csdn.net/lidawei0124/article/details/80383469" target="_blank" rel="noopener">单磁盘多系统</a>和<a href="https://blog.csdn.net/u014113983/article/details/83049102" target="_blank" rel="noopener">多磁盘多系统</a>的两种方案。</p>
+<h3 id="坑文"><a href="#坑文" class="headerlink" title="坑文"></a>坑文</h3><p>给出了<a target="_blank" rel="noopener" href="https://blog.csdn.net/lidawei0124/article/details/80383469">单磁盘多系统</a>和<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014113983/article/details/83049102">多磁盘多系统</a>的两种方案。</p>
 <p>其他博主写的这种方法的文章也有很多，可是照着实现的时候总是会出现引导错误等问题，安装不成功。</p>
 <p>所以无论单磁盘还是多磁盘，用上面的办法都太冒险了，装不好系统事小，万一哪里没有注意，一个错误把原来的系统也损坏就亏大了。</p>
 <p><img src="https://k1ng0fic3.github.io/images/xitong1.png" alt="avatar"></p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><p><a href="https://blog.csdn.net/qingsong3333/article/details/80863293" target="_blank" rel="noopener">救星</a>出现！</p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qingsong3333/article/details/80863293">救星</a>出现！</p>
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>原材料：</p>
 <blockquote>
-<p>Windows X<br>EasyBCD 2.3<br>ubuntu-18.04.3-desktop-amd64.iso or <a href="https://ubuntu.com/download" target="_blank" rel="noopener">其他版本</a></p>
+<p>Windows X<br>EasyBCD 2.3<br>ubuntu-18.04.3-desktop-amd64.iso or <a target="_blank" rel="noopener" href="https://ubuntu.com/download">其他版本</a></p>
 </blockquote>
 <h4 id="可用空间"><a href="#可用空间" class="headerlink" title="可用空间"></a>可用空间</h4><p>首先，win+r，输入<code>diskmgmt.msc</code>进行空间管理，删除某个分区空出一块地方来。</p>
 <p><img src="https://k1ng0fic3.github.io/images/xitong2.png" alt="avatar"></p>
@@ -227,7 +208,7 @@
 <p>再进行配置，我这里是这样的：</p>
 <p><img src="https://k1ng0fic3.github.io/images/xitong6.png" alt="avatar"></p>
 <blockquote>
-<p>title Install Ubuntu<br>root (hd0,4)<br>kernel (hd0,4)/vmlinuz boot=casper iso-scan/filename=/ubuntu-18.04.3-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8<br>initrd (hd0,4)/initrd</p>
+<p>title Install Ubuntu<br>root (hd0,4)<br>kernel (hd0,4)&#x2F;vmlinuz boot&#x3D;casper iso-scan&#x2F;filename&#x3D;&#x2F;ubuntu-18.04.3-desktop-amd64.iso ro quiet splash locale&#x3D;zh_CN.UTF-8<br>initrd (hd0,4)&#x2F;initrd</p>
 </blockquote>
 <h4 id="磁盘编号"><a href="#磁盘编号" class="headerlink" title="磁盘编号"></a>磁盘编号</h4><p><img src="https://k1ng0fic3.github.io/images/xitong7.png" alt="avatar"></p>
 <p>我这里把三个文件放到了D盘下，如上图，在硬盘中位于第一逻辑分区，所以定位在<code>(hd0,4)</code>。<br>主分区与逻辑分区的编号规则如下：</p>
@@ -238,7 +219,7 @@
 <p><img src="https://k1ng0fic3.github.io/images/xitong10.jpg" alt="avatar"></p>
 <p>进入后，使用ctrl + alt + T打开终端，输入以下命令卸载分区：</p>
 <blockquote>
-<p>sudo umount -l /isodevice</p>
+<p>sudo umount -l &#x2F;isodevice</p>
 </blockquote>
 <p><img src="https://k1ng0fic3.github.io/images/xitong14.png" alt="avatar"></p>
 <p>之后运行桌面上的系统安装程序</p>
@@ -254,7 +235,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>/</td>
+<td>&#x2F;</td>
 <td>为根目录，逻辑分区</td>
 <td>96G+</td>
 <td>ext4</td>
@@ -266,13 +247,13 @@
 <td>swap</td>
 </tr>
 <tr>
-<td>/home</td>
+<td>&#x2F;home</td>
 <td>用户工作目录，含个人配置文件，逻辑分区</td>
 <td>96G+</td>
 <td>ext4</td>
 </tr>
 <tr>
-<td>/boot</td>
+<td>&#x2F;boot</td>
 <td>空间起始位置，应大于400M或1G，主分区</td>
 <td>4G</td>
 <td>ext4</td>
@@ -405,14 +386,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          区块链&amp;智能合约
+          (no title)
         
       </div>
     </a>
   
   
     <a href="/2020/03/05/SQL%E6%B3%A8%E5%85%A5%E4%B8%89%E8%BF%9E/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SQL注入三连</div>
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,7 +420,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#最友好のWin-Linux双系统安装"><span class="toc-number">1.</span> <span class="toc-text">最友好のWin+Linux双系统安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#坑文"><span class="toc-number">1.0.1.</span> <span class="toc-text">坑文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#教程"><span class="toc-number">1.0.2.</span> <span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备工作"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可用空间"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">可用空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置引导"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">配置引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#磁盘编号"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">磁盘编号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进入引导"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">进入引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#清理引导"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">清理引导</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%8F%8B%E5%A5%BD%E3%81%AEWin-Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">最友好のWin+Linux双系统安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E6%96%87"><span class="toc-number">1.0.1.</span> <span class="toc-text">坑文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-number">1.0.2.</span> <span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">可用空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%BC%95%E5%AF%BC"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">配置引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%BC%96%E5%8F%B7"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">磁盘编号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E5%BC%95%E5%AF%BC"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">进入引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E5%BC%95%E5%AF%BC"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">清理引导</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -454,7 +435,7 @@
   
   
   <div class="valine_comment"></div>
-<!--载入js，在<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>之前插入即可-->
+<!--载入js，在</body>之前插入即可-->
 <!--Leancloud 操作库:-->
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <!--Valine 的核心代码库-->
@@ -493,7 +474,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 冰皇
+    		&copy; 2024 冰皇
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

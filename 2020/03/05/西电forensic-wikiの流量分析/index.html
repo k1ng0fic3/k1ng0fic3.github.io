@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>西电forensic-wikiの流量分析 | 冰皇&#39;s blog</title>
+  <title>冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="西电forensic-wikiの流量分析">
+<meta property="og:title" content="冰皇&#39;s blog">
 <meta property="og:url" content="https://k1ng0fic3.github.io/2020/03/05/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
 <meta property="og:description" content="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。">
@@ -48,7 +48,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -62,10 +62,8 @@
 			<img src="/images/BH.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">冰皇</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">欲登宝可梦巅峰者</p>
 		
 
 		<nav class="header-menu">
@@ -124,10 +122,8 @@
 				<img src="/images/BH.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">冰皇</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>欲登宝可梦巅峰者<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -179,34 +175,19 @@
             <article id="post-西电forensic-wikiの流量分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      西电forensic-wikiの流量分析
-    </h1>
-  
-
-        
-        <a href="/2020/03/05/%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-03-05T02:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析"><a href="#西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析" class="headerlink" title="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析"></a>西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</h2><p>和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。</p>
-<a id="more"></a>
+        <h2 id="西电forensic-wikiの流量分析-美亚杯题目分析"><a href="#西电forensic-wikiの流量分析-美亚杯题目分析" class="headerlink" title="西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析"></a>西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</h2><p>和小伙伴们合作参与了取证方面的wiki编辑工作，记录一下流量分析部分，并解题。</p>
+<span id="more"></span>
 <h1 id="Packet-Analysis"><a href="#Packet-Analysis" class="headerlink" title="Packet Analysis"></a>Packet Analysis</h1><p>网络流量分析是指捕捉网络中流动的数据包，并通过查看包内部数据以及进行相关的协议、流量分析、统计等来发现网络运行过程中出现的问题。</p>
 <p>在应急响应与日常运维中都是至关重要的步骤。</p>
-<p>对于取证分析，在<a href="https://wiki.x10sec.org/misc/traffic/introduction/" target="_blank" rel="noopener">CTF中的流量包分析</a>中有一些简单的介绍。二者基本上类似，不过在CTF中对数据包的分析比较注重细节和较高难度的处理；在美亚杯的比赛中更注重流量包的行为和结果，从而对其他镜像的分析结果进行佐证。</p>
+<p>对于取证分析，在<a target="_blank" rel="noopener" href="https://wiki.x10sec.org/misc/traffic/introduction/">CTF中的流量包分析</a>中有一些简单的介绍。二者基本上类似，不过在CTF中对数据包的分析比较注重细节和较高难度的处理；在美亚杯的比赛中更注重流量包的行为和结果，从而对其他镜像的分析结果进行佐证。</p>
 <h2 id="Wireshark使用"><a href="#Wireshark使用" class="headerlink" title="Wireshark使用"></a>Wireshark使用</h2><p>pcap流量包的分析通常都是通过图形化的网络嗅探器——Wireshark进行的，这款嗅探器经过众多开发者的不断完善，现在已经成为了使用最为广泛的安全工具之一。</p>
 <p>Wireshark的基本使用分为数据包筛选、数据包搜索、数据包还原、数据提取四个部分。</p>
 <h4 id="数据包筛选"><a href="#数据包筛选" class="headerlink" title="数据包筛选"></a>数据包筛选</h4><p>数据包筛选功能是Wireshark的核心功能，比如需要筛选出特定的协议如HTTP，Telnet等，也可能需要筛选出ip地址，端口等。</p>
 <h4 id="数据包搜索"><a href="#数据包搜索" class="headerlink" title="数据包搜索"></a>数据包搜索</h4><p>在Wireshark界面按“Ctrl+F”，可以进行关键字搜索。Wireshark的搜索功能支持正则表达式、字符串、十六进制等方式进行搜索，通常情况下直接使用字符串方式进行搜索。</p>
-<h4 id="数据包还原"><a href="#数据包还原" class="headerlink" title="数据包还原"></a>数据包还原</h4><p>在Wireshark中，存在一个交追踪流的功能，可以将HTTP或TCP流量集合在一起并还原成原始数据，具体操作方式：选中想要还原的流量包，右键选中，选择追踪流 – TCP流/UPD流/SSL流/HTTP流。</p>
-<h4 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h4><p>Wireshark支持提取通过http传输（上传/下载）的文件内容，方法：选中http文件传输流量包，在分组详情中找到data或者Line-based text data:text/html层，鼠标右键点击 – 选中 导出分组字节流。</p>
+<h4 id="数据包还原"><a href="#数据包还原" class="headerlink" title="数据包还原"></a>数据包还原</h4><p>在Wireshark中，存在一个交追踪流的功能，可以将HTTP或TCP流量集合在一起并还原成原始数据，具体操作方式：选中想要还原的流量包，右键选中，选择追踪流 – TCP流&#x2F;UPD流&#x2F;SSL流&#x2F;HTTP流。</p>
+<h4 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h4><p>Wireshark支持提取通过http传输（上传&#x2F;下载）的文件内容，方法：选中http文件传输流量包，在分组详情中找到data或者Line-based text data:text&#x2F;html层，鼠标右键点击 – 选中 导出分组字节流。</p>
 <h2 id="第五届美亚杯题解"><a href="#第五届美亚杯题解" class="headerlink" title="第五届美亚杯题解"></a>第五届美亚杯题解</h2><h4 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h4><p><img src="https://k1ng0fic3.github.io/images/w1ki4.png" alt="avatar"></p>
 <p><img src="https://k1ng0fic3.github.io/images/w1ki2.png" alt="avatar"></p>
 <p><img src="https://k1ng0fic3.github.io/images/w1ki3.png" alt="avatar"></p>
@@ -214,7 +195,7 @@
 <p>这是美亚杯一个特点，疯狂求各种文件的MD5值。</p>
 <p>Windows终端命令如下：</p>
 <blockquote>
-<p>certutil -hashfile filename MD5/SHA1/SHA256</p>
+<p>certutil -hashfile filename MD5&#x2F;SHA1&#x2F;SHA256</p>
 </blockquote>
 <p><img src="https://k1ng0fic3.github.io/images/w1ki1.png" alt="avatar"></p>
 <p>不过此题出了一些问题，跟答案对不上，最终作废了。</p>
@@ -222,7 +203,7 @@
 <p>107、Dos攻击：</p>
 <p>从很多地方可以看出来攻击方式：</p>
 <p><img src="https://k1ng0fic3.github.io/images/w1ki6.png" alt="avatar"></p>
-<p><a href="https://github.com/shekyan/slowhttptest" target="_blank" rel="noopener">Slowhttptest</a>是依赖HTTP协议的慢速攻击DoS攻击工具，设计的基本原理是服务器在请求完全接收后才会进行处理，如果客户端的发送速度缓慢或者发送不完整，服务端为其保留连接资源池占用，大量此类请求并发将导致DoS。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/shekyan/slowhttptest">Slowhttptest</a>是依赖HTTP协议的慢速攻击DoS攻击工具，设计的基本原理是服务器在请求完全接收后才会进行处理，如果客户端的发送速度缓慢或者发送不完整，服务端为其保留连接资源池占用，大量此类请求并发将导致DoS。</p>
 <p>108、抓包时间：</p>
 <p>按时间排序后，查看最后一个包的Arrival Time。</p>
 <p><img src="https://k1ng0fic3.github.io/images/w1ki7.png" alt="avatar"></p>
@@ -351,7 +332,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          西电forensic-wikiのWindows
+          (no title)
         
       </div>
     </a>
@@ -380,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#西电forensic-wikiの流量分析-amp-amp-美亚杯题目分析"><span class="toc-number">1.</span> <span class="toc-text">西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Packet-Analysis"><span class="toc-number"></span> <span class="toc-text">Packet Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wireshark使用"><span class="toc-number">1.</span> <span class="toc-text">Wireshark使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包筛选"><span class="toc-number">1.0.1.</span> <span class="toc-text">数据包筛选</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包搜索"><span class="toc-number">1.0.2.</span> <span class="toc-text">数据包搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据包还原"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据包还原</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据提取"><span class="toc-number">1.0.4.</span> <span class="toc-text">数据提取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五届美亚杯题解"><span class="toc-number">2.</span> <span class="toc-text">第五届美亚杯题解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目："><span class="toc-number">2.0.1.</span> <span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解析："><span class="toc-number">2.0.2.</span> <span class="toc-text">解析：</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A5%BF%E7%94%B5forensic-wiki%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90-%E7%BE%8E%E4%BA%9A%E6%9D%AF%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">西电forensic-wikiの流量分析 &amp;&amp; 美亚杯题目分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Packet-Analysis"><span class="toc-number"></span> <span class="toc-text">Packet Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wireshark%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">Wireshark使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%AD%9B%E9%80%89"><span class="toc-number">1.0.1.</span> <span class="toc-text">数据包筛选</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E6%90%9C%E7%B4%A2"><span class="toc-number">1.0.2.</span> <span class="toc-text">数据包搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E8%BF%98%E5%8E%9F"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据包还原</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96"><span class="toc-number">1.0.4.</span> <span class="toc-text">数据提取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E5%B1%8A%E7%BE%8E%E4%BA%9A%E6%9D%AF%E9%A2%98%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">第五届美亚杯题解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-number">2.0.2.</span> <span class="toc-text">解析：</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -395,7 +376,7 @@
   
   
   <div class="valine_comment"></div>
-<!--载入js，在<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>之前插入即可-->
+<!--载入js，在</body>之前插入即可-->
 <!--Leancloud 操作库:-->
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <!--Valine 的核心代码库-->
@@ -434,7 +415,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 冰皇
+    		&copy; 2024 冰皇
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

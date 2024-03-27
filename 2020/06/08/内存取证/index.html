@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>内存取证 | 冰皇&#39;s blog</title>
+  <title>冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内存取证">
+<meta property="og:title" content="冰皇&#39;s blog">
 <meta property="og:url" content="https://k1ng0fic3.github.io/2020/06/08/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
 <meta property="og:description" content="内存取证练习以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。">
@@ -62,7 +62,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -76,10 +76,8 @@
 			<img src="/images/BH.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">冰皇</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">欲登宝可梦巅峰者</p>
 		
 
 		<nav class="header-menu">
@@ -138,10 +136,8 @@
 				<img src="/images/BH.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">冰皇</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>欲登宝可梦巅峰者<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -193,26 +189,11 @@
             <article id="post-内存取证" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      内存取证
-    </h1>
-  
-
-        
-        <a href="/2020/06/08/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" class="archive-article-date">
-  	<time datetime="2020-06-08T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="内存取证练习"><a href="#内存取证练习" class="headerlink" title="内存取证练习"></a>内存取证练习</h1><h5 id="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><a href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。" class="headerlink" title="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"></a>以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</h5><a id="more"></a>
+        <h1 id="内存取证练习"><a href="#内存取证练习" class="headerlink" title="内存取证练习"></a>内存取证练习</h1><h5 id="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><a href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。" class="headerlink" title="以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"></a>以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</h5><span id="more"></span>
 <p>题目文件下载链接：</p>
-<h5 id="https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><a href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw" class="headerlink" title="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw"></a><a href="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw" target="_blank" rel="noopener">https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw</a></h5><p>做题之前简单介绍下<code>Volatility</code>这个工具——<br>一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入volatility来使用，功能可在源码或直接-h查看。</p>
+<h5 id="https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><a href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw" class="headerlink" title="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw"></a><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw">https://pan.baidu.com/s/1QVCp4a45sFQUkrX-D4fvUw</a></h5><p>做题之前简单介绍下<code>Volatility</code>这个工具——<br>一款开源的内存取证分析工具，Python编写，兼容各系统，可通过插件来拓展功能。Kali-Linux下集成了该工具，命令行中输入volatility来使用，功能可在源码或直接-h查看。</p>
 <p>附：关于如何给volatility添加组件。<br>【在Python源码<code>https://github.com/volatilityfoundation/</code>中，将目标文件（如：mimikatz. py）移入<code>volatility-master\volatility\plugins</code>目录下即可。】</p>
 <h5 id="1-9、"><a href="#1-9、" class="headerlink" title="1-9、"></a>1-9、</h5><blockquote>
 <p>1- What the password? 100<br>you got a sample of rick’s PC’s memory. can you get his user password? </p>
@@ -250,7 +231,7 @@
 <blockquote>
 <p>5- Name Game 2 150<br>From a little research we found that the username of the logged on character is always after this signature: 0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2} What’s rick’s character’s name? </p>
 </blockquote>
-<p>再次回到netscan的界面，把那个游戏LunarMS.exe（pid=708那个）给dump下来，因为题目文件是vmem文件么，所以memdump就好了</p>
+<p>再次回到netscan的界面，把那个游戏LunarMS.exe（pid&#x3D;708那个）给dump下来，因为题目文件是vmem文件么，所以memdump就好了</p>
 <p><img src="https://k1ng0fic3.github.io/images/neicun11.png" alt="avatar"></p>
 <p>接下来就去找0x64 0x??{6-8} 0x40 0x06 0x??{18} 0x5a 0x0c 0x00{2}这串东西，可以辨认出来的是：</p>
 <p><img src="https://k1ng0fic3.github.io/images/neicun12.png" alt="avatar"></p>
@@ -281,7 +262,7 @@
 <blockquote>
 <p>8- Path To Glory 150<br>How did the malware got to rick’s PC? It must be one of rick old illigal habits…</p>
 </blockquote>
-<p>malware-恶意软件，不过并不知道怎么看出来，这个问题我们后面再讨论吧（先贴个网址在这儿：<a href="https://www.freebuf.com/articles/system/104899.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/system/104899.html</a> ），不过匹配Rick和exe肯定没有错，filescan之：</p>
+<p>malware-恶意软件，不过并不知道怎么看出来，这个问题我们后面再讨论吧（先贴个网址在这儿：<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/system/104899.html">https://www.freebuf.com/articles/system/104899.html</a> ），不过匹配Rick和exe肯定没有错，filescan之：</p>
 <p><img src="https://k1ng0fic3.github.io/images/neicun21.png" alt="avatar"></p>
 <p>这个地方比较懵，不过根据推测，rwd：读取写入即时同步，于是dump出RWD—模式的文件来看看：</p>
 <p><img src="https://k1ng0fic3.github.io/images/neicun22.png" alt="avatar"></p>
@@ -398,14 +379,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          DigDog安装与简易运行演示
+          (no title)
         
       </div>
     </a>
   
   
     <a href="/2020/06/05/volatility%E6%8F%92%E4%BB%B6%E3%81%AE%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">volatility插件の笔记</div>
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -432,7 +413,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存取证练习"><span class="toc-number">1.</span> <span class="toc-text">内存取证练习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9、"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">1-9、</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E7%BB%83%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">内存取证练习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A5OtterCTF%E9%A2%98%E7%9B%AE%E4%B8%BA%E4%BE%8B%EF%BC%8CVolatility%E4%B8%BA%E8%BE%85%EF%BC%8C%E8%BF%9B%E8%A1%8C%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E6%96%B9%E9%9D%A2%E5%BA%94%E7%94%A8%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%92%8C%E7%BB%83%E4%B9%A0%E3%80%82"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">以OtterCTF题目为例，Volatility为辅，进行内存取证方面应用的模拟和练习。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#https-pan-baidu-com-s-1QVCp4a45sFQUkrX-D4fvUw"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1QVCp4a45sFQUkrX-D4fvUw</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9%E3%80%81"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">1-9、</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -447,7 +428,7 @@
   
   
   <div class="valine_comment"></div>
-<!--载入js，在<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>之前插入即可-->
+<!--载入js，在</body>之前插入即可-->
 <!--Leancloud 操作库:-->
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <!--Valine 的核心代码库-->
@@ -486,7 +467,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 冰皇
+    		&copy; 2024 冰皇
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

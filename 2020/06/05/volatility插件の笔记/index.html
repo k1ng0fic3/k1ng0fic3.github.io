@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://k1ng0fic3.github.io">
-  <title>volatility插件の笔记 | 冰皇&#39;s blog</title>
+  <title>冰皇&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="为了了解volatility的运作机制和插件情况（以实现开发新插件的计划），代码审计如下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="volatility插件の笔记">
+<meta property="og:title" content="冰皇&#39;s blog">
 <meta property="og:url" content="https://k1ng0fic3.github.io/2020/06/05/volatility%E6%8F%92%E4%BB%B6%E3%81%AE%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="冰皇&#39;s blog">
 <meta property="og:description" content="为了了解volatility的运作机制和插件情况（以实现开发新插件的计划），代码审计如下：">
@@ -41,7 +41,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +55,8 @@
 			<img src="/images/BH.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">冰皇</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">欲登宝可梦巅峰者</p>
 		
 
 		<nav class="header-menu">
@@ -117,10 +115,8 @@
 				<img src="/images/BH.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">冰皇</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>欲登宝可梦巅峰者<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -172,34 +168,21 @@
             <article id="post-volatility插件の笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      volatility插件の笔记
-    </h1>
-  
-
-        
-        <a href="/2020/06/05/volatility%E6%8F%92%E4%BB%B6%E3%81%AE%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-06-05T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
         <p>为了了解volatility的运作机制和插件情况（以实现开发新插件的计划），代码审计如下：</p>
-<a id="more"></a>
+<span id="more"></span>
 <h4 id="0x00-volatility主线程"><a href="#0x00-volatility主线程" class="headerlink" title="0x00 volatility主线程"></a>0x00 volatility主线程</h4><p>审计核心代码<code>vol.py</code>，源码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印版本信息</span></span><br><span class="line">    sys.stderr.write(<span class="string">"Volatility Foundation Volatility Framework &#123;0&#125;\n"</span>.format(constants.VERSION))</span><br><span class="line">    sys.stderr.flush()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化debug模块</span></span><br><span class="line">    debug.setup()</span><br><span class="line">    <span class="comment"># Load up modules in case they set config options</span></span><br><span class="line">    registry.PluginImporter()</span><br><span class="line"></span><br><span class="line">    <span class="comment">## Register all register_options for the various classes</span></span><br><span class="line">    registry.register_global_options(config, addrspace.BaseAddressSpace)</span><br><span class="line">    registry.register_global_options(config, commands.Command)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> config.INFO:</span><br><span class="line">        print_info()</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">## Parse all the options now</span></span><br><span class="line">    config.parse_options(<span class="literal">False</span>)</span><br><span class="line">    <span class="comment"># Reset the logging level now we know whether debug is set or not</span></span><br><span class="line">    debug.setup(config.DEBUG)</span><br><span class="line"></span><br><span class="line">    module = <span class="literal">None</span></span><br><span class="line">    <span class="comment"># 获取插件的字典 插件名：插件体</span></span><br><span class="line">    cmds = registry.get_plugin_classes(commands.Command, lower = <span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> config.args:</span><br><span class="line">        <span class="comment"># 找到参数里的第一个插件名</span></span><br><span class="line">        <span class="keyword">if</span> m <span class="keyword">in</span> cmds.keys():</span><br><span class="line">            <span class="comment"># module即为插件名 比如Linux_arp</span></span><br><span class="line">            module = m</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> module: <span class="comment"># 插件不存在</span></span><br><span class="line">        config.parse_options()</span><br><span class="line">        debug.error(<span class="string">"You must specify something to do (try -h)"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> module <span class="keyword">in</span> cmds.keys():</span><br><span class="line">        <span class="comment"># 插件存在，则获取插件对象，并将config赋值module这个插件的_config变量</span></span><br><span class="line">        command = cmds[module](config)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># hook 上help函数</span></span><br><span class="line">        config.set_help_hook(obj.Curry(command_help, command))</span><br><span class="line">        config.parse_options()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> config.LOCATION:</span><br><span class="line">            debug.error(<span class="string">"Please specify a location (-l) or filename (-f)"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 开始执行插件</span></span><br><span class="line">        command.execute()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印版本信息</span></span><br><span class="line">    sys.stderr.write(<span class="string">&quot;Volatility Foundation Volatility Framework &#123;0&#125;\n&quot;</span>.<span class="built_in">format</span>(constants.VERSION))</span><br><span class="line">    sys.stderr.flush()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化debug模块</span></span><br><span class="line">    debug.setup()</span><br><span class="line">    <span class="comment"># Load up modules in case they set config options</span></span><br><span class="line">    registry.PluginImporter()</span><br><span class="line"></span><br><span class="line">    <span class="comment">## Register all register_options for the various classes</span></span><br><span class="line">    registry.register_global_options(config, addrspace.BaseAddressSpace)</span><br><span class="line">    registry.register_global_options(config, commands.Command)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> config.INFO:</span><br><span class="line">        print_info()</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">## Parse all the options now</span></span><br><span class="line">    config.parse_options(<span class="literal">False</span>)</span><br><span class="line">    <span class="comment"># Reset the logging level now we know whether debug is set or not</span></span><br><span class="line">    debug.setup(config.DEBUG)</span><br><span class="line"></span><br><span class="line">    module = <span class="literal">None</span></span><br><span class="line">    <span class="comment"># 获取插件的字典 插件名：插件体</span></span><br><span class="line">    cmds = registry.get_plugin_classes(commands.Command, lower = <span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> config.args:</span><br><span class="line">        <span class="comment"># 找到参数里的第一个插件名</span></span><br><span class="line">        <span class="keyword">if</span> m <span class="keyword">in</span> cmds.keys():</span><br><span class="line">            <span class="comment"># module即为插件名 比如Linux_arp</span></span><br><span class="line">            module = m</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> module: <span class="comment"># 插件不存在</span></span><br><span class="line">        config.parse_options()</span><br><span class="line">        debug.error(<span class="string">&quot;You must specify something to do (try -h)&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> module <span class="keyword">in</span> cmds.keys():</span><br><span class="line">        <span class="comment"># 插件存在，则获取插件对象，并将config赋值module这个插件的_config变量</span></span><br><span class="line">        command = cmds[module](config)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># hook 上help函数</span></span><br><span class="line">        config.set_help_hook(obj.Curry(command_help, command))</span><br><span class="line">        config.parse_options()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> config.LOCATION:</span><br><span class="line">            debug.error(<span class="string">&quot;Please specify a location (-l) or filename (-f)&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 开始执行插件</span></span><br><span class="line">        command.execute()</span><br></pre></td></tr></table></figure>
 
 <p>总结的流程图如下：</p>
 <p><img src="https://k1ng0fic3.github.io/images/vola1.png" alt="avatar"></p>
 <p>上面主要是主线程的启动流程。</p>
 <p>1、vol从自身配置中获取插件字典，该字典的格式是[插件名:插件体]<br>2、主线程从命令行参数里获取第一个长得像是插件名的参数，就像我们输入的linux_arp一样的参数<br>3、参数：</p>
 <pre><code>1、不存在像是插件名的字符串则报错并退出
-2、存在则以插件名、配置来初始化插件</code></pre><p>4、在插件上hook help函数<br>5、开始执行插件</p>
+2、存在则以插件名、配置来初始化插件
+</code></pre>
+<p>4、在插件上hook help函数<br>5、开始执行插件</p>
 <p>注意的：<code>get_plugin_classes</code>函数用于获取一切以<code>commands.Command</code>为父类的派生类字典。</p>
 <h4 id="0x01-插件的类派生"><a href="#0x01-插件的类派生" class="headerlink" title="0x01 插件的类派生"></a>0x01 插件的类派生</h4><p><img src="https://k1ng0fic3.github.io/images/vola2.png" alt="avatar"></p>
 <p>如上图，volatility中的插件以<code>commands</code>的<code>Command</code>类为父类，分别派生出<code>AbstractWindowsCommand</code>类、<code>AbstractMacCommand</code>类以及<code>AbstractLinuxCommand</code>类，这分别代表三个平台插件的基类。</p>
@@ -207,25 +190,25 @@
 <h4 id="0x02-插件运行机理"><a href="#0x02-插件运行机理" class="headerlink" title="0x02 插件运行机理"></a>0x02 插件运行机理</h4><p><img src="https://k1ng0fic3.github.io/images/vola3.png" alt="avatar"></p>
 <p>如上是插件的运行机理：</p>
 <p>首先获取所有已注册的Profile的派生类集合。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment"># 获取Profile类的子类</span></span><br><span class="line">    profs = registry.get_plugin_classes(obj.Profile)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="comment"># 获取Profile类的子类</span></span><br><span class="line">    profs = registry.get_plugin_classes(obj.Profile)</span><br></pre></td></tr></table></figure>
 
 <p>接着除了kdbgscan和imageinfo两个插件可以不提供profile而使用默认的profile–WinXPSP2x86以外，其他插件没有提供profile参数就不给运行的机会。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> plugin_name != <span class="string">"mac_get_profile"</span>:</span><br><span class="line">    <span class="keyword">if</span> self._config.PROFILE == <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> plugin_name <span class="keyword">in</span> [<span class="string">"kdbgscan"</span>, <span class="string">"imageinfo"</span>]:</span><br><span class="line">            self._config.update(<span class="string">"PROFILE"</span>, <span class="string">"WinXPSP2x86"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            debug.error(<span class="string">"You must set a profile!"</span>)</span><br><span class="line">     </span><br><span class="line">        <span class="keyword">if</span> self._config.PROFILE <span class="keyword">not</span> <span class="keyword">in</span> profs:</span><br><span class="line">            debug.error(<span class="string">"Invalid profile "</span> + self._config.PROFILE + <span class="string">" selected"</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.is_valid_profile(profs[self._config.PROFILE]()):</span><br><span class="line">            debug.error(<span class="string">"This command does not support the profile "</span> + self._config.PROFILE)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> plugin_name != <span class="string">&quot;mac_get_profile&quot;</span>:</span><br><span class="line">    <span class="keyword">if</span> self._config.PROFILE == <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> plugin_name <span class="keyword">in</span> [<span class="string">&quot;kdbgscan&quot;</span>, <span class="string">&quot;imageinfo&quot;</span>]:</span><br><span class="line">            self._config.update(<span class="string">&quot;PROFILE&quot;</span>, <span class="string">&quot;WinXPSP2x86&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            debug.error(<span class="string">&quot;You must set a profile!&quot;</span>)</span><br><span class="line">     </span><br><span class="line">        <span class="keyword">if</span> self._config.PROFILE <span class="keyword">not</span> <span class="keyword">in</span> profs:</span><br><span class="line">            debug.error(<span class="string">&quot;Invalid profile &quot;</span> + self._config.PROFILE + <span class="string">&quot; selected&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.is_valid_profile(profs[self._config.PROFILE]()):</span><br><span class="line">            debug.error(<span class="string">&quot;This command does not support the profile &quot;</span> + self._config.PROFILE)</span><br></pre></td></tr></table></figure>
 
 <p>接着执行插件的calculate函数，这个函数我们在自定义插件的时候一般会实现，作为vol和我们的自定义插件之间的调用接口，即插件的执行。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># # 首先执行calculate</span></span><br><span class="line">data = self.calculate()</span><br></pre></td></tr></table></figure>
 
 <p>随后基于输出格式确定渲染函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function_name = <span class="string">"render_&#123;0&#125;"</span>.format(self._config.OUTPUT)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function_name = <span class="string">&quot;render_&#123;0&#125;&quot;</span>.<span class="built_in">format</span>(self._config.OUTPUT)</span><br></pre></td></tr></table></figure>
 
 <p>若非sqlite输出且存在输出的目标文件，则进行写文件。否则将结果输出至标准输出。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> self._config.OUTPUT == <span class="string">"sqlite"</span> <span class="keyword">and</span> self._config.OUTPUT_FILE:</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    outfd = sys.stdout</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> self._config.OUTPUT == <span class="string">&quot;sqlite&quot;</span> <span class="keyword">and</span> self._config.OUTPUT_FILE:</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    outfd = sys.stdout</span><br></pre></td></tr></table></figure>
 
 <p>其中默认以时间戳_插件名的命名方式来创建输出文件，若指定了输出文件，则使用用户自定义的。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">out_file = <span class="string">'&#123;0&#125;_&#123;1&#125;.txt'</span>.format(time.strftime(<span class="string">'%Y%m%d%H%M%S'</span>), plugin_name) <span class="keyword">if</span> self._config.OUTPUT_FILE == <span class="string">'.'</span> <span class="keyword">else</span> self._config.OUTPUT_FILE</span><br><span class="line"><span class="keyword">if</span> os.path.exists(out_file):</span><br><span class="line">    debug.error(<span class="string">"File "</span> + out_file + <span class="string">" already exists.  Cowardly refusing to overwrite it..."</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'Outputting to: &#123;0&#125;'</span>.format(out_file)</span><br><span class="line">outfd = open(out_file, <span class="string">'wb'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">out_file = <span class="string">&#x27;&#123;0&#125;_&#123;1&#125;.txt&#x27;</span>.<span class="built_in">format</span>(time.strftime(<span class="string">&#x27;%Y%m%d%H%M%S&#x27;</span>), plugin_name) <span class="keyword">if</span> self._config.OUTPUT_FILE == <span class="string">&#x27;.&#x27;</span> <span class="keyword">else</span> self._config.OUTPUT_FILE</span><br><span class="line"><span class="keyword">if</span> os.path.exists(out_file):</span><br><span class="line">    debug.error(<span class="string">&quot;File &quot;</span> + out_file + <span class="string">&quot; already exists.  Cowardly refusing to overwrite it...&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Outputting to: &#123;0&#125;&#x27;</span>.<span class="built_in">format</span>(out_file)</span><br><span class="line">outfd = <span class="built_in">open</span>(out_file, <span class="string">&#x27;wb&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 <p>接着执行插件对应的渲染函数<code>render_output</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func = getattr(self, function_name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func = <span class="built_in">getattr</span>(self, function_name)</span><br></pre></td></tr></table></figure>
 
 <p>最后将结果输出到输出对象里。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func(outfd, data)</span><br></pre></td></tr></table></figure>
@@ -349,14 +332,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          内存取证
+          (no title)
         
       </div>
     </a>
   
   
     <a href="/2020/04/05/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E3%81%AE%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">应急响应の流量分析</div>
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -383,7 +366,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x00-volatility主线程"><span class="toc-number">1.</span> <span class="toc-text">0x00 volatility主线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x01-插件的类派生"><span class="toc-number">2.</span> <span class="toc-text">0x01 插件的类派生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x02-插件运行机理"><span class="toc-number">3.</span> <span class="toc-text">0x02 插件运行机理</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x00-volatility%E4%B8%BB%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">0x00 volatility主线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x01-%E6%8F%92%E4%BB%B6%E7%9A%84%E7%B1%BB%E6%B4%BE%E7%94%9F"><span class="toc-number">2.</span> <span class="toc-text">0x01 插件的类派生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x02-%E6%8F%92%E4%BB%B6%E8%BF%90%E8%A1%8C%E6%9C%BA%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">0x02 插件运行机理</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -398,7 +381,7 @@
   
   
   <div class="valine_comment"></div>
-<!--载入js，在<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-koharu    //妹子有很多个，叫名字他才出来"},"display":{"position":"right   //位置","width":"150    //妹子宽度","height":"300    //妹子高度"},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>之前插入即可-->
+<!--载入js，在</body>之前插入即可-->
 <!--Leancloud 操作库:-->
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <!--Valine 的核心代码库-->
@@ -437,7 +420,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 冰皇
+    		&copy; 2024 冰皇
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
